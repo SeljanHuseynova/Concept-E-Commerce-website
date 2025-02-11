@@ -1,0 +1,26 @@
+@import "./global";
+@import "./navbar";
+@import "./heroHome";
+
+:root {
+  --primary-color: #fd8b8b;
+  --secondary-color: #f5e7ec;
+  --background-color: linear-gradient(
+    215deg,
+    #f8d0da73 34.38%,
+    #c3ecfc73 73.44%
+  );
+  --text-color: #0000;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --primary-color: #1e88e5;
+  --secondary-color: #43a047;
+  --background-color: linear-gradient(
+    215deg,
+    rgba(139, 105, 115, 0.6) 34.38%,
+    rgba(73, 96, 125, 0.6) 73.44%
+  );
+  --text-color: #ffffff;
+}

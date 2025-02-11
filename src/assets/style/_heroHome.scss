@@ -1,0 +1,18 @@
+.home-hero {
+  background-image: url("../images/general/homeHero.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @media (max-width: 1046px) {
+    background-size: contain;
+  }
+  height: 100vh;
+ 
+}
+p {
+  height: 50vh;
+  background: linear-gradient(
+    215deg,
+    #f8d0da73 34.38%,
+    #c3ecfc73 73.44%);
+}
