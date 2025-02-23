@@ -1,16 +1,27 @@
 @import "./global";
 @import "./navbar";
 @import "./heroHome";
+@import "./_newArrivals";
+@import "./products";
+@import "./spotLight";
+@import "./modal-style/modal";
+@import "./modal-style/wishlist";
+
+// body {
+//   background-color: #191919 !important;
+// }
 
 :root {
-  --primary-color: #fd8b8b;
+  --primary-color: #fff9f9;
   --secondary-color: #f5e7ec;
   --background-color: linear-gradient(
     215deg,
-    #f8d0da73 34.38%,
-    #c3ecfc73 73.44%
-  );
-  --text-color: #0000;
+    rgba(248, 208, 218, 0.45) 34.38%,
+    rgba(195, 236, 252, 0.45) 73.44%
+  ) !important;
+  --text-color: #191919;
+  --main-font-family: "Cormorant", serif;
+  --secondary-font-family: "Poppins", serif;
 }
 
 /* Dark mode */

@@ -1,0 +1,45 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 4;
+
+  .modal-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 31%;
+    height: 100vh;
+    background: linear-gradient(45deg, #ebf0f6, #fef9f9, #fff4f4, #f3f4f8);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .icon-container {
+      align-self: end;
+      width: 46px;
+      height: 46px;
+      background-color: #e5e0e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(13px) translateY(-10px);
+      &:hover {
+        .cls-icon {
+          transform: scale(1.15) rotate(360deg);
+        }
+      }
+      .cls-icon {
+        font-size: 16px;
+        transition: transform 1s ease-in-out;
+      }
+    }
+  }
+}

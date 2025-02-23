@@ -2,7 +2,9 @@ import React from 'react'
 
 const Announcement = () => {
   return (
-    <div className='announcement'>lorem</div>
+    <div className='announcement'>
+      <span>FREE SHIPPING ON ORDERS OVER $120</span>
+    </div>
   )
 }
 

@@ -1,0 +1,37 @@
+.new-arrivals {
+  
+    background: linear-gradient(135deg, rgba(98, 0, 234, 0.3) 30%, rgba(41, 121, 255, 0.3) 70%);
+    background: var(--background-color);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+
+  .title {
+    span {
+      font-family: var(--secondary-font-family);
+      font-size: 18px;
+      color: #545454;
+      border-bottom: 0.001rem solid #545454;
+      animation: borderAnimation 1s infinite alternate;
+      @media (max-width: 830px) {
+        font-size: 16px;
+      }
+      @media (max-width: 560px) {
+        font-size: 14px;
+      }
+      @media (max-width: 400px) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+@keyframes borderAnimation {
+  0% {
+    border-bottom-color: rgba(84, 84, 84, 0);
+  }
+  50% {
+    border-bottom-color: rgba(84, 84, 84, 1);
+  }
+  100% {
+    border-bottom-color: rgba(84, 84, 84, 0);
+  }
+}

@@ -5,7 +5,7 @@ import Announcement from "./Announcement";
 const Header = () => {
   return (
     <header>
-      {/* <Announcement /> */}
+      <Announcement />
       <Navbar />
     </header>
   );
