@@ -21,7 +21,7 @@ function App() {
     <>
       <CustomCursor />
       <WishListProvider>
-        <Header />
+        <Header currentUser={currentUser}/>
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="/about" element={<About />} />

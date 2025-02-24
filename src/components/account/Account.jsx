@@ -8,8 +8,7 @@ const Account = () => {
   const dispatch = useDispatch();
 
   const logout = () => {
-    dispatch(logoutUser());
-    navigate("/");
+    dispatch(logoutUser()).then(() => navigate("/"));
   };
 
   return (

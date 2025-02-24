@@ -5,19 +5,15 @@ export const registerUser = createAsyncThunk(
   "users/register",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
-        accountUrl, 
-        userData,
-        {
-          headers: {
-            ...headers,
-            Prefer: "return=representation", 
-          },
-        }
-      );
+      const response = await axios.post(accountUrl, userData, {
+        headers: {
+          ...headers,
+          Prefer: "return=representation",
+        },
+      });
 
       if (response.data.length > 0) {
-        return response.data[0]; 
+        return response.data[0];
       } else {
         return rejectWithValue("User registration failed.");
       }
@@ -26,7 +22,6 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
-
 
 export const loginUser = createAsyncThunk(
   "users/login",
@@ -53,6 +48,11 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAsyncThunk("users/logout", async () => {
+  localStorage.removeItem("currentUser");
+  return null;
+});
+
 const initialState = {
   currentUser: JSON.parse(localStorage.getItem("currentUser")) || null,
   status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
@@ -62,12 +62,7 @@ const initialState = {
 const accountSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {
-    logoutUser: (state) => {
-      state.currentUser = null;
-      localStorage.removeItem("currentUser");
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.pending, (state) => {
@@ -95,10 +90,11 @@ const accountSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        state.currentUser = null;
       });
   },
 });
-
-export const { logoutUser } = accountSlice.actions;
 
 export default accountSlice.reducer;

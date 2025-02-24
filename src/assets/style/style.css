@@ -221,15 +221,34 @@ header nav img {
   transform: translateY(10px);
 }
 header nav ul,
-header nav .icons {
+header nav .icons, header nav .icons-add {
   padding-bottom: 8px;
   border-bottom: 0.001rem solid rgb(44, 62, 80);
 }
 @media (max-width: 992px) {
   header nav ul,
-  header nav .icons {
+  header nav .icons, header nav .icons-add {
     border: none;
   }
+}
+header nav .icons-add {
+  padding-bottom: 10px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+@media (min-width: 992px) {
+  header nav .icons-add {
+    padding-right: 60px;
+  }
+}
+header nav .icons-add .icon {
+  font-size: 21px;
+}
+header nav .icons-add .icon:hover {
+  transform: scale(1.15);
 }
 header nav .icons {
   padding-right: 60px;

@@ -7,14 +7,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter } from "react-router";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
-import AccountProvider from "./context/AccountProvider.jsx";
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
   <Provider store={store}>
     <BrowserRouter>
-      <AccountProvider>
-        <App />
-      </AccountProvider>
+      <App />
     </BrowserRouter>
   </Provider>
   // </StrictMode>

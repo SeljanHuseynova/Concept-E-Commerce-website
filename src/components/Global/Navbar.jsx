@@ -10,33 +10,14 @@ import logo from "../../assets/images/logo/concept.logo.png";
 import { LuMenu } from "react-icons/lu";
 import Modal from "../modals/Modal";
 
-const Navbar = () => {
+const Navbar = ({ currentUser, isSticky, isMobileView }) => {
   const [modalType, setModalType] = useState(null);
-  const [isSticky, setIsSticky] = useState(false);
-
   const openModal = (type) => {
     setModalType(type);
   };
-
   const closeModal = () => {
     setModalType(null);
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <nav
@@ -48,7 +29,6 @@ const Navbar = () => {
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="concept-logo" />
           </Link>
-
           <button
             className="navbar-toggler"
             type="button"
@@ -58,7 +38,6 @@ const Navbar = () => {
           >
             <LuMenu className="toggle-icon" />
           </button>
-
           <div
             className="offcanvas offcanvas-end"
             tabIndex={-1}
@@ -108,33 +87,59 @@ const Navbar = () => {
                     Contact
                   </a>
                 </li>
+                {isMobileView && (
+                  <>
+                    <IoHeartOutline
+                      className="icon"
+                      onClick={() => openModal("wishlist")}
+                    />
+                    <IoBagOutline
+                      className="icon"
+                      onClick={() => openModal("cart")}
+                    />
+                  </>
+                )}
               </ul>
             </div>
           </div>
-
           {/* Icons Section */}
-          <div className="icons d-flex align-items-center ms-auto">
+          <div
+            className={`d-flex align-items-center ms-auto ${
+             currentUser ? "icons-add" : "icons"
+            }`}
+          >
             <IoSearchOutline
               className="icon"
               onClick={() => openModal("search")}
             />
+            
             <IoPersonOutline
-              className="icon"
+              className="icon user-hover"
               onClick={() => openModal("account")}
             />
-            <IoHeartOutline
-              className="icon"
-              onClick={() => openModal("wishlist")}
-            />
-            <IoBagOutline className="icon" onClick={() => openModal("cart")} />
+            {currentUser && (
+              <div className="user-name">
+                <span>{currentUser.name}</span>
+              </div>
+            )}
+            {!isMobileView && (
+              <>
+                <IoHeartOutline
+                  className="icon"
+                  onClick={() => openModal("wishlist")}
+                />
+                <IoBagOutline
+                  className="icon"
+                  onClick={() => openModal("cart")}
+                />
+              </>
+            )}
           </div>
         </div>
       </nav>
-
       {/* Modal */}
       {modalType && <Modal closeModal={closeModal} modalType={modalType} />}
     </>
   );
 };
-
 export default Navbar;
