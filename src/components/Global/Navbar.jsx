@@ -114,9 +114,18 @@ const Navbar = () => {
 
           {/* Icons Section */}
           <div className="icons d-flex align-items-center ms-auto">
-            <IoSearchOutline className="icon" onClick={() => openModal("search")} />
-            <IoPersonOutline className="icon" onClick={() => openModal("account")} />
-            <IoHeartOutline className="icon" onClick={() => openModal("wishlist")} />
+            <IoSearchOutline
+              className="icon"
+              onClick={() => openModal("search")}
+            />
+            <IoPersonOutline
+              className="icon"
+              onClick={() => openModal("account")}
+            />
+            <IoHeartOutline
+              className="icon"
+              onClick={() => openModal("wishlist")}
+            />
             <IoBagOutline className="icon" onClick={() => openModal("cart")} />
           </div>
         </div>
