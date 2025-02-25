@@ -53,10 +53,60 @@ export const logoutUser = createAsyncThunk("users/logout", async () => {
   return null;
 });
 
+export const addToCart = createAsyncThunk(
+  "users/addToCart",
+  async ({ userId, product }, { rejectWithValue }) => {
+    try {
+      // 1. Fetch the user's cart from the database
+      const response = await axios.get(`${accountUrl}?id=eq.${userId}`, {
+        headers,
+      });
+
+      if (response.data.length === 0) {
+        return rejectWithValue("User not found");
+      }
+
+      let user = response.data[0];
+      let cart = user.cart || []; // Ensure cart is an array
+
+      // 2. Check if the product is already in the cart
+      let existingProduct = cart.find((item) => item.id === product.id);
+
+      if (existingProduct) {
+        // 3. If product is in the cart, check stock before increasing quantity
+        if (existingProduct.quantity < product.quantity) {
+          existingProduct.quantity += 1; // Increase only if stock allows
+        } else {
+          return rejectWithValue(
+            `"${product.name}" cannot be added, not enough stock!`
+          );
+        }
+      } else {
+        // 4. If product is not in the cart, check stock and add it
+        if (product.quantity > 0) {
+          cart.push({ id: product.id, name: product.name, quantity: 1 }); // New cart entry
+        } else {
+          return rejectWithValue(`"${product.name}" is out of stock!`);
+        }
+      }
+
+      // 5. Update the user's cart in the database
+      await axios.patch(`${accountUrl}?id=eq.${userId}`, { cart }, { headers });
+
+      return cart;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  }
+);
+
+
+
 const initialState = {
   currentUser: JSON.parse(localStorage.getItem("currentUser")) || null,
   status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
+  cart:[],
 };
 
 const accountSlice = createSlice({

@@ -130,7 +130,7 @@ header nav.sticky img {
   transform: none;
 }
 header nav.sticky .icons,
-header nav.sticky ul {
+header nav.sticky ul, header nav.sticky .icons-add {
   border-bottom: none;
 }
 header nav.sticky ul {
@@ -221,13 +221,15 @@ header nav img {
   transform: translateY(10px);
 }
 header nav ul,
-header nav .icons, header nav .icons-add {
+header nav .icons,
+header nav .icons-add {
   padding-bottom: 8px;
   border-bottom: 0.001rem solid rgb(44, 62, 80);
 }
 @media (max-width: 992px) {
   header nav ul,
-  header nav .icons, header nav .icons-add {
+  header nav .icons,
+  header nav .icons-add {
     border: none;
   }
 }
@@ -510,6 +512,9 @@ header nav .toggle-icon {
   align-items: center;
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
   transform: translateY(20px);
+}
+.products-container .products .product-cart .hover-buttons .in-wishlist {
+  background-color: #d5a5a5 !important;
 }
 .products-container .products .product-cart .hover-buttons .wishlist {
   position: relative;

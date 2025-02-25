@@ -95,7 +95,9 @@
         align-items: center;
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         transform: translateY(20px);
-
+        .in-wishlist {
+          background-color: #d5a5a5 !important;
+        }
         .wishlist {
           position: relative;
           left: 105px;

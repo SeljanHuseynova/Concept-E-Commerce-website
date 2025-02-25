@@ -28,7 +28,7 @@ header {
         transform: none;
       }
       .icons,
-      ul {
+      ul,.icons-add {
         border-bottom: none;
       }
       ul {
@@ -130,7 +130,8 @@ header {
       transform: translateY(10px);
     }
     ul,
-    .icons,.icons-add {
+    .icons,
+    .icons-add {
       padding-bottom: 8px;
       border-bottom: 0.001rem solid rgb(44, 62, 80);
       @media (max-width: 992px) {
@@ -139,10 +140,10 @@ header {
     }
     .icons-add {
       padding-bottom: 10px;
-      @media (min-width:992px) {
+      @media (min-width: 992px) {
         padding-right: 60px;
       }
- 
+
       margin-top: 14px;
       display: flex;
       align-items: center;
@@ -155,23 +156,22 @@ header {
         font-size: 21px;
       }
     }
-   .icons {
-  padding-right: 60px;
-  padding-bottom: 13px;
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+    .icons {
+      padding-right: 60px;
+      padding-bottom: 13px;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
 
-
-  .icon {
-    &:hover {
-      transform: scale(1.15);
+      .icon {
+        &:hover {
+          transform: scale(1.15);
+        }
+        font-size: 21px;
+      }
     }
-    font-size: 21px;
-  }
-}
 
     .container-fluid {
       padding: 0;

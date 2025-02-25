@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import { WishListContext } from "../../context/WIshListProvider";
 
 const NewArrivals = ({ products }) => {
-  const { addToWishlist, wishlist } = useContext(WishListContext);
+  const { toggleWishlist, wishlist,itemExists } = useContext(WishListContext);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -43,11 +43,23 @@ const NewArrivals = ({ products }) => {
 
               <div className="hover-buttons" data-aos="fade-left">
                 <div
-                  className="wishlist"
-                  onClick={() => addToWishlist(product)}
+                  className={`wishlist ${
+                    wishlist.some((item) => item.id === product.id)
+                      ? "in-wishlist"
+                      : ""
+                  }`}
+                  onClick={() => toggleWishlist(product)}
                 >
-                  <GoHeart className="icon" data-aos="zoom-in" />
+                  <GoHeart
+                    className={`icon ${
+                      wishlist.some((item) => item.id === product.id)
+                        ? "filled"
+                        : ""
+                    }`}
+                    
+                  />
                 </div>
+
                 <div className="btn">
                   <button className="add-to-cart">Add to Cart</button>
                 </div>

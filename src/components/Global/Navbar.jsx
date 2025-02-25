@@ -88,7 +88,7 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
                   </a>
                 </li>
                 {isMobileView && (
-                  <>
+                  <div className="mobile-wishlist-cart">
                     <IoHeartOutline
                       className="icon"
                       onClick={() => openModal("wishlist")}
@@ -97,7 +97,7 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
                       className="icon"
                       onClick={() => openModal("cart")}
                     />
-                  </>
+                  </div>
                 )}
               </ul>
             </div>
