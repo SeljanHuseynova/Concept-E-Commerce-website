@@ -10,13 +10,28 @@ import logo from "../../assets/images/logo/concept.logo.png";
 import { LuMenu } from "react-icons/lu";
 import Modal from "../modals/Modal";
 
-const Navbar = ({ currentUser, isSticky, isMobileView }) => {
+const Navbar = ({
+  currentUser,
+  isSticky,
+  isMobileView,
+  isOffcanvasOpen,
+  setIsOffcanvasOpen,
+  setIsSticky,
+}) => {
   const [modalType, setModalType] = useState(null);
   const openModal = (type) => {
     setModalType(type);
   };
   const closeModal = () => {
     setModalType(null);
+  };
+  const toggleOffcanvas = () => {
+    setIsOffcanvasOpen(!isOffcanvasOpen);
+    if (!isOffcanvasOpen) {
+      setIsSticky(false);
+    } else {
+      setIsSticky(window.scrollY > 50);
+    }
   };
   return (
     <>
@@ -35,6 +50,7 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
+            onClick={toggleOffcanvas}
           >
             <LuMenu className="toggle-icon" />
           </button>
@@ -53,6 +69,7 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
                 className="btn-close"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
+                onClick={toggleOffcanvas}
               />
             </div>
             <div className="offcanvas-body">
@@ -68,9 +85,9 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link to="/products" className="nav-link">
                     Products
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
@@ -85,6 +102,11 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
                 <li className="nav-item">
                   <a className="nav-link" href="#">
                     Contact
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    FAQ
                   </a>
                 </li>
                 {isMobileView && (
@@ -105,14 +127,14 @@ const Navbar = ({ currentUser, isSticky, isMobileView }) => {
           {/* Icons Section */}
           <div
             className={`d-flex align-items-center ms-auto ${
-             currentUser ? "icons-add" : "icons"
+              currentUser ? "icons-add" : "icons"
             }`}
           >
             <IoSearchOutline
               className="icon"
               onClick={() => openModal("search")}
             />
-            
+
             <IoPersonOutline
               className="icon user-hover"
               onClick={() => openModal("account")}

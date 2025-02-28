@@ -7,13 +7,11 @@ import SearchModal from "./SearchModal";
 
 const Modal = ({ closeModal, modalType }) => {
   useEffect(() => {
-    // Disable scroll and hide navbar
     document.documentElement.style.overflow = "hidden";
     const nav = document.querySelector("nav");
     if (nav) nav.style.display = "none";
 
     return () => {
-      // Restore scroll and show navbar when modal closes
       document.documentElement.style.overflow = "";
       if (nav) nav.style.display = "";
     };

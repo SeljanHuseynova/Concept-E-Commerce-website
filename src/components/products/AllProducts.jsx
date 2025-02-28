@@ -1,39 +1,23 @@
 import React, { useContext, useEffect } from "react";
+import { WishListContext } from "../../context/WIshListProvider";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { WishListContext } from "../../context/WIshListProvider";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/accountSlice";
 
-const NewArrivals = ({ products }) => {
-  const { toggleWishlist, wishlist } = useContext(WishListContext);
-  const dispatch = useDispatch();
+const AllProducts = ({ products }) => {
+  const { wishlist, toggleWishlist } = useContext(WishListContext);
+  console.log(products)
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  const newArrivals = products.filter((item) => [1, 2, 3, 5].includes(item.id));
-  const currentUser = useSelector((state) => state.users?.currentUser);
-  const handleAddToCart = (product) => {
-    if (!currentUser) {
-      alert("Please log in to add items to the cart.");
-      return;
-    }
-    dispatch(addToCart({ userId: currentUser.id, product }));
-  };
-
   return (
-    <div className="new-arrivals">
-      <div className="title" data-aos="fade-up">
-        <h2>What's New</h2>
-        <span>SHOP NEW ARRIVALS</span>
-      </div>
+    <div className="all-products">
       <div className="products-container">
         <div className="products">
-          {newArrivals.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
-              data-id={product.id}
+              data-id ={product.id}
               className="product-cart"
               style={{ backgroundImage: `url(${product.images[0]})` }}
               data-aos="fade-up"
@@ -88,4 +72,4 @@ const NewArrivals = ({ products }) => {
   );
 };
 
-export default NewArrivals;
+export default AllProducts;

@@ -1,0 +1,9 @@
+.filter-sort-container {
+    padding: 30px ;
+    display: flex;
+    justify-content: space-between;
+    .filter-container {
+        display: flex;
+        gap: 30px;
+    }
+}

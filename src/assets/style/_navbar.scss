@@ -67,7 +67,7 @@ header {
     // img {
     //   filter: invert(100%);
     // }
-    background: linear-gradient(45deg, #ebf0f6, #fef9f9, #fff4f4, #f3f4f8);
+    background: linear-gradient(45deg, var(--primary-color), #fef9f9, #fff4f4, #f3f4f8);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 

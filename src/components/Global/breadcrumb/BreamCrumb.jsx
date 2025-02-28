@@ -6,17 +6,17 @@ const Breadcrumb = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <nav className="breadcrumb">
+    <nav className="breadcrumb-custom">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className="link">Home</Link>
         </li>
         {pathnames.map((value, index) => {
           const to = `/${pathnames.slice(0, index + 1).join("/")}`;
           return (
             <li key={to}>
-              <span>/</span>
-              <Link to={to} className="breadcrumb-item">{value.replace(/-/g, " ")}</Link>
+            <span>/</span>
+              <Link to={to} className="link">{value.replace(/-/g, " ")}</Link>
             </li>
           );
         })}

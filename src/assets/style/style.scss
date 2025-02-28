@@ -6,7 +6,10 @@
 @import "./spotLight";
 @import "./modal-style/modal";
 @import "./modal-style/wishlist";
-
+@import "./modal-style/cart";
+@import "./products-page/allProducts";
+@import "./breadcrumb.scss";
+@import "./products-page/filter-sort";
 // body {
 //   background-color: #191919 !important;
 // }
@@ -20,6 +23,7 @@
     rgba(195, 236, 252, 0.45) 73.44%
   ) !important;
   --text-color: #191919;
+  --second-text-color: #0000007a;
   --main-font-family: "Cormorant", serif;
   --secondary-font-family: "Poppins", serif;
 }
