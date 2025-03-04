@@ -1,0 +1,37 @@
+
+.marquee-container {
+    overflow: hidden;
+    padding: 25px 60px;
+    background: var(--primary-color); 
+    color: var(--text-color);
+  }
+  
+  .marquee {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  
+    &__items {
+      display: flex;
+      animation: marquee-scroll 30s linear infinite;
+  
+      .marquee__item {
+        font-family: var(--main-font-family);
+        font-size: 35px;
+        font-weight: 800;
+        padding: 0 30px;
+      }
+    }
+  }
+  
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  

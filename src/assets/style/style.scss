@@ -1,15 +1,17 @@
 @import "./global";
 @import "./navbar";
-@import "./heroHome";
-@import "./_newArrivals";
+@import "./home/_newArrivals";
+@import "./home/heroHome";
+@import "./home/spotLight";
 @import "./products";
-@import "./spotLight";
 @import "./modal-style/modal";
 @import "./modal-style/wishlist";
 @import "./modal-style/cart";
 @import "./products-page/allProducts";
 @import "./breadcrumb.scss";
 @import "./products-page/filter-sort";
+@import "./home/shopNow";
+@import "./home/ingredients";
 // body {
 //   background-color: #191919 !important;
 // }
