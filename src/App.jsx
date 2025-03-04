@@ -44,8 +44,6 @@ function App() {
             element={currentUser ? <Account /> : <Navigate to="/login" />}
           />
           <Route path="/products" element={<Products products={products} />} />
-          <Route path="/products/:category" element={<Products />} />
-          <Route path="/products/:category/:subCategory" element={<Products />} />
         </Routes>
       </WishListProvider>
     </>

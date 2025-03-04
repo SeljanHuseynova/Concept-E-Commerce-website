@@ -4,6 +4,7 @@ import CartModal from "./CartModal";
 import AccountModal from "./AccountModal";
 import WishListModal from "./WishListModal";
 import SearchModal from "./SearchModal";
+import FilterModal from "./FilterModal";
 
 const Modal = ({ closeModal, modalType }) => {
   useEffect(() => {
@@ -27,6 +28,8 @@ const Modal = ({ closeModal, modalType }) => {
         return <AccountModal />;
       case "search":
         return <SearchModal />;
+      case "filter":
+        return <FilterModal />;
       default:
         return null;
     }

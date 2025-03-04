@@ -1,6 +1,7 @@
 .modal-overlay {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
@@ -10,11 +11,40 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 31%;
+    width: 30%;
+    @media (max-width: 1500px) {
+      width: 39%;
+    }
+    @media (max-width: 1100px) {
+      width: 50%;
+    }
+    @media (max-width: 800px) {
+      width: 60%;
+    }
+    @media (max-width: 650px) {
+      width: 70%;
+    }
+    @media (max-width: 550px) {
+      width: 80%;
+    }
+    @media (max-width: 460px) {
+      width: 92%;
+    }
     height: 100vh;
     background: linear-gradient(45deg, #ebf0f6, #fef9f9, #fff4f4, #f3f4f8);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
     transition: transform 0.3s ease-in-out;
     z-index: 5;
     padding: 2rem;
@@ -43,3 +73,4 @@
     }
   }
 }
+@import "./filter-modal";

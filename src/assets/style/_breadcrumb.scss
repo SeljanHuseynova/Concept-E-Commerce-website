@@ -1,7 +1,13 @@
 .breadcrumb-custom {
     background-color: var(--primary-color) !important;
     padding: 30px 30px 20px 30px;
+    @media (max-width:1060px) {
+        padding: 30px 20px 20px 20px;
+    }
+   
+    
     ul {
+        padding: 0;
         span {
             margin-right: 10px;
         }
@@ -31,6 +37,9 @@
                   }
                 font-family: var(--secondary-font-family);
                 font-size: 17px;
+                @media (max-width:800px) {
+                    font-size: 15px;
+                }
                 text-decoration: none;
                 color: var(--second-text-color);
             }

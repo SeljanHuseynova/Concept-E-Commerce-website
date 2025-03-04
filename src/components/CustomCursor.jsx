@@ -32,12 +32,12 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const handleMouseOver = (e) => {
-      if (e.target.closest("a, button, .icon")) {
+      if (e.target.closest("a, button, .icon,.reset")) {
         setHover(true);
       }
     };
     const handleMouseOut = (e) => {
-      if (e.target.closest("a, button, .icon")) {
+      if (e.target.closest("a, button, .icon,.reset")) {
         setHover(false);
       }
     };

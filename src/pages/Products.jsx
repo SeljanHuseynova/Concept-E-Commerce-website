@@ -7,7 +7,7 @@ const Products = ({products}) => {
   return (
     <>
       <BreamCrumb />
-      <FilterAndSort />
+      <FilterAndSort products={products}/>
       <AllProducts products={products}/>
     </>
   );

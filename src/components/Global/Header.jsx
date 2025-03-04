@@ -39,7 +39,6 @@ const Header = ({ currentUser }) => {
         setIsSticky={setIsSticky}
         isOffcanvasOpen = {isOffcanvasOpen}
         setIsOffcanvasOpen ={setIsOffcanvasOpen}
-   
       />
     </header>
   );

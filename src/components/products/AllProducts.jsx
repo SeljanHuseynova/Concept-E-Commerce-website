@@ -3,13 +3,27 @@ import { WishListContext } from "../../context/WIshListProvider";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { addToCart } from "../../redux/accountSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const AllProducts = ({ products }) => {
   const { wishlist, toggleWishlist } = useContext(WishListContext);
-  console.log(products)
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.users.currentUser);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+  if (!products || products.length === 0) {
+    return <div className="no-result">Loading or No Products Found</div>;
+    y;
+  }
+  const handleAddToCart = (product) => {
+    if (!currentUser) {
+      alert("Please log in to add items to the cart.");
+      return;
+    }
+    dispatch(addToCart({ userId: currentUser.id, product }));
+  };
   return (
     <div className="all-products">
       <div className="products-container">
@@ -17,7 +31,7 @@ const AllProducts = ({ products }) => {
           {products.map((product) => (
             <div
               key={product.id}
-              data-id ={product.id}
+              data-id={product.id}
               className="product-cart"
               style={{ backgroundImage: `url(${product.images[0]})` }}
               data-aos="fade-up"

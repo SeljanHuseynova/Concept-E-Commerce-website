@@ -22,8 +22,14 @@ export const WishListProvider = ({ children }) => {
       }
     });
   };
+  const clearWishlist = () => {
+    setWishlist([]);
+    localStorage.removeItem("wishlist");
+  };
   return (
-    <WishListContext.Provider value={{ wishlist, toggleWishlist }}>
+    <WishListContext.Provider
+      value={{ wishlist, toggleWishlist, clearWishlist }}
+    >
       {children}
     </WishListContext.Provider>
   );

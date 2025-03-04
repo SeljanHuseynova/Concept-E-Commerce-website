@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { headers, productsUrl } from "../supabase";
 
-// Fetch all products
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (_, { rejectWithValue }) => {
@@ -15,10 +14,9 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-// Initial state
 const initialState = {
-  products: [],
-  filteredProducts: [],
+  products: [], 
+  filteredProducts: [], 
   status: "idle",
   error: null,
   filters: {
@@ -27,37 +25,101 @@ const initialState = {
     category: null,
     subCategory: null,
   },
+  sortOrder: null,
 };
+
+const applyAllFilters = (state) => {
+  let filtered = [...state.products];
+
+  if (state.filters.availability) {
+    filtered = filtered.filter((product) =>
+      state.filters.availability === "inStock" ? product.quantity > 0 : product.quantity === 0
+    );
+  }
+
+  if (state.filters.brand) {
+    filtered = filtered.filter((product) => product.brand === state.filters.brand);
+  }
+
+  if (state.filters.category) {
+    filtered = filtered.filter((product) => product.category === state.filters.category);
+  }
+
+  if (state.filters.subCategory) {
+    filtered = filtered.filter((product) => product.subCategory === state.filters.subCategory);
+  }
+
+  switch (state.sortOrder) {
+    case "nameAsc":
+      filtered.sort((a, b) => a.name.localeCompare(b.name));
+      break;
+    case "nameDesc":
+      filtered.sort((a, b) => b.name.localeCompare(a.name));
+      break;
+    case "priceAsc":
+      filtered.sort((a, b) => a.price - b.price);
+      break;
+    case "priceDesc":
+      filtered.sort((a, b) => b.price - a.price);
+      break;
+    case "dateDesc":
+      filtered.sort((a, b) => a.id - b.id);
+      break;
+    case "dateAsc":
+      filtered.sort((a, b) => b.id - a.id);
+      break;
+    default:
+      break;
+  }
+
+  state.filteredProducts = filtered;
+};
+
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+  
     setAvailability: (state, action) => {
       state.filters.availability = action.payload;
-      state.filteredProducts = state.products.filter((product) =>
-        action.payload === "inStock" ? product.quantity > 0 : product.quantity === 0
-      );
+      applyAllFilters(state);
     },
+
+  
     setBrand: (state, action) => {
       state.filters.brand = action.payload;
-      state.filteredProducts = state.products.filter(
-        (product) => product.brand === action.payload
-      );
+      applyAllFilters(state);
     },
+
     setCategory: (state, action) => {
       state.filters.category = action.payload;
-      state.filteredProducts = state.products.filter(
-        (product) => product.category === action.payload
-      );
+      applyAllFilters(state);
     },
+
     setSubCategory: (state, action) => {
       state.filters.subCategory = action.payload;
-      state.filteredProducts = state.products.filter(
-        (product) => product.subCategory === action.payload
-      );
+      applyAllFilters(state);
+    },
+
+    
+    resetFilter: (state, action) => {
+      state.filters[action.payload] = null;
+      applyAllFilters(state);
+    },
+
+  
+    resetAllFilters: (state) => {
+      state.filters = { availability: null, brand: null, category: null, subCategory: null };
+      state.filteredProducts = state.products;
+    },
+
+    setSort: (state, action) => {
+      state.sortOrder = action.payload;
+      applyAllFilters(state);
     },
   },
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -75,5 +137,13 @@ const productsSlice = createSlice({
   },
 });
 
-export const { setAvailability, setBrand, setCategory, setSubCategory } = productsSlice.actions;
+export const {
+  setAvailability,
+  setBrand,
+  setCategory,
+  setSubCategory,
+  resetFilter,
+  resetAllFilters,
+  setSort,
+} = productsSlice.actions;
 export default productsSlice.reducer;
