@@ -19,12 +19,30 @@
         font-size: 42px;
       }
       button {
-        border: none;
-        outline: none;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
         &:hover {
-          background-color: #ffdada;
           color: black;
         }
+        &::before {
+          content: "";
+          position: absolute;
+          top: -150%;
+          left: -150%;
+          width: 300%;
+          height: 300%;
+          background: var(--primary-color);
+          z-index: -1;
+          transition: transform 0.8s ease-in-out;
+          transform: translate(-100%, -100%);
+        }
+
+        &:hover::before {
+          transform: translate(0, 0);
+        }
+        border: none;
+        outline: none;
         background-color: black;
         color: white;
         font-family: var(--secondary-font-family);

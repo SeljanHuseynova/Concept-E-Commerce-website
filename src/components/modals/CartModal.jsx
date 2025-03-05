@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCart } from "../../redux/accountSlice";
+import { addToCart, fetchCart } from "../../redux/accountSlice";
 
 const CartModal = () => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const CartModal = () => {
     }
   }, [dispatch]);
 
+  
   return (
     <div className="cart-modal">
       <h2>Shopping Cart</h2>
@@ -26,7 +27,11 @@ const CartModal = () => {
               <img src={item.image} alt={item.name} width="50" />
               <div>
                 <p>{item.name}</p>
+                <div className="quantity">
+                  <span>-</span>
                 <p>Quantity: {item.quantity}</p>
+                <span onClick={() =>dispatch(addToCart(item))}>+</span>
+                </div>
                 <p>Price: ${item.price}</p>
                 <p>Total: ${item.price * item.quantity}</p>
               </div>

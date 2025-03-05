@@ -12,12 +12,15 @@
 @import "./products-page/filter-sort";
 @import "./home/shopNow";
 @import "./home/ingredients";
+@import "./home/enhanceCollection";
+@import "./home/nimo-skincare";
 // body {
 //   background-color: #191919 !important;
 // }
 
 :root {
   --primary-color: #fff9f9;
+  --second-primary-color: #faeaee;
   --secondary-color: #f5e7ec;
   --background-color: linear-gradient(
     215deg,

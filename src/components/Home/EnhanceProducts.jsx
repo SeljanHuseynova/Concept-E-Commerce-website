@@ -2,17 +2,19 @@ import React, { useContext, useEffect } from "react";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { WishListContext } from "../../context/WIshListProvider";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/accountSlice";
-import { WishListContext } from "../../context/WishListProvider";
 
-const NewArrivals = ({ products }) => {
+const EnhanceProducts = () => {
   const { toggleWishlist, wishlist } = useContext(WishListContext);
+  const products = useSelector((state) => state.products.filteredProducts);
+  console.log(products)
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  const newArrivals = products.filter((item) => [1, 2, 3, 5].includes(item.id));
+  const newArrivals = products.filter((item) => [1, 2, 12].includes(item.id));
   const currentUser = useSelector((state) => state.users?.currentUser);
   const handleAddToCart = (product) => {
     if (!currentUser) {
@@ -23,11 +25,7 @@ const NewArrivals = ({ products }) => {
   };
 
   return (
-    <div className="new-arrivals">
-      <div className="title" data-aos="fade-up">
-        <h2>What's New</h2>
-        <span>SHOP NEW ARRIVALS</span>
-      </div>
+    <div className="enhance-products">
       <div className="products-container">
         <div className="products">
           {newArrivals.map((product) => (
@@ -88,4 +86,4 @@ const NewArrivals = ({ products }) => {
   );
 };
 
-export default NewArrivals;
+export default EnhanceProducts;
