@@ -106,6 +106,7 @@ header .announcement {
   font-weight: 400;
 }
 header nav {
+  z-index: 2;
   background: linear-gradient(45deg, var(--primary-color), #fef9f9, var(--second-primary-color), #f3f4f8);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
@@ -839,7 +840,7 @@ header nav .toggle-icon {
   }
 }
 .products-container .products .product-cart .hover-buttons .in-wishlist {
-  background-color: #d5a5a5 !important;
+  background-color: var(--second-primary-color) !important;
 }
 .products-container .products .product-cart .hover-buttons .wishlist {
   align-self: end;
@@ -869,6 +870,9 @@ header nav .toggle-icon {
     height: 32px;
   }
 }
+.products-container .products .product-cart .hover-buttons .wishlist .filled {
+  color: black !important;
+}
 .products-container .products .product-cart .hover-buttons .wishlist .icon {
   font-size: 23px;
   color: white;
@@ -882,16 +886,18 @@ header nav .toggle-icon {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  outline: none;
   padding: 8px 85px;
   text-align: center;
   background-color: #000;
   color: white;
   border: none;
+  z-index: 1;
   transition: background-color 0.3s ease-in-out;
+  outline: none;
 }
 .products-container .products .product-cart .hover-buttons .btn .add-to-cart:hover {
   color: black;
+  background-color: #333 !important;
 }
 .products-container .products .product-cart .hover-buttons .btn .add-to-cart::before {
   content: "";
@@ -900,13 +906,17 @@ header nav .toggle-icon {
   left: -150%;
   width: 300%;
   height: 300%;
-  background: var(--primary-color);
+  background: var(--second-primary-color);
   z-index: -1;
   transition: transform 0.8s ease-in-out;
   transform: translate(-100%, -100%);
 }
 .products-container .products .product-cart .hover-buttons .btn .add-to-cart:hover::before {
   transform: translate(0, 0);
+}
+.products-container .products .product-cart .hover-buttons .btn .add-to-cart:focus, .products-container .products .product-cart .hover-buttons .btn .add-to-cart:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 @media (max-width: 730px) {
   .products-container .products .product-cart .hover-buttons .btn .add-to-cart {
@@ -959,13 +969,6 @@ header nav .toggle-icon {
     padding: 6px 22px;
   }
 }
-.products-container .products .product-cart .hover-buttons .btn .add-to-cart:hover {
-  background-color: #333;
-}
-.products-container .products .product-cart .hover-buttons .btn .add-to-cart:focus, .products-container .products .product-cart .hover-buttons .btn .add-to-cart:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
 @media (max-width: 1150px) {
   .products-container .products {
     grid-template-columns: repeat(3, 1fr);
@@ -990,7 +993,7 @@ header nav .toggle-icon {
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 35%;
   height: 100vh;
   background: linear-gradient(45deg, var(--primary-color), #fef9f9, #fff4f4, #f3f4f8);
   animation: gradientBG 10s ease infinite;
@@ -1000,7 +1003,7 @@ header nav .toggle-icon {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1300px) {
   .modal-overlay .modal-content {
     width: 39%;
   }
@@ -2175,6 +2178,69 @@ header nav .toggle-icon {
     padding: 9px 13px;
     font-size: 14px;
   }
+}
+
+.check-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.check-out .top {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .check-out .top {
+    padding: 18px 45px;
+  }
+}
+@media (max-width: 650px) {
+  .check-out .top {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 500px) {
+  .check-out .top {
+    padding: 15px 24px;
+  }
+}
+.check-out .top h3 {
+  font-size: 30px;
+  font-family: var(--secondary-font-family);
+}
+@media (max-width: 1000px) {
+  .check-out .top h3 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 500px) {
+  .check-out .top h3 {
+    font-size: 24px;
+  }
+}
+.check-out .top .icon {
+  color: hsl(204, 74%, 39%);
+  font-size: 25px;
+}
+@media (max-width: 1000px) {
+  .check-out .top .icon {
+    font-size: 21px;
+  }
+}
+@media (max-width: 500px) {
+  .check-out .top .icon {
+    font-size: 18px;
+  }
+}
+.check-out .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 :root {

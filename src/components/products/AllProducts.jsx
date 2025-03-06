@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from "react";
-import { WishListContext } from "../../context/WIshListProvider";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { addToCart } from "../../redux/accountSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import { WishListContext } from "../../context/WishListProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 const AllProducts = ({ products }) => {
   const { wishlist, toggleWishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
@@ -19,10 +21,11 @@ const AllProducts = ({ products }) => {
   }
   const handleAddToCart = (product) => {
     if (!currentUser) {
-      alert("Please log in to add items to the cart.");
+      toast.error("Please log in to add items to the cart.");
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));
+   
   };
   return (
     <div className="all-products">

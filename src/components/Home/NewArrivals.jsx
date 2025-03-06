@@ -19,7 +19,8 @@ const NewArrivals = ({ products }) => {
       alert("Please log in to add items to the cart.");
       return;
     }
-    dispatch(addToCart({ userId: currentUser.id, product }));
+    dispatch(addToCart({ userId: currentUser.id, product }))
+ 
   };
 
   return (

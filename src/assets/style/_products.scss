@@ -140,7 +140,7 @@
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         transform: translateY(20px);
         .in-wishlist {
-          background-color: #d5a5a5 !important;
+          background-color: var(--second-primary-color) !important;
         }
         .wishlist {
           align-self: end;
@@ -163,7 +163,9 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
+          .filled {
+            color: black !important;
+          }
           .icon {
             font-size: 23px;
             color: white;
@@ -177,9 +179,19 @@
             position: relative;
             overflow: hidden;
             display: inline-block;
+            padding: 8px 85px;
+            text-align: center;
+            background-color: #000;
+            color: white;
+            border: none;
+            z-index: 1;
+            transition: background-color 0.3s ease-in-out;
+            outline: none;
             &:hover {
               color: black;
+              background-color: #333 !important;
             }
+
             &::before {
               content: "";
               position: absolute;
@@ -187,23 +199,22 @@
               left: -150%;
               width: 300%;
               height: 300%;
-              background: var(--primary-color);
+              background: var(--second-primary-color);
               z-index: -1;
               transition: transform 0.8s ease-in-out;
               transform: translate(-100%, -100%);
             }
-    
+
             &:hover::before {
               transform: translate(0, 0);
             }
-            outline: none;
-            padding: 8px 85px;
 
-            text-align: center;
-            background-color: #000;
-            color: white;
-            border: none;
-            transition: background-color 0.3s ease-in-out;
+            &:focus,
+            &:active {
+              outline: none !important;
+              box-shadow: none !important;
+            }
+
             @media (max-width: 730px) {
               font-size: 14px;
               padding: 10px 75px;
@@ -234,15 +245,6 @@
             }
             @media (max-width: 395px) {
               padding: 6px 22px;
-            }
-            &:hover {
-              background-color: #333;
-            }
-
-            &:focus,
-            &:active {
-              outline: none !important;
-              box-shadow: none !important;
             }
           }
         }

@@ -5,16 +5,24 @@ import AccountModal from "./AccountModal";
 import WishListModal from "./WishListModal";
 import SearchModal from "./SearchModal";
 import FilterModal from "./FilterModal";
-
 const Modal = ({ closeModal, modalType }) => {
   useEffect(() => {
     document.documentElement.style.overflow = "hidden";
     const nav = document.querySelector("nav");
-    if (nav) nav.style.display = "none";
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        if (nav) nav.style.display = "none";
+      } else {
+        if (nav) nav.style.display = "";
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
 
     return () => {
       document.documentElement.style.overflow = "";
       if (nav) nav.style.display = "";
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
