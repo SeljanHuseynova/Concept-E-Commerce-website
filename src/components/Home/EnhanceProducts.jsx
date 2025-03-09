@@ -2,9 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { WishListContext } from "../../context/WIshListProvider";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/accountSlice";
+import { WishListContext } from "../../context/WishListProvider";
+import { Link } from "react-router";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EnhanceProducts = () => {
   const { toggleWishlist, wishlist } = useContext(WishListContext);
@@ -16,9 +19,10 @@ const EnhanceProducts = () => {
   }, []);
   const newArrivals = products.filter((item) => [1, 2, 12].includes(item.id));
   const currentUser = useSelector((state) => state.users?.currentUser);
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product,e) => {
+    e.preventDefault();
     if (!currentUser) {
-      alert("Please log in to add items to the cart.");
+     toast.error("Please log in to add items to the cart.");
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));
@@ -51,14 +55,22 @@ const EnhanceProducts = () => {
                 </span>
               </div>
 
-              <div className="hover-buttons" data-aos="fade-left">
+             
+              <Link
+                to={`/products/${product.id}`}
+                className="hover-buttons"
+                data-aos="fade-left"
+              >
                 <div
                   className={`wishlist ${
                     wishlist.some((item) => item.id === product.id)
                       ? "in-wishlist"
                       : ""
                   }`}
-                  onClick={() => toggleWishlist(product)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleWishlist(product);
+                  }}
                 >
                   <GoHeart
                     className={`icon ${
@@ -72,12 +84,12 @@ const EnhanceProducts = () => {
                 <div className="btn">
                   <button
                     className="add-to-cart"
-                    onClick={() => handleAddToCart(product)}
+                    onClick={(e) => handleAddToCart(product, e)}
                   >
                     {product.quantity === 0 ? "Out of Stock" : "Add to Cart"}
                   </button>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

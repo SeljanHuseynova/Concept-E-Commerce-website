@@ -2,37 +2,39 @@ import React, { useContext, useEffect } from "react";
 import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { addToCart } from "../../redux/accountSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/accountSlice";
 import { WishListContext } from "../../context/WishListProvider";
+import { Link } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router";
-const AllProducts = ({ products }) => {
-  const { wishlist, toggleWishlist } = useContext(WishListContext);
+
+const YouMayAlsoLike = () => {
+    const products = useSelector((state) => state.products?.filteredProducts || []) ;
+  const { toggleWishlist, wishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.users.currentUser);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  if (!products || products.length === 0) {
-    return <div className="no-result">Loading or No Products Found</div>;
-    y;
-  }
-  const handleAddToCart = (product,e) => {
+  const newArrivals = products?.filter((item) => [6,7,8,9].includes(item.id));
+  const currentUser = useSelector((state) => state.users?.currentUser);
+  const handleAddToCart = (product, e) => {
     e.preventDefault();
     if (!currentUser) {
-      toast.error("Please log in to add items to the cart.");
+       toast.error("Please log in to add items to the cart.");
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));
-   
   };
+
   return (
-    <div className="all-products">
+    <div className="you-may-also-like">
+      <div className="title" data-aos="fade-up">
+        <h2>You may also like</h2>
+      </div>
       <div className="products-container">
         <div className="products">
-          {products.map((product) => (
+          {newArrivals?.map((product) => (
             <div
               key={product.id}
               data-id={product.id}
@@ -97,4 +99,4 @@ const AllProducts = ({ products }) => {
   );
 };
 
-export default AllProducts;
+export default YouMayAlsoLike;

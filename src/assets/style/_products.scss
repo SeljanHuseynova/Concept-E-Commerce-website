@@ -33,6 +33,12 @@
     }
 
     .product-cart {
+      .product-overlay {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
       background-color: white;
       padding: 18px;
       @media (max-width: 450px) {
@@ -74,6 +80,7 @@
       .bottom {
         align-self: end;
         .price {
+          color: black;
           font-size: 20px;
           @media (max-width: 561px) {
             font-size: 15px;
@@ -93,6 +100,7 @@
       }
 
       .product-name {
+        color: black;
         padding-top: 5px;
         font-size: 22px;
         line-height: 30px;
@@ -140,7 +148,7 @@
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         transform: translateY(20px);
         .in-wishlist {
-          background-color: var(--second-primary-color) !important;
+          background-color:var(--wishlist-color) !important;
         }
         .wishlist {
           align-self: end;
@@ -164,7 +172,7 @@
           align-items: center;
           justify-content: center;
           .filled {
-            color: black !important;
+            color: var(--wishlist-icon-color) !important;
           }
           .icon {
             font-size: 23px;

@@ -15,13 +15,16 @@
 @import "./home/enhanceCollection";
 @import "./home/nimo-skincare";
 @import "./checkout/check-out";
-// body {
-//   background-color: #191919 !important;
-// }
+@import "./admin";
+@import "./floatingButtons";
+@import "./singleProduct";
+@import "./footer";
 
 :root {
   --primary-color: #fff9f9;
   --second-primary-color: #faeaee;
+  --third-primary-color: #fef9f9;
+  --fourth-primary-color: #f3f4f8;
   --secondary-color: #f5e7ec;
   --background-color: linear-gradient(
     215deg,
@@ -30,18 +33,39 @@
   ) !important;
   --text-color: #191919;
   --second-text-color: #0000007a;
+  // --third-text-color:
   --main-font-family: "Cormorant", serif;
   --secondary-font-family: "Poppins", serif;
+  --wishlist-color: #faeaee;
+  --wishlist-icon-color: black;
 }
 
 /* Dark mode */
 [data-theme="dark"] {
-  --primary-color: #1e88e5;
-  --secondary-color: #43a047;
+  --primary-color: #3a2325;
+  --second-primary-color: #4a2d30;
+  --third-primary-color: #523134;
+  --fourth-primary-color: #613a3d;
+  --secondary-color: #744447;
   --background-color: linear-gradient(
     215deg,
-    rgba(139, 105, 115, 0.6) 34.38%,
-    rgba(73, 96, 125, 0.6) 73.44%
-  );
-  --text-color: #ffffff;
+    rgba(90, 50, 53, 0.85) 34.38%,
+    rgba(60, 35, 37, 0.85) 73.44%
+  ) !important;
+  --text-color: #f1dfdf;
+  --second-text-color: rgba(245, 225, 225, 0.7);
+  --main-font-family: "Cormorant", serif;
+  --secondary-font-family: "Poppins", serif;
+  --wishlist-color: #613a3d;
+  --wishlist-icon-color: white;
+}
+[data-theme="dark"] .navbar-brand img {
+  filter: invert(100%);
+}
+[data-theme="dark"] .nav-link {
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+[data-theme="dark"] .nav-link:hover {
+  color: #a65c68;
 }

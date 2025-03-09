@@ -6,7 +6,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(productsUrl, { headers });
+      const response = await axios.get(`${productsUrl}?order=id.desc`, { headers });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Failed to fetch products");
@@ -14,9 +14,51 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+//add product
+export const addProduct = createAsyncThunk(
+  "products/addProduct",
+  async (productData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(productsUrl, productData, { headers });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || "Failed to add product");
+    }
+  }
+);
+//edit
+export const editProduct = createAsyncThunk(
+  "products/editProduct",
+  async ({ id, updates }, { rejectWithValue }) => {
+    try {
+      const response = await axios.patch(
+        `${productsUrl}?id=eq.${id}`,
+        updates,
+        { headers }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || "Failed to edit product");
+    }
+  }
+);
+// Remove
+export const removeProduct = createAsyncThunk(
+  "products/removeProduct",
+  async (id, { rejectWithValue }) => {
+    try {
+      await axios.delete(`${productsUrl}?id=eq.${id}`, { headers });
+      return id;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || "Failed to remove product"
+      );
+    }
+  }
+);
 const initialState = {
-  products: [], 
-  filteredProducts: [], 
+  products: [],
+  filteredProducts: [],
   status: "idle",
   error: null,
   filters: {
@@ -33,20 +75,28 @@ const applyAllFilters = (state) => {
 
   if (state.filters.availability) {
     filtered = filtered.filter((product) =>
-      state.filters.availability === "inStock" ? product.quantity > 0 : product.quantity === 0
+      state.filters.availability === "inStock"
+        ? product.quantity > 0
+        : product.quantity === 0
     );
   }
 
   if (state.filters.brand) {
-    filtered = filtered.filter((product) => product.brand === state.filters.brand);
+    filtered = filtered.filter(
+      (product) => product.brand === state.filters.brand
+    );
   }
 
   if (state.filters.category) {
-    filtered = filtered.filter((product) => product.category === state.filters.category);
+    filtered = filtered.filter(
+      (product) => product.category === state.filters.category
+    );
   }
 
   if (state.filters.subCategory) {
-    filtered = filtered.filter((product) => product.subCategory === state.filters.subCategory);
+    filtered = filtered.filter(
+      (product) => product.subCategory === state.filters.subCategory
+    );
   }
 
   switch (state.sortOrder) {
@@ -75,18 +125,15 @@ const applyAllFilters = (state) => {
   state.filteredProducts = filtered;
 };
 
-
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-  
     setAvailability: (state, action) => {
       state.filters.availability = action.payload;
       applyAllFilters(state);
     },
 
-  
     setBrand: (state, action) => {
       state.filters.brand = action.payload;
       applyAllFilters(state);
@@ -102,15 +149,18 @@ const productsSlice = createSlice({
       applyAllFilters(state);
     },
 
-    
     resetFilter: (state, action) => {
       state.filters[action.payload] = null;
       applyAllFilters(state);
     },
 
-  
     resetAllFilters: (state) => {
-      state.filters = { availability: null, brand: null, category: null, subCategory: null };
+      state.filters = {
+        availability: null,
+        brand: null,
+        category: null,
+        subCategory: null,
+      };
       state.filteredProducts = state.products;
     },
 
@@ -131,6 +181,49 @@ const productsSlice = createSlice({
         state.filteredProducts = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+      .addCase(addProduct.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(addProduct.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.products.push(action.payload);
+        applyAllFilters(state);
+      })
+      .addCase(addProduct.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+
+      
+      .addCase(editProduct.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(editProduct.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        const index = state.products.findIndex((p) => p.id === action.meta.arg.id);
+        if (index !== -1) {
+          state.products[index] = { ...state.products[index], ...action.meta.arg.updates };
+        }
+        applyAllFilters(state);
+      })
+      .addCase(editProduct.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+
+   
+      .addCase(removeProduct.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(removeProduct.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.products = state.products.filter((product) => product.id !== action.payload);
+        applyAllFilters(state);
+      })
+      .addCase(removeProduct.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       });

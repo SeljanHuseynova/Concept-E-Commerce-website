@@ -1,6 +1,6 @@
 header {
   .announcement {
-    background-color: var(--text-color);
+    background-color: black;
     color: white;
     display: flex;
     justify-content: center;
@@ -10,6 +10,9 @@ header {
   }
 
   nav {
+    * {
+      color: var(--text-color);
+    }
     z-index: 2;
     &.sticky {
       animation: slideDown 0.6s ease-in-out forwards;
@@ -19,7 +22,8 @@ header {
       z-index: 999;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
+      background: var(--second-primary-color);
+      opacity: 0.8!important ;
       transition: all 0.3s ease-in-out;
       padding: 8px !important;
       border-bottom: 0.001rem solid rgb(44, 62, 80);
@@ -45,6 +49,7 @@ header {
     .nav-link {
       font-family: var(--secondary-font-family);
       position: relative;
+      color: var(--text-color);
 
       &::after {
         content: "";
@@ -65,10 +70,9 @@ header {
         transform-origin: left;
       }
     }
-    // img {
-    //   filter: invert(100%);
-    // }
-    background: linear-gradient(45deg, var(--primary-color), #fef9f9, var(--second-primary-color), #f3f4f8);
+   
+    
+    background: linear-gradient(45deg, var(--primary-color),var(--third-primary-color) , var(--second-primary-color), var(--fourth-primary-color));
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 

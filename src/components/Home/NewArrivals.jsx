@@ -5,6 +5,9 @@ import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/accountSlice";
 import { WishListContext } from "../../context/WishListProvider";
+import { Link } from "react-router";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NewArrivals = ({ products }) => {
   const { toggleWishlist, wishlist } = useContext(WishListContext);
@@ -12,15 +15,15 @@ const NewArrivals = ({ products }) => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  const newArrivals = products.filter((item) => [1, 2, 3, 5].includes(item.id));
+  const newArrivals = products?.filter((item) => [1, 2, 3, 5].includes(item.id));
   const currentUser = useSelector((state) => state.users?.currentUser);
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product, e) => {
+    e.preventDefault();
     if (!currentUser) {
-      alert("Please log in to add items to the cart.");
+       toast.error("Please log in to add items to the cart.");
       return;
     }
-    dispatch(addToCart({ userId: currentUser.id, product }))
- 
+    dispatch(addToCart({ userId: currentUser.id, product }));
   };
 
   return (
@@ -31,7 +34,7 @@ const NewArrivals = ({ products }) => {
       </div>
       <div className="products-container">
         <div className="products">
-          {newArrivals.map((product) => (
+          {newArrivals?.map((product) => (
             <div
               key={product.id}
               data-id={product.id}
@@ -54,14 +57,21 @@ const NewArrivals = ({ products }) => {
                 </span>
               </div>
 
-              <div className="hover-buttons" data-aos="fade-left">
+              <Link
+                to={`/products/${product.id}`}
+                className="hover-buttons"
+                data-aos="fade-left"
+              >
                 <div
                   className={`wishlist ${
                     wishlist.some((item) => item.id === product.id)
                       ? "in-wishlist"
                       : ""
                   }`}
-                  onClick={() => toggleWishlist(product)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleWishlist(product);
+                  }}
                 >
                   <GoHeart
                     className={`icon ${
@@ -75,12 +85,12 @@ const NewArrivals = ({ products }) => {
                 <div className="btn">
                   <button
                     className="add-to-cart"
-                    onClick={() => handleAddToCart(product)}
+                    onClick={(e) => handleAddToCart(product, e)}
                   >
                     {product.quantity === 0 ? "Out of Stock" : "Add to Cart"}
                   </button>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
