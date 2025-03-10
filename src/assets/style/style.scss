@@ -41,6 +41,7 @@
   --wishlist-color: #faeaee;
   --wishlist-icon-color: black;
   --close-btn: #e5e0e0;
+  --faq-bg-color:#ebe5e5;
 }
 
 /* Dark mode */
@@ -62,6 +63,7 @@
   --wishlist-color: #613a3d;
   --wishlist-icon-color: white;
   --close-btn: #7e5559;
+  --faq-bg-color:#987579;
 }
 [data-theme="dark"] .navbar-brand img {
   filter: invert(100%);

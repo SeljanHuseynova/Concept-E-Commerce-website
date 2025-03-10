@@ -20,6 +20,9 @@
     }
   }
   .main {
+    * {
+      color: var(--text-color);
+    }
     @media (max-width: 1050px) {
       flex-direction: column;
     }
@@ -210,10 +213,10 @@
           font-family: var(--main-font-family);
           font-weight: bold;
           padding: 13px;
-          background-color: #ebe5e5;
+          background-color: var(--faq-bg-color);
           &.active {
             background-color: transparent;
-            box-shadow: 0px 12px 20px rgba(122, 104, 104, 0.1);
+            box-shadow: 0px 12px 20px rgba(169, 141, 141, 0.1);
           }
         }
         .faq-answer {

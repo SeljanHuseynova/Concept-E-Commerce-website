@@ -1,7 +1,7 @@
 .floating-buttons {
     position: fixed;
     z-index: 40;
-    right: 20px;
+    left: 20px;
     bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
       .language-dropdown {
         position: absolute;
         top: 50%;
-        right: 50px; // Opens to the left
+        left: 50px; 
         transform: translateY(-50%);
         background: white;
         border-radius: 6px;

@@ -29,7 +29,7 @@ const Modal = ({ closeModal, modalType }) => {
   const renderModalContent = () => {
     switch (modalType) {
       case "cart":
-        return <CartModal />;
+        return <CartModal closeModal={closeModal}/>;
       case "wishlist":
         return <WishListModal />;
       case "account":

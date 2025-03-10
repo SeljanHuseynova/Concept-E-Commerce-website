@@ -9,10 +9,10 @@ const Basket = () => {
   const [discountedTotal, setDiscountedTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Calculate Total Price
+  
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  // Function to Apply Promo Code (Only on Enter)
+ 
   const handlePromoCodeApply = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();

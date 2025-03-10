@@ -40,6 +40,8 @@
     flex-direction: column;
 
     .icon-container {
+      position: relative;
+      z-index: 40;
       align-self: end;
       width: 46px;
       height: 46px;

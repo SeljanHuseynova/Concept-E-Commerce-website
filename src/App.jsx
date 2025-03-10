@@ -27,13 +27,13 @@ function App() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products?.filteredProducts);
   const location = useLocation();
-  
+  const cart = useSelector((state) => state.users.currentUser?.cart || []);
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
   const isCheckoutPage = location.pathname === "/check-out";
-  const admin = JSON.parse(localStorage.getItem("admin")); 
+  const admin = JSON.parse(localStorage.getItem("admin"));
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [language, setLanguage] = useState("en");
 
@@ -50,8 +50,8 @@ function App() {
       <ToastContainer />
       <CustomCursor />
       <FloatingButtons
-        onThemeChange={handleThemeChange} 
-        onLanguageChange={handleLanguageChange} 
+        onThemeChange={handleThemeChange}
+        onLanguageChange={handleLanguageChange}
       />
       <WishListProvider>
         {!isCheckoutPage && <Header currentUser={currentUser} />}
@@ -71,15 +71,23 @@ function App() {
             element={currentUser ? <Account /> : <Navigate to="/login" />}
           />
           <Route path="/products" element={<Products products={products} />} />
-          <Route path="/check-out" element={currentUser ? <CheckOut /> : <Navigate to="/" />} />
+          <Route
+            path="/check-out"
+            element={
+              currentUser && cart.length > 0 ? (
+                <CheckOut />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route
             path="/admin"
             element={admin ? <AdminDashboard /> : <Navigate to="/" />}
           />
-           <Route path="/products/:id" element={<SinglePage />} />
-           <Route path="/FAQs" element={<FAQ />} />
-
+          <Route path="/products/:id" element={<SinglePage />} />
+          <Route path="/FAQs" element={<FAQ />} />
         </Routes>
         {!isCheckoutPage && <Footer />}
       </WishListProvider>

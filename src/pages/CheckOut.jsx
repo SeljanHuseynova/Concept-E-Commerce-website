@@ -1,6 +1,5 @@
 import React from 'react'
 import { SlBasketLoaded } from 'react-icons/sl'
-
 import Basket from '../components/checkout/Basket'
 import Form from '../components/checkout/Form'
 

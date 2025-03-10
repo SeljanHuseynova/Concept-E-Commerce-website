@@ -44,7 +44,7 @@ html,body {
   }
 }
 
-// Cursor Wrapper
+// cursor wrap
 .cursor-fixed {
   position: fixed;
   top: 0;
@@ -55,7 +55,7 @@ html,body {
   z-index: 9999;
 }
 
-// Large Cursor
+// large cursor
 .cursor--large {
   position: fixed;
   width: 25px;
@@ -66,7 +66,7 @@ html,body {
   z-index: 9998;
 }
 
-// Small Cursor
+// small curosr
 .cursor--small {
   position: fixed;
   width: 6px;
@@ -77,7 +77,7 @@ html,body {
   z-index: 9999;
 }
 
-// Hover Effect
+// hover Effect
 .cursor--large.hover {
   width: 42px;
   height: 42px;
