@@ -100,9 +100,9 @@ const Navbar = ({
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    FAQ
-                  </a>
+                  <Link to="/FAQs" className="nav-link">
+                  FAQs
+                  </Link>
                 </li>
                 {isMobileView && (
                   <div className="mobile-wishlist-cart">

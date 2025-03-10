@@ -32,19 +32,7 @@
     }
     height: 100vh;
   
-    background: linear-gradient(45deg, var(--primary-color), #fef9f9, #fff4f4, #f3f4f8);
-    animation: gradientBG 10s ease infinite;
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+    background-color: var(--third-primary-color);
     transition: transform 0.3s ease-in-out;
     z-index: 5;
     padding: 2rem;
@@ -55,7 +43,7 @@
       align-self: end;
       width: 46px;
       height: 46px;
-      background-color: #e5e0e0;
+      background-color: var(--close-btn);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -67,6 +55,7 @@
         }
       }
       .cls-icon {
+        color: var(--text-color);
         font-size: 16px;
         transition: transform 1s ease-in-out;
       }
@@ -74,3 +63,4 @@
   }
 }
 @import "./filter-modal";
+@import './search';

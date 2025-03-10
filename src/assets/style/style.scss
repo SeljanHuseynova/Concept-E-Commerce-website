@@ -19,6 +19,8 @@
 @import "./floatingButtons";
 @import "./singleProduct";
 @import "./footer";
+@import "./home/quotas";
+@import "./faq/faq";
 
 :root {
   --primary-color: #fff9f9;
@@ -38,6 +40,7 @@
   --secondary-font-family: "Poppins", serif;
   --wishlist-color: #faeaee;
   --wishlist-icon-color: black;
+  --close-btn: #e5e0e0;
 }
 
 /* Dark mode */
@@ -58,6 +61,7 @@
   --secondary-font-family: "Poppins", serif;
   --wishlist-color: #613a3d;
   --wishlist-icon-color: white;
+  --close-btn: #7e5559;
 }
 [data-theme="dark"] .navbar-brand img {
   filter: invert(100%);

@@ -18,14 +18,12 @@
         height: 79vh;
       }
     position: relative;
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.8s ease-in-out;
     }
-
     &:hover img {
       transform: rotate(5deg) scale(1.2);
     }
@@ -89,6 +87,29 @@
           font-family: var(--main-font-family);
         }
         .link {
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+          &:hover {
+            color: var(--text-color);
+            background-color: #333 !important;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 300%;
+            height: 300%;
+            background: var(--second-primary-color);
+            z-index: -1;
+            transition: transform 0.8s ease-in-out;
+            transform: translate(-100%, -100%);
+          }
+
+          &:hover::before {
+            transform: translate(0, 0);
+          }
           font-family: var(--secondary-font-family);
           text-decoration: none;
           color: white;

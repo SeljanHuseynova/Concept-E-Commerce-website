@@ -501,6 +501,12 @@
 }
 
 .reviews {
+  .review-list {
+    max-height: 50vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
   .review {
     border-bottom: 0.001rem solid rgba(119, 111, 111, 0.3);
 color: var(--text-color);

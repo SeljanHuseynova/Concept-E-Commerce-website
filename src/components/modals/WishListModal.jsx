@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { CiHeart } from "react-icons/ci";
 import { TfiClose } from "react-icons/tfi";
 import { MdAddShoppingCart } from "react-icons/md";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WishListModal = () => {
   const { wishlist, toggleWishlist, clearWishlist } = useContext(WishListContext);
@@ -13,7 +15,7 @@ const WishListModal = () => {
 
   const handleAddToCart = (product) => {
     if (!currentUser) {
-      alert("Please log in to add items to the cart.");
+     toast.error("Please log in to add items to the cart.");
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));

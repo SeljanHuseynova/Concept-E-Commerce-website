@@ -184,6 +184,11 @@
         }
         .btn {
           .add-to-cart {
+            &:focus {
+              outline: none !important;
+              box-shadow: none !important;
+              border: none !important;
+            }
             position: relative;
             overflow: hidden;
             display: inline-block;
@@ -196,7 +201,7 @@
             transition: background-color 0.3s ease-in-out;
             outline: none;
             &:hover {
-              color: black;
+              color: var(--text-color);
               background-color: #333 !important;
             }
 

@@ -35,7 +35,7 @@ const Modal = ({ closeModal, modalType }) => {
       case "account":
         return <AccountModal />;
       case "search":
-        return <SearchModal />;
+        return <SearchModal closeModal={closeModal}/>;
       case "filter":
         return <FilterModal />;
       default:

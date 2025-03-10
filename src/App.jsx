@@ -20,11 +20,12 @@ import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import FloatingButtons from "./components/Global/FloatingButtons";
 import SinglePage from "./pages/SinglePage";
+import FAQ from "./pages/FAQ";
 
 function App() {
-  const currentUser = useSelector((state) => state.users.currentUser);
+  const currentUser = useSelector((state) => state.users?.currentUser);
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.filteredProducts);
+  const products = useSelector((state) => state.products?.filteredProducts);
   const location = useLocation();
   
   useEffect(() => {
@@ -77,6 +78,8 @@ function App() {
             element={admin ? <AdminDashboard /> : <Navigate to="/" />}
           />
            <Route path="/products/:id" element={<SinglePage />} />
+           <Route path="/FAQs" element={<FAQ />} />
+
         </Routes>
         {!isCheckoutPage && <Footer />}
       </WishListProvider>
