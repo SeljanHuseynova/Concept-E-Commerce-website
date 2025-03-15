@@ -7,8 +7,9 @@ import { TfiClose } from "react-icons/tfi";
 import { MdAddShoppingCart } from "react-icons/md";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router";
 
-const WishListModal = () => {
+const WishListModal = ({closeModal}) => {
   const { wishlist, toggleWishlist, clearWishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.users.currentUser);
@@ -41,15 +42,24 @@ const WishListModal = () => {
       ) : (
         <div className="wishlist">
           {wishlist.map((product, index) => (
+            
             <div key={product.id || index} className="wishlist-product">
               <div className="left">
                 <img src={product.images[0]} alt={product.name} width="50" />
               </div>
               <div className="right">
+              <Link
+            to={`/products/${product.id}`}
+            style={{textDecoration:'none',color:'black'}}
+            className="link"
+            onClick={closeModal} 
+            key={product.id} 
+          >
                 <div className="top">
                   <p className="name">{product.name}</p>
                   <p className="brand">{product.brand}</p>
                 </div>
+                </Link>
                 <div className="bottom">
                   <p className="price">${product.price}</p>
                   <button
@@ -68,6 +78,7 @@ const WishListModal = () => {
                 </div>
               </div>
             </div>
+        
           ))}
         </div>
       )}

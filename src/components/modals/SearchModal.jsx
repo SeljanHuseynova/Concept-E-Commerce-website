@@ -40,7 +40,6 @@ console.log(filteredProducts)
             className="link"
             onClick={closeModal} 
             key={product.id} 
-
           >
             <li className="product">
               <div className="left">

@@ -16,7 +16,7 @@ const YouMayAlsoLike = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  const newArrivals = products?.filter((item) => [6,7,8,9].includes(item.id));
+  const newArrivals = products?.filter((item) => [6,5,8,9].includes(item.id));
   const currentUser = useSelector((state) => state.users?.currentUser);
   const handleAddToCart = (product, e) => {
     e.preventDefault();

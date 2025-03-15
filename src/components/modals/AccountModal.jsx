@@ -1,12 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import NotLogged from "./NotLogged";
+import LoggedInModal from "./LoggedInModal";
 
-const AccountModal = () => {
-  return (
-    <div>
-      <h2>My Account</h2>
-      <p>Login or sign up to access your account.</p>
-    </div>
-  );
+const AccountModal = ({closeModal}) => {
+  const currentUser = useSelector((state) => state.users?.currentUser);
+  return <div>{currentUser ? <LoggedInModal closeModal={closeModal}/> : <NotLogged closeModal={closeModal}/>}</div>;
 };
 
 export default AccountModal;

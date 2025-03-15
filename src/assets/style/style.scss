@@ -21,6 +21,8 @@
 @import "./footer";
 @import "./home/quotas";
 @import "./faq/faq";
+@import "./notFoundPage";
+@import './login/login';
 
 :root {
   --primary-color: #fff9f9;
@@ -35,13 +37,12 @@
   ) !important;
   --text-color: #191919;
   --second-text-color: #0000007a;
-  // --third-text-color:
   --main-font-family: "Cormorant", serif;
   --secondary-font-family: "Poppins", serif;
   --wishlist-color: #faeaee;
   --wishlist-icon-color: black;
   --close-btn: #e5e0e0;
-  --faq-bg-color:#ebe5e5;
+  --faq-bg-color: #ebe5e5;
 }
 
 /* Dark mode */
@@ -63,7 +64,7 @@
   --wishlist-color: #613a3d;
   --wishlist-icon-color: white;
   --close-btn: #7e5559;
-  --faq-bg-color:#987579;
+  --faq-bg-color: #978384;
 }
 [data-theme="dark"] .navbar-brand img {
   filter: invert(100%);

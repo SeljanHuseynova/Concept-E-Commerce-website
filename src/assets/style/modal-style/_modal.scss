@@ -8,6 +8,7 @@
   z-index: 4;
 
   .modal-content {
+    height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
@@ -30,8 +31,8 @@
     @media (max-width: 460px) {
       width: 92%;
     }
-    height: 100vh;
-  
+   
+
     background-color: var(--third-primary-color);
     transition: transform 0.3s ease-in-out;
     z-index: 5;
@@ -65,4 +66,5 @@
   }
 }
 @import "./filter-modal";
-@import './search';
+@import "./search";
+@import "./accountModal";

@@ -5,7 +5,6 @@ import accountReducer from "./accountSlice";
 const rootReducer = combineReducers({
   products: productsReducer,
   users: accountReducer,
-
 });
 
 export default rootReducer;

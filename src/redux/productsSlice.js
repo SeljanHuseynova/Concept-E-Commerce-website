@@ -22,6 +22,7 @@ export const addProduct = createAsyncThunk(
       const response = await axios.post(productsUrl, productData, { headers });
       return response.data;
     } catch (error) {
+      console.error("Add Product Error:", error.response?.data);
       return rejectWithValue(error.response?.data || "Failed to add product");
     }
   }
@@ -190,7 +191,7 @@ const productsSlice = createSlice({
       .addCase(addProduct.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.products.push(action.payload);
-        applyAllFilters(state);
+        
       })
       .addCase(addProduct.rejected, (state, action) => {
         state.status = "failed";

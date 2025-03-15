@@ -343,7 +343,6 @@ const initialState = {
   status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
-
 const accountSlice = createSlice({
   name: "users",
   initialState,
@@ -431,5 +430,4 @@ const accountSlice = createSlice({
       });
   },
 });
-
 export default accountSlice.reducer;

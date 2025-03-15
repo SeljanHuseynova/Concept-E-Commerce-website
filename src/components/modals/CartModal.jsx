@@ -9,6 +9,10 @@ import {
 } from "../../redux/accountSlice";
 import { Link } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
+import { AiOutlineMinus } from "react-icons/ai";
+import { HiOutlinePlus } from "react-icons/hi2";
+
+
 
 const CartModal = ({ closeModal }) => {
   const dispatch = useDispatch();
@@ -59,20 +63,30 @@ const CartModal = ({ closeModal }) => {
           <span className="items">{totalItems} items</span>
           <div className="cart">
             {cart.map((item) => (
+               
               <div key={item.id} className="cart-item">
                 <div className="left">
                   <img src={item.image} alt={item.name} width="50" />
                 </div>
+
                 <div className="right">
+                <Link
+                          to={`/products/${item.id}`}
+                          style={{textDecoration:'none',color:'black'}}
+                          className="link"
+                          onClick={closeModal} 
+                          key={item.id} 
+                        >
                   <p className="name">{item.name}</p>
+                  </Link>
                   <div className="bottom">
                     <div className="quantity">
-                      <button onClick={() => handleDecrease(item.id)}>-</button>
+                    <AiOutlineMinus  onClick={() => handleDecrease(item.id)}/>
                       <p>{item.quantity}</p>
-                      <button onClick={() => handleIncrease(item.id)}>+</button>
+                      <HiOutlinePlus onClick={() => handleIncrease(item.id)} />
                     </div>
+                    <p className="price">${item.price}</p>
                   </div>
-                  <p className="price">${item.price}</p>
                   <button
                     onClick={() => handleRemove(item.id)}
                     className="icon-container"
@@ -81,6 +95,7 @@ const CartModal = ({ closeModal }) => {
                   </button>
                 </div>
               </div>
+           
             ))}
           </div>
           <div className="below">

@@ -1,5 +1,7 @@
 .filter-sort-container {
+  background-color: var(--fourth-primary-color);
   * {
+    color: var(--text-color);
     font-family: var(--secondary-font-family);
     @media (max-width:870px) {
       font-size: 15px;
@@ -15,6 +17,7 @@
   position: relative;
 
   .filter-container {
+ 
     .filter {
       display: flex;
       align-items: center;
@@ -29,6 +32,7 @@
       }
 
       .filter-div {
+        
         .reset {
           background-color: black;
           color: white;
@@ -63,6 +67,8 @@
       }
 
       .filter-div.open {
+        background-color: var(--second-primary-color);
+
         display: block;
       }
     }
@@ -85,7 +91,6 @@
       margin-right: 20px;
     }
     position: relative;
-    cursor: pointer;
     margin-left: auto;
 
     .icon {
@@ -114,7 +119,7 @@
         transition: background 0.3s;
 
         &:hover {
-          background: #f5f5f5;
+          background:var(--third-primary-color);
         }
       }
     }

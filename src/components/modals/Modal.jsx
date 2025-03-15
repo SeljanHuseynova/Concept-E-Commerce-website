@@ -31,9 +31,9 @@ const Modal = ({ closeModal, modalType }) => {
       case "cart":
         return <CartModal closeModal={closeModal}/>;
       case "wishlist":
-        return <WishListModal />;
+        return <WishListModal closeModal={closeModal}/>;
       case "account":
-        return <AccountModal />;
+        return <AccountModal closeModal={closeModal}/>;
       case "search":
         return <SearchModal closeModal={closeModal}/>;
       case "filter":

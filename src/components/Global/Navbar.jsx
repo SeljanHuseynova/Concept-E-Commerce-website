@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useContext } from "react";
 import {
   IoBagOutline,
   IoHeartOutline,
@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo/concept.logo.png";
 import { LuMenu } from "react-icons/lu";
 import Modal from "../modals/Modal";
+import { WishListContext } from "../../context/WishListProvider";
+import { LanguageContext } from "../../context/LanguageProvider";
+
 
 const Navbar = ({
   currentUser,
@@ -18,6 +21,7 @@ const Navbar = ({
   setIsOffcanvasOpen,
   setIsSticky,
 }) => {
+  const {t} = useContext(LanguageContext);
   const [modalType, setModalType] = useState(null);
   const openModal = (type) => {
     setModalType(type);
@@ -33,6 +37,9 @@ const Navbar = ({
       setIsSticky(window.scrollY > 50);
     }
   };
+  const cart = useMemo(() => currentUser?.cart || [], [currentUser]);
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const { wishlist } = useContext(WishListContext);
   return (
     <>
       <nav
@@ -76,7 +83,7 @@ const Navbar = ({
               <ul className="navbar-nav flex-grow-1 justify-content-center">
                 <li className="nav-item">
                   <Link to="/" className="nav-link">
-                    Home
+                    {t("home")}
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -141,14 +148,20 @@ const Navbar = ({
             )}
             {!isMobileView && (
               <>
+              <div className="icon-container">
                 <IoHeartOutline
                   className="icon"
                   onClick={() => openModal("wishlist")}
                 />
+                {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
+                </div>
+                <div className="icon-container">
                 <IoBagOutline
                   className="icon"
                   onClick={() => openModal("cart")}
                 />
+                {totalItems > 0 && <span className="badge">{totalItems}</span>}
+                </div>
               </>
             )}
           </div>

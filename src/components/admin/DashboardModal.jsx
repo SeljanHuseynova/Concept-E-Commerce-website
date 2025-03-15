@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct, editProduct } from "../../redux/productsSlice";
+import { addProduct, editProduct, fetchProducts } from "../../redux/productsSlice";
+import { useActionData } from "react-router";
 
 const DashboardModal = ({ product, onClose }) => {
+  
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     id: "",
@@ -21,6 +23,7 @@ const DashboardModal = ({ product, onClose }) => {
     benefits: "",
     ingredients: "",
     howTo: "",
+    reviews:"[]",
   });
 
   useEffect(() => {
@@ -39,10 +42,21 @@ const DashboardModal = ({ product, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const cleanFormData = {
+      ...formData,
+      id: product ? Number(product.id) : Date.now(), 
+      price: formData.price ? Number(formData.price) : null,
+      discountPercentage: formData.discountPercentage ? Number(formData.discountPercentage) : null,
+      salePrice: formData.salePrice ? Number(formData.salePrice) : null,
+      rate: formData.rate ? Number(formData.rate) : null,
+      quantity: formData.quantity ? Number(formData.quantity) : null,
+      images: Array.isArray(formData.images) ? formData.images : JSON.parse(formData.images || "[]"),
+      reviews: Array.isArray(formData.reviews) ? formData.reviews : JSON.parse(formData.reviews || "[]"),
+    };
     if (product) {
       dispatch(editProduct({ id: product.id, updates: formData }));
     } else {
-      dispatch(addProduct({ ...formData, id: Date.now() }));
+      dispatch(addProduct(cleanFormData)).then(()=> dispatch(fetchProducts()));
     }
     onClose();
   };
@@ -56,7 +70,7 @@ const DashboardModal = ({ product, onClose }) => {
           <input name="brand" placeholder="Brand" value={formData.brand} onChange={handleChange} required />
           <textarea name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
           <input name="price" type="number" placeholder="Price" value={formData.price} onChange={handleChange} required />
-          <label>
+          <label id="sale">
             <input type="checkbox" name="onsale" checked={formData.onsale} onChange={handleChange} />
             On Sale
           </label>
@@ -70,7 +84,7 @@ const DashboardModal = ({ product, onClose }) => {
           <textarea name="benefits" placeholder="Benefits" value={formData.benefits} onChange={handleChange} />
           <textarea name="ingredients" placeholder="Ingredients" value={formData.ingredients} onChange={handleChange} />
           <textarea name="howTo" placeholder="How To Use" value={formData.howTo} onChange={handleChange} />
-
+          <input name="reviews" placeholder="Reviews" value={formData.rewievs} onChange={handleChange} />
           <button type="submit">{product ? "Update" : "Add"}</button>
           <button type="button" onClick={onClose}>Cancel</button>
         </form>
