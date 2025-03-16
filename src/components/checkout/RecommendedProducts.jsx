@@ -3,26 +3,26 @@ import { GoHeart } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/accountSlice";
-import { WishListContext } from "../../context/WishListProvider";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { LanguageContext } from "../../context/LanguageProvider";
-
-const NewArrivals = ({ products }) => {
-  const {t} = useContext(LanguageContext);
+import { WishListContext } from "../../context/WishListProvider";
+import { addToCart } from "../../redux/accountSlice";
+const RecommendedProducts = () => {
+  const products = useSelector((state) => state.products?.filteredProducts);
   const { toggleWishlist, wishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-  const newArrivals = products?.filter((item) => [1, 2, 3, 5].includes(item.id));
+  const newArrivals = products?.filter((item) =>
+    [1, 2, 3, 5].includes(item.id)
+  );
   const currentUser = useSelector((state) => state.users?.currentUser);
   const handleAddToCart = (product, e) => {
     e.preventDefault();
     if (!currentUser) {
-       toast.error("Please log in to add items to the cart.");
+      toast.error("Please log in to add items to the cart.");
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));
@@ -31,8 +31,7 @@ const NewArrivals = ({ products }) => {
   return (
     <div className="new-arrivals">
       <div className="title" data-aos="fade-up">
-        <h2>{t("home.what-new")}</h2>
-        <span>{t("home.shop-new-arrivals")}</span>
+        <h2>Recommended Products</h2>
       </div>
       <div className="products-container">
         <div className="products">
@@ -101,4 +100,4 @@ const NewArrivals = ({ products }) => {
   );
 };
 
-export default NewArrivals;
+export default RecommendedProducts;

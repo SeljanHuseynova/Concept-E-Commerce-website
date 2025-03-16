@@ -31,7 +31,7 @@ const LoggedInModal = ({ closeModal }) => {
       </ul>
       <div className="bottom">
         <span>Enjoy your shopping! Browse our latest collections now.</span>
-        <Link to='/products' className="link">Start Shopping</Link>
+        <Link to='/products' className="link" onClick={closeModal}>Start Shopping</Link>
       </div>
       </div>
     </div>

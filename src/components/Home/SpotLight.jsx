@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import image from "../../assets/images/general/homeSlide.jpg";
 import { TfiArrowLeft, TfiArrowRight } from "react-icons/tfi";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const SpotLight = ({ products }) => {
+  const {t} = useContext(LanguageContext);
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -41,7 +43,7 @@ const SpotLight = ({ products }) => {
   return (
     <div className="spot-light">
       <div className="title">
-        <h2>Spotlight Products</h2>
+        <h2>{t("home.spotlight")}</h2>
       </div>
       <div className="main row">
         <div className="col-md-6">

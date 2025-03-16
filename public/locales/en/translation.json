@@ -1,8 +1,69 @@
 {
+  "nav": {
     "home": "Home",
-    "hello": "Hello, how are you?",
-    "change_language": "Change Language",
-    "dark_mode": "Dark Mode",
-    "light_mode": "Light Mode"
+    "about": "About Us",
+    "products": "Products",
+    "blog": "Blog",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "announcement": "FREE SHIPPING on orders over $120"
+  },
+  "home": {
+    "discover": "Discover the Art of Cosmetics",
+    "our-make-up-products": "OUR MAKE-UP PRODUCTS",
+    "what-new": "What's New",
+    "shop-new-arrivals": "SHOP NEW ARRIVALS",
+    "spotlight": "Featured Products",
+    "shop": "Enhance your natural beauty and boost your confidence with our stylish makeup and skincare products.",
+    "shop-now": "SHOP NOW",
+    "quotes": [
+      {
+        "quote": "NIMO has a preternaturally cool reputation for stocking beauty's latest obsessions before everyone else does.",
+        "brand": "ELLE"
+      },
+      {
+        "quote": "NIMO cosmetics are a game-changer! Top quality, gorgeous packaging.",
+        "brand": "FENTY"
+      },
+      {
+        "quote": "NIMO's eyeshadows are amazing. Rich colors, easy to blend, any look possible!",
+        "brand": "DOVINE"
+      }
+    ],
+    "marquee":{
+      "skin":"Sensitive Skin",
+      "natural" :"Natural Ingredient"
+    },
+    "enchance":{
+      "collection":"Enchanté Collection",
+      "heading":"Unleash Your Beauty with LAORIV Cosmetics",
+      "first-paragraph":"Dive into a world of limitless possibilities as we unveil a range of vibrant colors, luxurious textures, and cutting-edge formulas.",
+      "second-paragraph":"Get ready to transform your makeup game and embrace the extraordinary with our latest collection.",
+      "button":"EXPLORE THE COLLECTION"
+    },
+    "nimo": {
+      "paragraph":"Discover NIMO Skincare Routine. Unlock Your Beauty Potential with our Skincare Cosmetics",
+      "button":"SHOP NOW"
+    }
+  },
+  "footer": {
+    "left":" Sign up for 10% off your first order and discover the best new beauty first.",
+    "skincare":"Skincare",
+    "makeup":"Makeup",
+    "beauty":"Beauty Tips",
+    "products":"Products",
+    "routine":"Routine",
+    "copyright":"© 2024 Concept. All rights reserved.",
+    "refund":"Refund Policy",
+    "privacy":"Privacy Policy",
+    "terms":"Terms of service",
+    "shipping":"Shipping Policy",
+    "contact":" Contact Information",
+    "about-head":"ABOUT",
+    "about-us":"About us",
+    "contact-us":"Contact us",
+    "blog":"Blog",
+    "shop":"SHOP"
+
   }
-  
+}

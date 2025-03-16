@@ -8,12 +8,18 @@ import {
   setCategory,
   setSubCategory,
   resetFilter,
-  setSort,
 } from "../../redux/productsSlice";
 import { IoIosColorFilter } from "react-icons/io";
+import Sort from "./Sort";
 const FilterAndSort = ({ products }) => {
   const dispatch = useDispatch();
   const [openFilter, setOpenFilter] = useState(null);
+  const [selectedFilters, setSelectedFilters] = useState({
+    availability: null,
+    brand: null,
+    category: null,
+    subCategory: null,
+  });
   const filterRef = useRef(null);
   const toggleFilter = (filter) => {
     setOpenFilter(openFilter === filter ? null : filter);
@@ -29,151 +35,91 @@ const FilterAndSort = ({ products }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  const [modalType, setModalType] = useState(null);
-  const openModal = (type) => {
-    setModalType(type);
+
+  const handleSelect = (filterType, value) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [filterType]: value,
+    }));
+    if (filterType === "availability") dispatch(setAvailability(value));
+    if (filterType === "brand") dispatch(setBrand(value));
+    if (filterType === "category") dispatch(setCategory(value));
+    if (filterType === "subCategory") dispatch(setSubCategory(value));
   };
-  const closeModal = () => {
-    setModalType(null);
+  const handleReset = (filterType) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [filterType]: null,
+    }));
+    dispatch(resetFilter(filterType));
   };
   return (
     <div className="filter-sort-container" ref={filterRef}>
       <div
         className="mobile-filter-container"
-        onClick={() => openModal("filter")}
+        onClick={() => setOpenFilter("filter")}
       >
         <IoIosColorFilter className="icon" />
         <span>FILTER</span>
       </div>
-      <div className="filter-container">
-        <div className="filter" onClick={() => toggleFilter("availability")}>
-          <span>Availability</span>
-          <GoChevronDown className="icon" />
-          <div
-            className={`filter-div ${
-              openFilter === "availability" ? "open" : ""
-            }`}
-          >
-            <span onClick={() => dispatch(setAvailability("inStock"))}>
-              In Stock
-            </span>
-            <span onClick={() => dispatch(setAvailability("outOfStock"))}>
-              Out Of Stock
-            </span>
-            <span
-              className="reset"
-              onClick={() => dispatch(resetFilter("availability"))}
-            >
-              Reset
-            </span>
-          </div>
-        </div>
 
-        <div className="filter" onClick={() => toggleFilter("brand")}>
-          <span>Brand</span>
-          <GoChevronDown className="icon" />
-          <div className={`filter-div ${openFilter === "brand" ? "open" : ""}`}>
-            {[
+      <div className="filter-container">
+        {[
+          {
+            type: "availability",
+            label: "Availability",
+            options: ["In Stock", "Out Of Stock"],
+          },
+          {
+            type: "brand",
+            label: "Brand",
+            options: [
               "LAORIV",
               "FURTUNA",
               "IRIS HANTVERK",
               "FENTY BEAUTY",
               "RARE BEAUTY",
               "KOSAS",
-            ].map((brand) => (
-              <span key={brand} onClick={() => dispatch(setBrand(brand))}>
-                {brand}
-              </span>
-            ))}
-            <span
-              className="reset"
-              onClick={() => dispatch(resetFilter("brand"))}
+            ],
+          },
+          {
+            type: "category",
+            label: "Product Type",
+            options: ["Skincare", "Makeup"],
+          },
+          {
+            type: "subCategory",
+            label: "Product",
+            options: ["serum", "cream", "lotion", "gloss", "blush", "mascara", "shampoo"],
+          },
+        ].map(({ type, label, options }) => (
+          <div key={type} className="filter" onClick={() => toggleFilter(type)}>
+            <span>{label}</span>
+            <GoChevronDown className="icon" />
+            <div
+              className={`filter-div ${openFilter === type ? "open" : ""}`}
             >
-              Reset
-            </span>
-          </div>
-        </div>
-
-        <div className="filter" onClick={() => toggleFilter("category")}>
-          <span>Product Type</span>
-          <GoChevronDown className="icon" />
-          <div
-            className={`filter-div ${openFilter === "category" ? "open" : ""}`}
-          >
-            <span onClick={() => dispatch(setCategory("skincare"))}>
-              Skincare
-            </span>
-            <span onClick={() => dispatch(setCategory("makeup"))}>Makeup</span>
-            <span
-              className="reset"
-              onClick={() => dispatch(resetFilter("category"))}
-            >
-              Reset
-            </span>
-          </div>
-        </div>
-
-        <div className="filter" onClick={() => toggleFilter("subCategory")}>
-          <span>Product</span>
-          <GoChevronDown className="icon" />
-          <div
-            className={`filter-div ${
-              openFilter === "subCategory" ? "open" : ""
-            }`}
-          >
-            {[
-              "serum",
-              "cream",
-              "lotion",
-              "gloss",
-              "blush",
-              "mascara",
-              "shampoo",
-            ].map((product) => (
+              {options.map((option) => (
+                <span
+                  key={option}
+                  className={selectedFilters[type] === option ? "selected" : ""}
+                  onClick={() => handleSelect(type, option)}
+                >
+                  {option}
+                </span>
+              ))}
               <span
-                key={product}
-                onClick={() => dispatch(setSubCategory(product))}
+                className="reset"
+                onClick={() => handleReset(type)}
               >
-                {product}
+                Reset
               </span>
-            ))}
-            <span
-              className="reset"
-              onClick={() => dispatch(resetFilter("subCategory"))}
-            >
-              Reset
-            </span>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      <div className="sort-container" onClick={() => toggleFilter("sort")}>
-        <span className="number-products">{products.length} products</span>
-        <span>SORT</span>
-        <GoChevronDown className="icon" />
-        <div className={`sort-div ${openFilter === "sort" ? "open" : ""}`}>
-          <span onClick={() => dispatch(setSort("nameAsc"))}>
-            Alphabetically, A-Z
-          </span>
-          <span onClick={() => dispatch(setSort("nameDesc"))}>
-            Alphabetically, Z-A
-          </span>
-          <span onClick={() => dispatch(setSort("priceAsc"))}>
-            Price, low to high
-          </span>
-          <span onClick={() => dispatch(setSort("priceDesc"))}>
-            Price, high to low
-          </span>
-          <span onClick={() => dispatch(setSort("dateAsc"))}>
-            Date, old to new
-          </span>
-          <span onClick={() => dispatch(setSort("dateDesc"))}>
-            Date, new to old
-          </span>
-        </div>
-      </div>
-      {modalType && <Modal closeModal={closeModal} modalType={modalType} />}
+     <Sort toggleFilter={toggleFilter} products={products} openFilter={openFilter}/>
     </div>
   );
 };
-
 export default FilterAndSort;

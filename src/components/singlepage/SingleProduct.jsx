@@ -63,15 +63,10 @@ const SingleProduct = () => {
              });
       return;
   }
-    dispatch(addToCart({ userId: currentUser.id, product }));
-   
       navigate("/check-out");
   
   }
   const isInWishlist = wishlist.some((item) => item.id === product.id);
- 
-
- 
   return (
     <div className="single-product">
       <div className="title-product">

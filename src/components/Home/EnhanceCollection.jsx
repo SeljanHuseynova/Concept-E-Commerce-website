@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import collection from '../../assets/images/general/collection-enchante.webp';
 import { Link } from 'react-router-dom';
 import EnhanceProducts from './EnhanceProducts';
+import { LanguageContext } from '../../context/LanguageProvider';
+
 
 const EnhanceCollection = () => {
+  const {t} = useContext(LanguageContext);
   return (
     <div className='enhance-collection'>
-      <h2>Enchanté Collection</h2>
+      <h2>{t("home.enchance.collection")}</h2>
       <div className="main">
         <div className="left">
           <div className="content">
-          <h1>Unleash Your Beauty with LAORIV Cosmetics</h1>
-          <p>Dive into a world of limitless possibilities as we unveil a range of vibrant colors, luxurious textures, and cutting-edge formulas.</p>
-          <p>Get ready to transform your makeup game and embrace the extraordinary with our latest collection.</p>
-         <Link to='/products' className='link'>EXPLORE THE COLLECTION</Link>
+          <h1>{t("home.enchance.heading")}</h1>
+          <p>{t("home.enchance.first-paragraph")}</p>
+          <p>{t("home.enchance.second-paragraph")}</p>
+         <Link to='/products' className='link'>{t("home.enchance.button")}</Link>
          </div>
         </div>
         <div className="right">

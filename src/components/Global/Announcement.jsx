@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageProvider';
 
 const Announcement = () => {
+    const {t} = useContext(LanguageContext);
   return (
     <div className='announcement'>
-      <span>FREE SHIPPING ON ORDERS OVER $120</span>
+      <span> {t("nav.announcement")}</span>
     </div>
   )
 }

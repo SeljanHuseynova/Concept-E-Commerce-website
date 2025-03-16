@@ -1,8 +1,68 @@
 {
-    "home": "Ana Səhifə",
-    "hello": "Salam, necəsən?",
-    "change_language": "Dili Dəyiş",
-    "dark_mode": "Qaranlıq rejim",
-    "light_mode": "İşıq rejimi"
-  }
-  
+  "nav": {
+    "home": "Ana səhifə",
+    "about": "Haqqımızda",
+    "products": "Məhsullar",
+    "blog": "Bloq",
+    "contact": "Əlaqə",
+    "faq": "Suallar",
+    "announcement": "120$-dan yuxarı sifarişlərdə PULSUZ ÇATDIRILMA"
+  },
+  "home": {
+    "discover": "Kosmetikanın Sənətini Kəşf Edin",
+    "our-make-up-products": "MAKİYAJ MƏHSULLARIMIZ",
+    "what-new": "Yeniliklər",
+    "shop-new-arrivals": "YENİ GƏLƏNLƏRİ AL",
+    "spotlight": "Seçilmiş Məhsullar",
+    "shop": "Dəbli makiyaj və dəriyə qulluq məhsullarımızla təbii gözəlliyinizi vurğulayın və özünüzə inamınızı artırın.",
+    "shop-now": "İNDİ AL",
+    "quotes": [
+      {
+        "quote": "NIMO gözəllik dünyasının ən son trendlərini hamıdan əvvəl təqdim etməsi ilə tanınır.",
+        "brand": "ELLE"
+      },
+      {
+        "quote": "NIMO kosmetikası inqilabi bir yenilikdir! Yüksək keyfiyyət, möhtəşəm qablaşdırma.",
+        "brand": "FENTY"
+      },
+      {
+        "quote": "NIMO-nun göz kölgələri mükəmməldir. Zəngin rənglər, asan qarışdırılma, istənilən görünüş mümkündür!",
+        "brand": "DOVINE"
+      }
+    ],
+    "marquee": {
+      "skin": "Həssas dəri",
+      "natural": "Təbii tərkib"
+    },
+    "enchance": {
+      "collection": "Enchanté Kolleksiyası",
+      "heading": "LAORIV Cosmetics ilə gözəlliyinizi üzə çıxarın",
+      "first-paragraph": "Bir sıra canlı rənglər, dəbdəbəli teksturalar və qabaqcıl düsturları təqdim edərkən sonsuz imkanlar dünyasına dalın.",
+      "second-paragraph": "Son kolleksiyamızla makiyaj oyununuzu dəyişdirməyə və qeyri-adiliyi qəbul etməyə hazır olun.",
+      "button": "KOLLEKSİYANI KEŞFEDİN"
+    },
+    "nimo": {
+      "paragraph": "NIMO Dəriyə Qulluq Rutinini kəşf edin. Dəriyə Qulluq Kosmetikamızla Gözəllik Potensialınızı açın",
+      "button": "İNDİ AL"
+    }  
+  },
+  "footer": {
+      "left": " İlk sifarişinizdə 10% endirim qazanın və ən yeni gözəllik məhsullarını ilk siz kəşf edin.",
+      "skincare": "Dəriyə Qulluq",
+      "makeup": "Makiyaj",
+      "beauty": "Gözəllik Məsləhətləri",
+      "products": "Məhsullar",
+      "routine": "Rutın",
+      "copyright": "© 2024 Concept. Bütün hüquqlar qorunur.",
+      "refund": "Geri Qaytarma Siyasəti",
+      "privacy": "Gizlilik Siyasəti",
+      "terms": "Xidmət Şərtləri",
+      "shipping": "Çatdırılma Siyasəti",
+      "contact": " Əlaqə Məlumatı",
+      "about-head": "HAQQIMIZDA",
+      "about-us": "Haqqımızda",
+      "contact-us": "Bizimlə Əlaqə",
+      "blog": "Bloq",
+       "shop":"MAĞAZA"
+    }
+}

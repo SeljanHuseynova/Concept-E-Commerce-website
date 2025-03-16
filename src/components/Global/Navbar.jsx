@@ -83,32 +83,32 @@ const Navbar = ({
               <ul className="navbar-nav flex-grow-1 justify-content-center">
                 <li className="nav-item">
                   <Link to="/" className="nav-link">
-                    {t("home")}
+                    {t("nav.home")}
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/about" className="nav-link">
-                    About
+                  {t("nav.about")}
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/products" className="nav-link">
-                    Products
+                  {t("nav.products")}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Blog
-                  </a>
+                <Link to="/CONCEPT'S-Beauty-Blogs" className="nav-link">
+                  {t("nav.blog")}
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Contact
-                  </a>
+                <Link to="/Contact" className="nav-link">
+                {t("nav.contact")}
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/FAQs" className="nav-link">
-                  FAQs
+                  {t("nav.faq")}
                   </Link>
                 </li>
                 {isMobileView && (

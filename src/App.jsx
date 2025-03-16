@@ -23,7 +23,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFoundPage from "./pages/NotFoundPage";
 import Adresses from "./pages/Adresses";
-
+import OrderCompleted from "./pages/OrderCompleted";
+import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 function App() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products?.filteredProducts);
@@ -31,22 +33,14 @@ function App() {
   const location = useLocation();
   const cart = currentUser?.cart || [];
   const admin = JSON.parse(localStorage.getItem("admin"));
-
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
   const isCheckoutPage = location.pathname === "/check-out";
-
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const [language, setLanguage] = useState("en");
 
   const handleThemeChange = useCallback((newTheme) => {
     setTheme(newTheme);
-  }, []);
-
-  const handleLanguageChange = useCallback((newLanguage) => {
-    setLanguage(newLanguage);
   }, []);
 
   return (
@@ -56,23 +50,26 @@ function App() {
       <CustomCursor />
       <FloatingButtons
         onThemeChange={handleThemeChange}
-        onLanguageChange={handleLanguageChange}
+      
       />
       <WishListProvider>
         {!isCheckoutPage && <Header currentUser={currentUser} />}
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={currentUser ? <Navigate to="/account" /> : <Login />} />
-          <Route path="/register" element={currentUser ? <Navigate to="/account" /> : <Register />} />
-          <Route path="/account" element={currentUser ? <Account /> : <Navigate to="/login" />} />
+          <Route path="/login" element={currentUser ? <Navigate to="/Account" /> : <Login />} />
+          <Route path="/register" element={currentUser ? <Navigate to="/Account" /> : <Register />} />
+          <Route path="/Account" element={currentUser ? <Account /> : <Navigate to="/login" />} />
           <Route path="/products" element={<Products products={products} />} />
           <Route path="/products/:id" element={<SinglePage />} />
           <Route path="/FAQs" element={<FAQ />} />
           <Route path="/check-out" element={currentUser && cart.length > 0 ? <CheckOut /> : <Navigate to="/" />} />
           <Route path="/Admin-login" element={<AdminLogin />} />
           <Route path="/Admin" element={admin ? <AdminDashboard /> : <Navigate to="/" />} />
-          <Route path='/Adresses' element={<Adresses/>} />
+          <Route path='/Adresses' element={currentUser ? <Adresses /> : <Navigate to="/" />}  />
+          <Route path='/order-completed' element={currentUser ? <OrderCompleted /> : <Navigate to="/" />}/>
+          <Route path='/contact' element={<Contact />} />
+          <Route path="/CONCEPT'S-Beauty-Blogs" element={<Blog />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
         {!isCheckoutPage && <Footer />}

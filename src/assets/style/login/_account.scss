@@ -1,0 +1,184 @@
+.account-details {
+  height: 50vh;
+  margin-top: -40px;
+  padding: 5px 25px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 570px) {
+    flex-direction: column;
+    height: 62vh;
+  }
+  @media (max-width: 620px) {
+    align-items: center;
+
+  }
+  .left {
+    width: 50%;
+    @media (max-width: 570px) {
+     width: 100%;
+      }
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    h1 {
+      font-family: var(--main-font-family);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text-color);
+    }
+    span {
+      font-family: var(--secondary-font-family);
+      padding: 5px;
+      color: var(--text-color);
+    }
+    .log-out-btn {
+      padding: 5px;
+      text-decoration: underline;
+      font-family: var(--main-font-family);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-color);
+      border: none;
+      background: none;
+      outline: none;
+      &:hover {
+        color: var(--second-text-color);
+      }
+    }
+  }
+  .right {
+    display: flex;
+    justify-content: end;
+    @media (max-width: 570px) {
+        justify-content: center;
+        align-self: center;
+      }
+    align-self: end;
+    .details {
+      * {
+        color: var(--text-color);
+      }
+      h4 {
+        font-family: var(--main-font-family);
+        font-weight: 700;
+        font-size: 22px;
+      }
+      .view-addresses {
+        margin-top: 15px;
+        &:hover {
+          color: var(--second-text-color);
+        }
+      }
+      .name {
+        margin-top: 19px;
+        display: flex;
+        gap: 7px;
+        font-family: var(--secondary-font-family);
+      }
+      display: inline-block;
+      background-color: var(--faq-bg-color);
+      padding: 30px 180px 30px 40px;
+      @media (max-width: 765px) {
+        padding: 30px 120px 30px 40px;
+      }
+      @media (max-width: 660px) {
+        padding: 25px 110px 25px 35px;
+      }
+      @media (max-width: 613px) {
+        padding: 25px 80px 25px 35px;
+      }
+    }
+    width: 50%;
+    @media (max-width: 570px) {
+        width: 100%;
+         }
+  }
+}
+
+//addresses page
+.addresses {
+    background-color: var(--primary-color);
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-family: var(--main-font-family);
+
+        font-size: 40px;
+        font-weight: 650;
+        color: var(--text-color);
+        @media (max-width:760px) {
+            font-size: 35px;
+        }
+    }
+    .add-btn {
+        margin-top: 15px;
+        align-self: center;
+        padding: 10px 35px;
+        font-size: 18px;
+        font-family: var(--secondary-font-family);
+        background: none;
+        border: 0.001rem solid var(--text-color);
+        color: var(--text-color);
+        @media (max-width:740px) {
+            font-size: 16px;
+            padding: 8px 48px;
+        }
+    }
+    ul {
+        padding: 10px 70px;
+        @media (max-width:1200px) {
+            padding: 10px 50px;
+        }
+        @media (max-width:690px) {
+            padding: 10px 30px;
+        }
+        @media (max-width:480px) {
+            padding: 10px;
+        }
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        
+        * {
+            font-family: var(--secondary-font-family);
+        }
+        li {
+            .buttons {
+                display: flex;
+                gap: 10px;
+                .edit {
+                    border: none;
+                    background-color: black;
+                    color: white;
+                }
+                .delete {
+                    border: 0.001rem solid var(--text-color);
+                    background: none;
+                    color: var(--text-color);
+                }
+                button {
+                    padding: 8px 20px;
+                    @media (max-width:740px) {
+                        padding: 6px 15px;
+                    }
+                }
+            }
+            list-style-type: none;
+            width: 100%;
+            .address {
+                color: var(--text-color);
+                padding: 20px 20px;
+                margin-bottom: 15px;
+                width: 100%;
+                background-color: var(--faq-bg-color);
+            }
+        }
+        
+    }
+}

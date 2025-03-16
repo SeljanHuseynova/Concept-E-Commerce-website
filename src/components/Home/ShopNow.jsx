@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { LanguageContext } from "../../context/LanguageProvider";
 const ShopNow = () => {
+  const {t} = useContext(LanguageContext);
   useEffect(() => {
     AOS.init({ duration: 1000 }); 
   }, []);
@@ -18,12 +20,10 @@ const ShopNow = () => {
         <div className="overlay">
           <div className="overlay-content">
             <p data-aos="fade-up">
-              “Explore our premium skincare and makeup products, meticulously
-              crafted to enhance your natural features and elevate your
-              confidence.”
+              {t("home.shop")}
             </p>
             <Link to="/products" className="link" data-aos="zoom-in">
-              SHOP NOW
+            {t("home.shop-now")}
             </Link>
           </div>
         </div>

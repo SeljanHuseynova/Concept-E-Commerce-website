@@ -9,8 +9,8 @@
     span {
       font-family: var(--secondary-font-family);
       font-size: 18px;
-      color: #545454;
-      border-bottom: 0.001rem solid #545454;
+      color: var(--second-text-color);
+      border-bottom: 0.001rem solid var(--second-text-color);
       animation: borderAnimation 1s infinite alternate;
       @media (max-width: 830px) {
         font-size: 16px;

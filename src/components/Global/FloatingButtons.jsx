@@ -7,7 +7,6 @@ const FloatingButtons = ({ onThemeChange }) => {
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const { changeLanguage } = useContext(LanguageContext);
 
-  // Apply stored theme on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);

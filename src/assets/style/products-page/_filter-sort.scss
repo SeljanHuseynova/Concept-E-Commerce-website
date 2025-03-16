@@ -1,4 +1,8 @@
 .filter-sort-container {
+  .selected {
+    font-weight: bold;
+    color: var(--second-text-color);
+  }
   background-color: var(--fourth-primary-color);
   * {
     color: var(--text-color);

@@ -27,7 +27,7 @@ const LoginForm = ({ closeModal }) => {
     dispatch(loginUser(userData))
       .then((resultAction) => {
         if (loginUser.fulfilled.match(resultAction)) {
-          navigate("/account");
+          navigate("/Account");
           closeModal();
         } else {
           setError(resultAction.payload || "Invalid email or password.");

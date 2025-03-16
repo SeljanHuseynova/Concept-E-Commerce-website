@@ -338,6 +338,27 @@ export const updateStockAfterPurchase = createAsyncThunk(
     }
   }
 );
+//fetch user adress
+export const fetchAddress = createAsyncThunk(
+  "users/fetchAdress",
+  async (userId, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `${accountUrl}?id=eq.${userId}&select=adress`,
+        {
+          headers,
+        }
+      );
+      if (response.data.length === 0) {
+        return rejectWithValue("User not found");
+      }
+      return response.data[0].adress || [];
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  }
+);;
+
 const initialState = {
   currentUser: JSON.parse(localStorage.getItem("currentUser")) || null,
   status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
@@ -427,6 +448,11 @@ const accountSlice = createSlice({
       .addCase(updateStockAfterPurchase.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
+      })
+      .addCase(fetchAddress.fulfilled, (state, action) => {
+        if (state.currentUser) {
+          state.currentUser.adress = action.payload; 
+        }
       });
   },
 });

@@ -1,26 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const Quotas = () => {
-  const quotas = [
-    {
-      quota:
-        
-      "NIMO has a preternaturally cool reputation for stocking beauty's latest obsessions before everyone else does."
-      ,
-      brand: "ELLE",
-    },
-    {
-      quota:
-        "NIMO cosmetics are a game-changer! Top quality, gorgeous packaging.",
-      brand: "FENTY",
-    },
-    {
-      quota:
-        "NIMO's eyeshadows are amazing. Rich colors, easy to blend, any look possible!",
-      brand: "DOVINE",
-    },
-  ];
+  const { t } = useContext(LanguageContext);
+  const quotas = t("home.quotes", { returnObjects: true });
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -40,7 +24,7 @@ const Quotas = () => {
         <GoArrowLeft />
       </button>
       <div className="quote-content">
-        <p className="quote">“{quotas[currentIndex].quota}”</p>
+        <p className="quote">“{quotas[currentIndex].quote}”</p>
         <h3 className="brand">{quotas[currentIndex].brand}</h3>
       </div>
       <button className="arrow right" onClick={nextQuote}>
