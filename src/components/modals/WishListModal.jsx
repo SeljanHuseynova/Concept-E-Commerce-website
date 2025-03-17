@@ -8,8 +8,10 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const WishListModal = ({closeModal}) => {
+  const {t} = useContext(LanguageContext);
   const { wishlist, toggleWishlist, clearWishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.users.currentUser);
@@ -25,9 +27,9 @@ const WishListModal = ({closeModal}) => {
   return (
     <div className="wishlist-container">
       <div className="top">
-        <h5>Wishlist</h5>
+        <h5>{t("wishlist.head")}</h5>
         {wishlist.length > 0 && (
-          <button onClick={clearWishlist} className="clear-all">Clear All</button>
+          <button onClick={clearWishlist} className="clear-all">{t("wishlist.button")}</button>
         )}
       </div>
 
@@ -35,8 +37,8 @@ const WishListModal = ({closeModal}) => {
         <div className="wishlist-empty">
           <CiHeart className="icon" />
           <div className="content">
-            <span>You don't have any favorites yet</span>
-            <p>Tap the heart on any product to save it to your favorites.</p>
+            <span>{t("wishlist.span")}</span>
+            <p>{t("wishlist.p")}</p>
           </div>
         </div>
       ) : (
@@ -66,7 +68,7 @@ const WishListModal = ({closeModal}) => {
                     className="add-to-cart"
                     onClick={() => handleAddToCart(product)}
                   >
-                    Quick Add
+                    {t("wishlist.add")}
                     <MdAddShoppingCart className="add-icon" />
                   </button>
                 </div>

@@ -30,40 +30,189 @@
         "brand": "DOVINE"
       }
     ],
-    "marquee":{
-      "skin":"Sensitive Skin",
-      "natural" :"Natural Ingredient"
+    "marquee": {
+      "skin": "Sensitive Skin",
+      "natural": "Natural Ingredient"
     },
-    "enchance":{
-      "collection":"Enchanté Collection",
-      "heading":"Unleash Your Beauty with LAORIV Cosmetics",
-      "first-paragraph":"Dive into a world of limitless possibilities as we unveil a range of vibrant colors, luxurious textures, and cutting-edge formulas.",
-      "second-paragraph":"Get ready to transform your makeup game and embrace the extraordinary with our latest collection.",
-      "button":"EXPLORE THE COLLECTION"
+    "enchance": {
+      "collection": "Enchanté Collection",
+      "heading": "Unleash Your Beauty with LAORIV Cosmetics",
+      "first-paragraph": "Dive into a world of limitless possibilities as we unveil a range of vibrant colors, luxurious textures, and cutting-edge formulas.",
+      "second-paragraph": "Get ready to transform your makeup game and embrace the extraordinary with our latest collection.",
+      "button": "EXPLORE THE COLLECTION"
     },
     "nimo": {
-      "paragraph":"Discover NIMO Skincare Routine. Unlock Your Beauty Potential with our Skincare Cosmetics",
-      "button":"SHOP NOW"
+      "paragraph": "Discover NIMO Skincare Routine. Unlock Your Beauty Potential with our Skincare Cosmetics",
+      "button": "SHOP NOW"
     }
   },
   "footer": {
-    "left":" Sign up for 10% off your first order and discover the best new beauty first.",
+    "left": "Sign up for 10% off your first order and discover the best new beauty first.",
+    "skincare": "Skincare",
+    "makeup": "Makeup",
+    "beauty": "Beauty Tips",
+    "products": "Products",
+    "routine": "Routine",
+    "copyright": "© 2024 Concept. All rights reserved.",
+    "refund": "Refund Policy",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of service",
+    "shipping": "Shipping Policy",
+    "contact": "Contact Information",
+    "about-head": "ABOUT",
+    "about-us": "About us",
+    "contact-us": "Contact us",
+    "blog": "Blog",
+    "shop": "SHOP"
+  },
+  "blogs": {
+    "heading":"CONCEPT'S Beauty Blogs",
+    "list": [
+      {
+        "id": 1,
+        "tags": ["Beauty Tips", "Newest", "Skincare"],
+        "text": "The Magic of Facial Fresh Sprays in Your Skincare Routine",
+        "by": "by Halo Themes",
+        "date": "11/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-6.jpg?v=1691722482&width=1000"
+      },
+      {
+        "id": 2,
+        "tags": ["Product reviews", "Routine"],
+        "text": "Discover the Best Serums for Glowing, Youthful Skin",
+        "by": "by Halo Themes",
+        "date": "11/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-2.jpg?v=1691722439&width=1000"
+      },
+      {
+        "id": 3,
+        "tags": ["Beauty Tips", "Product reviews", "Routine"],
+        "text": "The Beauty Lab: Laboratory-Style Testing and Reviews of Beauty Products",
+        "by": "by Halo Themes",
+        "date": "26/07/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-4.jpg?v=1692085771&width=1420"
+      },
+      {
+        "id": 4,
+        "tags": ["Promotion Products", "Skincare"],
+        "text": "Timeless Beauty: Discover the Power of Anti-Aging Creams to Combat the Signs of Aging",
+        "by": "by Halo Themes",
+        "date": "21/06/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-3_0b9c8128-678d-4842-b6ac-1bd361296da4.jpg?v=1691556035&width=1420"
+      },
+      {
+        "id": 5,
+        "tags": ["Beauty Tips", "Makeup"],
+        "text": "Beauty Unveiled: Pro Makeup Tips to Enhance Your Natural Features",
+        "by": "by Halo Themes",
+        "date": "18/06/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-4.jpg?v=1692085771&width=1420"
+      },
+      {
+        "id": 6,
+        "tags": ["Product reviews", "Skincare"],
+        "text": "From Ordinary to Extraordinary: Elevating Your Skincare Routine with Oil Serums",
+        "by": "by Halo Themes",
+        "date": "09/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-1_197b09f7-8da3-4c5b-8b5a-a8bc91625179.jpg?v=1691555952&width=1420"
+      },
+      {
+        "id": 7,
+        "tags": ["Makeup", "Trending"],
+        "text": "Luscious Lips: Unveiling the Must-Have Lipstick Collection - A Comprehensive Review",
+        "by": "by Halo Themes",
+        "date": "09/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-5.jpg?v=1690273838&width=1420"
+      },
+      {
+        "id": 8,
+        "tags": ["Beauty Collection", "Makeup"],
+        "text": "Glowing Glamour: Unveiling the Makeup Collection Curated for Light Tones - A Review and Guide",
+        "by": "by Halo Themes",
+        "date": "29/05/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-7.png?v=1690278739&width=1420"
+      },
+      {
+        "id": 9,
+        "tags": ["Makeup", "Routine"],
+        "text": "Hand Care Essentials: Unlock the Secrets to Hydrated Hands with Our Top Moisturizing Creams",
+        "by": "by Halo Themes",
+        "date": "12/03/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-8.png?v=1690278699&width=1420"
+      }
+    ]
+  },
+  "products": {
+    "filter":"FILTER",
+    "availability": "Availability",
+    "in-stock":"In Stock",
+    "out-of-stock":"Out Of Stock",
+    "reset":"Reset",
     "skincare":"Skincare",
-    "makeup":"Makeup",
-    "beauty":"Beauty Tips",
-    "products":"Products",
-    "routine":"Routine",
-    "copyright":"© 2024 Concept. All rights reserved.",
-    "refund":"Refund Policy",
-    "privacy":"Privacy Policy",
-    "terms":"Terms of service",
-    "shipping":"Shipping Policy",
-    "contact":" Contact Information",
-    "about-head":"ABOUT",
-    "about-us":"About us",
-    "contact-us":"Contact us",
-    "blog":"Blog",
-    "shop":"SHOP"
-
+    "brand": "Brand",
+    "product-type": "Product Type",
+    "product": "Product",
+    "products": "products",
+    "sort": "SORT",
+    "makeup":"Makeup"
+  },
+  "contact":{
+    "head":"Contact",
+    "first-p":" We're happy to answer questions or help you with returns.",
+    "second-p":" Please fill out the form below if you need assistance.",
+    "name":"Name",
+    "email":"Email",
+    "phone":"Phone Number",
+    "company":"Company",
+    "comment":"Comment",
+    "submit":"Submit Form",
+    "head-2":"Please Do Get In Touch!",
+    "p-3":" We'd love to hear from you. Please use the form to send us your message or ideaas. Or simply pop in for a cup of fresh tea and a cookie:",
+    "hours":"Opening Hours:",
+    "span-1":"Monday to Saturday: 9am - 10pm",
+    "span-2":"Sundays: 10am - 6pm",
+    "span-3":"Email: example@example.com",
+    "span-4":"Call us: (012)-345-6789",
+    "headquarter":"Headquarter:",
+    "span-5" :"1669 Ave Dermentum, Onsectetur Sagittis,",
+    "span-6":"CA 880986, United State",
+    "required":"Required"
+  },
+  "faqs":{
+    "head":"Theme FAQs",
+    "head-2":"Need help?",
+    "p":"Below FAQ are some common concerns of our clients beforepurchasing the theme. If you have other questions please just send to:",
+    "span":"seljan_huseynova@unec.edu.az",
+    "message":"Message us",
+    "contact":"Contact us"
+  },
+  "search":"Search",
+  "search-for-products":"Search for products...",
+  "account-modal":{
+    "head":"ACCOUNT",
+    "head-2":"CUSTOMER LOGIN",
+    "span":"Access your account information and settings below.",
+    "details":"Account Details",
+    "address":"Adresses",
+    "log-out":"Log Out",
+    "span-2":"Enjoy your shopping! Browse our latest collections now.",
+    "span-3":"If you are already registered, please log in.",
+    "span-4":"Don't have an account? Create and enjoy a new shopping experience.",
+    "button":"Start Shopping",
+    "button-2":"CREATE A NEW ACCOUNT",
+    "password":"Password",
+    "button-3":"LOG IN"
+  },
+  "wishlist": {
+    "head":"Wishlist",
+    "span":"You don't have any favorites yet",
+    "p":"Tap the heart on any product to save it to your favorites.",
+    "add":"Quick Add",
+    "button":"Clear All"
+  },
+  "cart":{
+    "head":"Your Cart",
+    "p":"Your cart is empty.",
+    "button":"Continue shopping"
   }
 }

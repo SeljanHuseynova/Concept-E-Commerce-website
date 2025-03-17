@@ -4,7 +4,6 @@ import { faqSections } from "../../Faqs";
 
 const FaqsAccordion = () => {
   const [openIndexes, setOpenIndexes] = useState(new Set());
-
   const toggleFaq = (index) => {
     setOpenIndexes((prevIndexes) => {
       const newIndexes = new Set(prevIndexes);
@@ -12,9 +11,6 @@ const FaqsAccordion = () => {
       return newIndexes;
     });
   };
-
-  
-
   return (
     <div className="faq-accordion">
       {faqSections.map((section, sectionIndex) => (

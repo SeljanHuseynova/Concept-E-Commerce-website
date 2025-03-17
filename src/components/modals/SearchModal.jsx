@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const SearchModal = ({ closeModal }) => {
+  const {t} = useContext(LanguageContext);
   const allProducts = useSelector((state) => state.products?.filteredProducts);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -22,10 +24,10 @@ const SearchModal = ({ closeModal }) => {
 console.log(filteredProducts)
   return (
     <div className="search-modal">
-      <h2>Search</h2>
+      <h2>{t("search")}</h2>
       <input
         type="text"
-        placeholder="Search for products..."
+        placeholder={t("search-for-products")}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

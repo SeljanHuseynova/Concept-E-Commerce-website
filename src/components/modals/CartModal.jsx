@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   increaseQuantity,
@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { AiOutlineMinus } from "react-icons/ai";
 import { HiOutlinePlus } from "react-icons/hi2";
-
-
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const CartModal = ({ closeModal }) => {
+  const {t} = useContext(LanguageContext);
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.users?.currentUser);
   const cart = useMemo(() => currentUser?.cart || [], [currentUser]);
@@ -50,12 +50,12 @@ const CartModal = ({ closeModal }) => {
 
   return (
     <div className="cart-modal">
-      <h2>Your Cart</h2>
+      <h2>{t("cart.head")}</h2>
       {cart.length === 0 ? (
         <div className="empty">
-          <p>Your cart is empty.</p>
+          <p>{t("cart.p")}</p>
           <Link to="/products" className="link" onClick={closeModal}>
-            Continue shopping
+          {t("cart.button")}
           </Link>
         </div>
       ) : (

@@ -1,29 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const GetInTouch = () => {
+  const {t} = useContext(LanguageContext);
   return (
     <div className="get-in-touch">
-      <h3>Please Do Get In Touch!</h3>
+      <h3>{t("contact.head-2")}</h3>
       <p>
-        We'd love to hear from you. Please use the form to send us your message
-        or ideaas. Or simply pop in for a cup of fresh tea and a cookie:
+      {t("contact.p-3")}
       </p>
       <div className="opening-hours">
-        <h6>Opening Hours:</h6>
+        <h6>{t("contact.hours")}</h6>
         <div className="top">
-          <span>Monday to Saturday: 9am - 10pm</span>
-          <span>Sundays: 10am - 6pm</span>
+          <span>{t("contact.span-1")}</span>
+          <span>{t("contact.span-2")}</span>
         </div>
         <div className="bottom">
-          <span>Email: example@example.com</span>
-          <span>Call us: (012)-345-6789</span>
+          <span>{t("contact.span-3")}</span>
+          <span>{t("contact.span-4")}</span>
         </div>
       </div>
       <div className="heard-quarter">
-        <h6>Headquarter:</h6>
+        <h6>{t("contact.headquarter")}</h6>
         <div className="top">
-          <span>1669 Ave Dermentum, Onsectetur Sagittis,</span>
-          <span>CA 880986, United State</span>
+          <span>{t("contact.span-5")}</span>
+          <span>{t("contact.span-6")}</span>
         </div>
       </div>
     </div>

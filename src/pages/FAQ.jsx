@@ -1,34 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import BreamCrumb from "../components/Global/breadcrumb/BreamCrumb";
-import { Link } from "react-router";
 import { AiFillMessage } from "react-icons/ai";
 import { SiTinyletter } from "react-icons/si";
 import FaqsAccordion from "../components/faq/FaqsAccordion";
+import { LanguageContext } from "../context/LanguageProvider";
 
 const FAQ = () => {
+  const {t} = useContext(LanguageContext);
   return (
     <div className="faq-container">
       <BreamCrumb />
-      <h2>Theme FAQs</h2>
+      <h2>{t("faqs.head")}</h2>
       <div className="main">
         <div className="left">
           <div className="content">
-            <h6>Need help?</h6>
+            <h6>{t("faqs.head-2")}</h6>
             <p>
-              Below FAQ are some common concerns of our clients before
-              purchasing the theme. If you have other questions, please just
-              send it to:
+            {t("faqs.p")}
             </p>
-            <span>seljan_huseynova@unec.edu.az</span>
+            <span>{t("faqs.span")}</span>
           </div>
           <div className="contact-us">
-            <div className="contact">
+            <div className="contact-faq">
               <AiFillMessage className="icon" />
-              <span>Message Us</span>
+              <span>{t("faqs.message")}</span>
             </div>
-            <div className="contact">
+            <div className="contact-faq">
               <SiTinyletter className="icon" />
-              <span>Contact Us</span>
+              <span>{t("faqs.contact")}</span>
             </div>
           </div>
         </div>

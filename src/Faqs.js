@@ -60,26 +60,25 @@ export const faqSections = [
         A: "11:00 AM to 09:00 PM (All days).",
       },
       {
-        Q:"Do you have any COVID restrictions at your stores at this point in time?",
-        A:"We encourage everyone to follow basic safety measures. The COVID restrictions are dependent on the store our customer is visiting."
+        Q: "Do you have any COVID restrictions at your stores at this point in time?",
+        A: "We encourage everyone to follow basic safety measures. The COVID restrictions are dependent on the store our customer is visiting.",
       },
       {
-        Q:"Is your store open on all days?",
-        A:"Yes, our stores are open on all days."
+        Q: "Is your store open on all days?",
+        A: "Yes, our stores are open on all days.",
       },
       {
-        Q:"Are pets allowed inside the store?",
-        A:"We love pets but to avoid any risk they are not allowed inside the store."
+        Q: "Are pets allowed inside the store?",
+        A: "We love pets but to avoid any risk they are not allowed inside the store.",
       },
       {
-        Q:"Do you offer planning services?",
-        A:"We offer various planning services either via Online/Store or at home, based on your needs we will call you."
+        Q: "Do you offer planning services?",
+        A: "We offer various planning services either via Online/Store or at home, based on your needs we will call you.",
       },
       {
-        Q:"Why are some articles out of stock?",
-        A:"Like many retailers, we’re experiencing some challenges with our supply owing to COVID and are therefore experiencing some availability issues."
+        Q: "Why are some articles out of stock?",
+        A: "Like many retailers, we’re experiencing some challenges with our supply owing to COVID and are therefore experiencing some availability issues.",
       },
-
     ],
   },
 ];

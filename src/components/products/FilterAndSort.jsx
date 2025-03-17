@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { useDispatch } from "react-redux";
 import Modal from "../modals/Modal";
+import Sort from "./Sort";
 import {
   setAvailability,
   setBrand,
@@ -10,20 +11,35 @@ import {
   resetFilter,
 } from "../../redux/productsSlice";
 import { IoIosColorFilter } from "react-icons/io";
-import Sort from "./Sort";
+import { LanguageContext } from "../../context/LanguageProvider";
+
 const FilterAndSort = ({ products }) => {
-  const dispatch = useDispatch();
-  const [openFilter, setOpenFilter] = useState(null);
+  const { t } = useContext(LanguageContext);
   const [selectedFilters, setSelectedFilters] = useState({
     availability: null,
     brand: null,
     category: null,
     subCategory: null,
   });
+  const dispatch = useDispatch();
+  const [openFilter, setOpenFilter] = useState(null);
   const filterRef = useRef(null);
+
   const toggleFilter = (filter) => {
     setOpenFilter(openFilter === filter ? null : filter);
   };
+
+  const handleSelect = (filterType, value) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [filterType]: value,
+    }));
+    if (filterType === "availability") dispatch(setAvailability(value));
+    if (filterType === "brand") dispatch(setBrand(value));
+    if (filterType === "category") dispatch(setCategory(value));
+    if (filterType === "subCategory") dispatch(setSubCategory(value));
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
@@ -36,43 +52,32 @@ const FilterAndSort = ({ products }) => {
     };
   }, []);
 
-  const handleSelect = (filterType, value) => {
-    setSelectedFilters((prev) => ({
-      ...prev,
-      [filterType]: value,
-    }));
-    if (filterType === "availability") dispatch(setAvailability(value));
-    if (filterType === "brand") dispatch(setBrand(value));
-    if (filterType === "category") dispatch(setCategory(value));
-    if (filterType === "subCategory") dispatch(setSubCategory(value));
+  const [modalType, setModalType] = useState(null);
+  const openModal = (type) => {
+    setModalType(type);
   };
-  const handleReset = (filterType) => {
-    setSelectedFilters((prev) => ({
-      ...prev,
-      [filterType]: null,
-    }));
-    dispatch(resetFilter(filterType));
+  const closeModal = () => {
+    setModalType(null);
   };
+
   return (
     <div className="filter-sort-container" ref={filterRef}>
       <div
         className="mobile-filter-container"
-        onClick={() => setOpenFilter("filter")}
+        onClick={() => openModal("filter")}
       >
         <IoIosColorFilter className="icon" />
-        <span>FILTER</span>
+        <span>{t("products.filter")}</span>
       </div>
-
       <div className="filter-container">
         {[
           {
-            type: "availability",
-            label: "Availability",
+            key: "availability",
             options: ["In Stock", "Out Of Stock"],
+            label: "availability",
           },
           {
-            type: "brand",
-            label: "Brand",
+            key: "brand",
             options: [
               "LAORIV",
               "FURTUNA",
@@ -81,45 +86,55 @@ const FilterAndSort = ({ products }) => {
               "RARE BEAUTY",
               "KOSAS",
             ],
+            label: "brand",
           },
           {
-            type: "category",
-            label: "Product Type",
-            options: ["Skincare", "Makeup"],
+            key: "category",
+            options: ["skincare", "makeup"],
+            label: "product-type",
           },
           {
-            type: "subCategory",
-            label: "Product",
-            options: ["serum", "cream", "lotion", "gloss", "blush", "mascara", "shampoo"],
+            key: "subCategory",
+            options: [
+              "serum",
+              "cream",
+              "lotion",
+              "gloss",
+              "blush",
+              "mascara",
+              "shampoo",
+            ],
+            label: "product",
           },
-        ].map(({ type, label, options }) => (
-          <div key={type} className="filter" onClick={() => toggleFilter(type)}>
-            <span>{label}</span>
+        ].map(({ key, options, label }) => (
+          <div className="filter" key={key} onClick={() => toggleFilter(key)}>
+            <span>{t(`products.${label}`)}</span>
             <GoChevronDown className="icon" />
-            <div
-              className={`filter-div ${openFilter === type ? "open" : ""}`}
-            >
+            <div className={`filter-div ${openFilter === key ? "open" : ""}`}>
               {options.map((option) => (
                 <span
                   key={option}
-                  className={selectedFilters[type] === option ? "selected" : ""}
-                  onClick={() => handleSelect(type, option)}
+                  className={selectedFilters[key] === option ? "selected" : ""}
+                  onClick={() => handleSelect(key, option)}
                 >
                   {option}
                 </span>
               ))}
-              <span
-                className="reset"
-                onClick={() => handleReset(type)}
-              >
-                Reset
+              <span className="reset" onClick={() => handleSelect(key, null)}>
+                {t("products.reset")}
               </span>
             </div>
           </div>
         ))}
       </div>
-     <Sort toggleFilter={toggleFilter} products={products} openFilter={openFilter}/>
+      <Sort
+        toggleFilter={toggleFilter}
+        products={products}
+        openFilter={openFilter}
+      />
+      {modalType && <Modal closeModal={closeModal} modalType={modalType} />}
     </div>
   );
 };
+
 export default FilterAndSort;

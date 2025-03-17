@@ -6,7 +6,7 @@
     "blog": "Bloq",
     "contact": "Əlaqə",
     "faq": "Suallar",
-    "announcement": "120$-dan yuxarı sifarişlərdə PULSUZ ÇATDIRILMA"
+    "announcement": "120$-dan yuxarı sifarişlər üçün PULSUZ ÇATDIRILMA"
   },
   "home": {
     "discover": "Kosmetikanın Sənətini Kəşf Edin",
@@ -14,55 +14,206 @@
     "what-new": "Yeniliklər",
     "shop-new-arrivals": "YENİ GƏLƏNLƏRİ AL",
     "spotlight": "Seçilmiş Məhsullar",
-    "shop": "Dəbli makiyaj və dəriyə qulluq məhsullarımızla təbii gözəlliyinizi vurğulayın və özünüzə inamınızı artırın.",
+    "shop": "Təbii gözəlliyinizi ön plana çıxarın və özünüzə inamınızı artırın – dəbli makiyaj və dəriyə qulluq məhsullarımızla.",
     "shop-now": "İNDİ AL",
     "quotes": [
       {
-        "quote": "NIMO gözəllik dünyasının ən son trendlərini hamıdan əvvəl təqdim etməsi ilə tanınır.",
+        "quote": "NIMO, gözəllik dünyasında ən yeni trendləri hamıdan əvvəl təqdim etməklə məşhurdur.",
         "brand": "ELLE"
       },
       {
-        "quote": "NIMO kosmetikası inqilabi bir yenilikdir! Yüksək keyfiyyət, möhtəşəm qablaşdırma.",
+        "quote": "NIMO kosmetikası inqilabi yenilikdir! Yüksək keyfiyyət, möhtəşəm dizayn.",
         "brand": "FENTY"
       },
       {
-        "quote": "NIMO-nun göz kölgələri mükəmməldir. Zəngin rənglər, asan qarışdırılma, istənilən görünüş mümkündür!",
+        "quote": "NIMO-nun göz kölgələri möhtəşəmdir. Canlı rənglər, asan qarışdırma, hər görünüş mümkündür!",
         "brand": "DOVINE"
       }
     ],
     "marquee": {
-      "skin": "Həssas dəri",
-      "natural": "Təbii tərkib"
+      "skin": "Həssas Dəri",
+      "natural": "Təbii Tərkib"
     },
     "enchance": {
       "collection": "Enchanté Kolleksiyası",
-      "heading": "LAORIV Cosmetics ilə gözəlliyinizi üzə çıxarın",
-      "first-paragraph": "Bir sıra canlı rənglər, dəbdəbəli teksturalar və qabaqcıl düsturları təqdim edərkən sonsuz imkanlar dünyasına dalın.",
-      "second-paragraph": "Son kolleksiyamızla makiyaj oyununuzu dəyişdirməyə və qeyri-adiliyi qəbul etməyə hazır olun.",
-      "button": "KOLLEKSİYANI KEŞFEDİN"
+      "heading": "LAORIV Kosmetika ilə Gözəlliyinizi Ortaya Çıxarın",
+      "first-paragraph": "Müxtəlif çalarlar, dəbdəbəli teksturalar və qabaqcıl formullarla dolu bir dünyaya dalın.",
+      "second-paragraph": "Makiyaj tərzinizi dəyişməyə və qeyri-adi gözəlliyinizi kəşf etməyə hazır olun.",
+      "button": "KOLLEKSİYANI KƏŞF EDİN"
     },
     "nimo": {
-      "paragraph": "NIMO Dəriyə Qulluq Rutinini kəşf edin. Dəriyə Qulluq Kosmetikamızla Gözəllik Potensialınızı açın",
+      "paragraph": "NIMO Dəriyə Qulluq Rutini ilə tanış olun. Skincare Kosmetikalarımızla gözəllik potensialınızı üzə çıxarın.",
       "button": "İNDİ AL"
-    }  
+    }
   },
   "footer": {
-      "left": " İlk sifarişinizdə 10% endirim qazanın və ən yeni gözəllik məhsullarını ilk siz kəşf edin.",
-      "skincare": "Dəriyə Qulluq",
-      "makeup": "Makiyaj",
-      "beauty": "Gözəllik Məsləhətləri",
-      "products": "Məhsullar",
-      "routine": "Rutın",
-      "copyright": "© 2024 Concept. Bütün hüquqlar qorunur.",
-      "refund": "Geri Qaytarma Siyasəti",
-      "privacy": "Gizlilik Siyasəti",
-      "terms": "Xidmət Şərtləri",
-      "shipping": "Çatdırılma Siyasəti",
-      "contact": " Əlaqə Məlumatı",
-      "about-head": "HAQQIMIZDA",
-      "about-us": "Haqqımızda",
-      "contact-us": "Bizimlə Əlaqə",
-      "blog": "Bloq",
-       "shop":"MAĞAZA"
-    }
+    "left": "İlk sifarişinizdə 10% endirim qazanın və ən yaxşı gözəllik yeniliklərini ilk siz kəşf edin.",
+    "skincare": "Dəriyə Qulluq",
+    "makeup": "Makiyaj",
+    "beauty": "Gözəllik Məsləhətləri",
+    "products": "Məhsullar",
+    "routine": "Rutininiz",
+    "copyright": "© 2024 Konsept. Bütün hüquqlar qorunur.",
+    "refund": "Geri Qaytarma Şərtləri",
+    "privacy": "Gizlilik Siyasəti",
+    "terms": "Xidmət Şərtləri",
+    "shipping": "Çatdırılma Siyasəti",
+    "contact": "Əlaqə Məlumatları",
+    "about-head": "HAQQIMIZDA",
+    "about-us": "Haqqımızda",
+    "contact-us": "Bizimlə əlaqə",
+    "blog": "Bloq",
+    "shop": "MAĞAZA"
+  },
+  "blogs": {
+    "heading": "CONCEPT'S Gözəllik Bloqları",
+    "list": [
+      {
+        "id": 1,
+        "tags": ["Gözəllik Məsləhətləri", "Yenilər", "Dəriyə Qulluq"],
+        "text": "Dəriyə Qulluq Rutininizdə Üz Spreylərinin Möcüzəsi",
+        "by": "by Halo Themes",
+        "date": "11/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-6.jpg?v=1691722482&width=1000"
+      },
+      {
+        "id": 2,
+        "tags": ["Məhsul Rəyləri", "Rutin"],
+        "text": "Parlaq və Gənc Dəri Üçün Ən Yaxşı Serumları Kəşf Edin",
+        "by": "by Halo Themes",
+        "date": "11/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-2.jpg?v=1691722439&width=1000"
+      },
+      {
+        "id": 3,
+        "tags": ["Gözəllik Məsləhətləri", "Məhsul Rəyləri", "Rutin"],
+        "text": "Gözəllik Laboratoriyası: Laboratoriya Üslublu Gözəllik Məhsullarının Testi və Rəyləri",
+        "by": "by Halo Themes",
+        "date": "26/07/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-4.jpg?v=1692085771&width=1420"
+      },
+      {
+        "id": 4,
+        "tags": ["Təqdimat Məhsulları", "Dəriyə Qulluq"],
+        "text": "Zamansız Gözəllik: Yaşlanma Əlamətləri ilə Mübarizə Aparan Kremlərin Gücünü Kəşf Edin",
+        "by": "by Halo Themes",
+        "date": "21/06/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-3_0b9c8128-678d-4842-b6ac-1bd361296da4.jpg?v=1691556035&width=1420"
+      },
+      {
+        "id": 5,
+        "tags": ["Gözəllik Məsləhətləri", "Makiyaj"],
+        "text": "Gözəllik Sirləri: Təbii Gözəlliyinizi Önə Çıxaran Peşəkar Makiyaj Məsləhətləri",
+        "by": "by Halo Themes",
+        "date": "18/06/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-4.jpg?v=1692085771&width=1420"
+      },
+      {
+        "id": 6,
+        "tags": ["Məhsul rəyləri", "Dəriyə Qulluq"],
+        "text": "Adidən Fövqəladəyə: Dəriyə Qulluq Rutininizi Yağ Serumları ilə Artırın",
+        "by": "by Halo Themes",
+        "date": "09/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-1_197b09f7-8da3-4c5b-8b5a-a8bc91625179.jpg?v=1691555952&width=1420"
+      },
+      {
+        "id": 7,
+        "tags": ["Makiyaj", "Trend"],
+        "text": "Luscious Dodaqlar: Mütləq Pomada Kolleksiyasının təqdimatı - Hərtərəfli İcmal",
+        "date": "09/08/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-5.jpg?v=1690273838&width=1420"
+      },
+      {
+        "id": 8,
+        "tags": ["Gözəllik Kolleksiyası", "Makiyaj"],
+        "text": "Glowing Glamour: Açıq tonlar üçün seçilmiş Makiyaj Kolleksiyasının təqdimatı - İcmal və Bələdçi",
+        "by": "by Halo Themes",
+        "date": "29/05/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-7.png?v=1690278739&width=1420"
+      },
+      {
+        "id": 9,
+        "tags": ["Makiyaj", "Rutin"],
+        "text": "Əllərə Qulluq Əsasları: Ən Yaxşı Nəmləndirici Kremlərimizlə Nəmləndirilmiş Əllərin Sirlərini Açın",
+        "date": "12/03/2023",
+        "img": "https://concept-theme.myshopify.com/cdn/shop/articles/beauty-blog-8.png?v=1690278699&width=1420"
+      }
+    ]
+  },
+  "products": {
+    "filter": "FILTER",
+    "availability": "Mövcudluğu",
+    "in-stock": "Stokda",
+    "out-of-stock": "Stokda yoxdur",
+    "reset": "Sıfırla",
+    "skincare": "Dəriyə qulluq",
+    "brand": "Marka",
+    "product-type": "Məhsul növü",
+    "product": "Məhsul",
+    "products": "məhsullar",
+    "sort": "SORT",
+    "makeup": "Makiyaj"
+  },
+  "contact": {
+    "head": "Əlaqə",
+    "first-p": "Biz suallarınızı cavablandırmaqdan və ya geri qaytarma məsələlərində kömək etməkdən məmnunuq.",
+    "second-p": "Zəhmət olmasa, kömək üçün aşağıdakı formu doldurun.",
+    "name": "Ad",
+    "email": "E-poçt",
+    "phone": "Telefon Nömrəsi",
+    "company": "Şirkət",
+    "comment": "Şərh",
+    "submit": "Formu Göndər",
+    "head-2": "Əlaqə Saxlayın!",
+    "p-3": "Sizdən eşitməkdən məmnunuq. Xahiş edirik, mesajınızı və ya fikrinizi göndərmək üçün formu istifadə edin. Və ya sadəcə təzə çay və peçenye içmək üçün gəlin:",
+    "hours": "İş Saatları:",
+    "span-1": "Bazar ertəsindən Şənbəyə qədər: 9:00 - 22:00",
+    "span-2": "Bazarlar: 10:00 - 18:00",
+    "span-3": "E-poçt: example@example.com",
+    "span-4": "Bizimlə əlaqə saxlayın: (012)-345-6789",
+    "headquarter": "Baş Ofis:",
+    "span-5": "1669 Ave Dermentum, Onsectetur Sagittis,",
+    "span-6": "CA 880986, ABŞ",
+    "required": "Tələb olunur"
+  },
+  "faqs": {
+    "head": "Suallar",
+    "head-2": "Köməyə ehtiyacınız var?",
+    "p": "Aşağıda, müştərilərimizin temayı almadan əvvəl tez-tez soruşduğu bəzi ümumi suallar yer alır. Əgər başqa suallarınız varsa, zəhmət olmasa bizə göndərin:",
+    "span": "seljan_huseynova@unec.edu.az",
+    "message": "Bizə mesaj göndərin",
+    "contact": "Bizimlə əlaqə saxlayın"
+  },
+  "search": "Axtar",
+  "search-for-products": "Məhsulları axtarın...",
+  "account-modal": {
+    "head": "HESAB",
+    "head-2": "MÜŞTƏRI GİRİŞİ",
+    "span": "Hesab məlumatlarınıza və parametrlərinizə aşağıda daxil ola bilərsiniz.",
+    "details": "Hesab Məlumatları",
+    "address": "Ünvanlar",
+    "log-out": "Çıxış",
+    "span-2": "Alış-verişinizdən zövq alın! İndi ən son kolleksiyalarımızı nəzərdən keçirin.",
+    "span-3": "Əgər artıq qeydiyyatdan keçmisinizsə, zəhmət olmasa daxil olun.",
+    "span-4": "Hesabınız yoxdursa? Yeni alış-veriş təcrübəsindən zövq almaq üçün hesab yaradın.",
+    "button": "Alış-verişə Başlayın",
+    "button-2": "YENİ HESAB YARADIN",
+    "password": "Parol",
+    "button-3": "DAXİL OL"
+  },
+ "wishlist": {
+    "head": "İstək Siyahısı",
+    "span": "Hələ heç bir favoritiniz yoxdur",
+    "p": "Hər hansı bir məhsulun üzərində ürək işarəsini sıxın və onu favoritlərinizə əlavə edin.",
+    "add": "Sürətli Əlavə Et",
+    "button": "Hamısını Təmizlə"
+},
+"cart": {
+    "head": "Səbətiniz",
+    "p": "Səbətiniz boşdur.",
+    "button": "Alış-verişə davam et"
+}
+
+
+
 }

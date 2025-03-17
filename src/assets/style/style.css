@@ -3085,6 +3085,12 @@ header .icon-container .badge {
   font-weight: 600;
   color: var(--text-color);
 }
+@media (max-width: 600px) {
+  .admin-dashboard .log-out-btn {
+    font-size: 25px;
+    padding: 5px 20px;
+  }
+}
 .admin-dashboard .log-out-btn:hover {
   color: var(--second-text-color);
 }
@@ -3104,6 +3110,18 @@ header .icon-container .badge {
   padding: 10px 50px;
   font-size: 16px;
 }
+@media (max-width: 700px) {
+  .admin-dashboard .main .add-product {
+    padding: 8px 40px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .admin-dashboard .main .add-product {
+    padding: 7px 35px;
+    font-size: 14px;
+  }
+}
 .admin-dashboard .main .add-product:hover {
   background-color: black;
 }
@@ -3117,6 +3135,14 @@ header .icon-container .badge {
   width: 100%;
   max-width: 1000px;
   overflow-x: auto;
+}
+.admin-dashboard .main .product-table * {
+  font-family: var(--secondary-font-family);
+}
+@media (max-width: 560px) {
+  .admin-dashboard .main .product-table {
+    padding: 30px 5px;
+  }
 }
 .admin-dashboard .main .product-table table {
   width: 100%;
@@ -3136,6 +3162,12 @@ header .icon-container .badge {
     padding: 0;
   }
 }
+@media (max-width: 480px) {
+  .admin-dashboard .main .product-table table th,
+  .admin-dashboard .main .product-table table td {
+    font-size: 10px;
+  }
+}
 .admin-dashboard .main .product-table table th {
   background-color: var(--table-header-bg);
   font-weight: bold;
@@ -3146,10 +3178,13 @@ header .icon-container .badge {
   gap: 10px;
 }
 .admin-dashboard .main .product-table table td button {
+  background: none;
+  font-weight: 700;
   border: none;
-  padding: 8px 15px;
-  cursor: pointer;
+  padding: 6px 10px;
   transition: 0.3s;
+  height: 100%;
+  background-color: none;
 }
 .admin-dashboard .main .product-table table td button.remove-btn {
   background-color: red;
@@ -4464,7 +4499,7 @@ footer .bottom .right {
 .faq-container .main * {
   color: var(--text-color);
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main {
     flex-direction: column;
   }
@@ -4485,7 +4520,7 @@ footer .bottom .right {
   flex-grow: 1;
   min-height: 100vh;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .right {
     width: 100%;
   }
@@ -4498,7 +4533,7 @@ footer .bottom .right {
     padding: 20px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left {
     width: 100%;
   }
@@ -4511,7 +4546,7 @@ footer .bottom .right {
   justify-content: space-around;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left .contact-us {
     width: 30%;
     margin-bottom: 20px;
@@ -4567,40 +4602,41 @@ footer .bottom .right {
     padding-right: 10px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left .contact-us .contact:first-child {
     border: none;
   }
 }
-.faq-container .main .left .contact-us .contact {
+.faq-container .main .left .contact-us .contact-faq {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1050px) {
-  .faq-container .main .left .contact-us .contact {
+@media (max-width: 1111px) {
+  .faq-container .main .left .contact-us .contact-faq {
     margin: 20px;
   }
 }
 @media (max-width: 1111px) {
-  .faq-container .main .left .contact-us .contact {
+  .faq-container .main .left .contact-us .contact-faq {
     margin: 14px;
   }
 }
-.faq-container .main .left .contact-us .contact span {
+.faq-container .main .left .contact-us .contact-faq span {
   margin-top: 5px;
 }
 @media (max-width: 1260) {
-  .faq-container .main .left .contact-us .contact span {
+  .faq-container .main .left .contact-us .contact-faq span {
     font-size: 15px;
   }
 }
-.faq-container .main .left .contact-us .contact .icon {
+.faq-container .main .left .contact-us .contact-faq .icon {
   font-size: 27px;
 }
 @media (max-width: 1260px) {
-  .faq-container .main .left .contact-us .contact .icon {
+  .faq-container .main .left .contact-us .contact-faq .icon {
     font-size: 25px;
   }
 }
@@ -4617,7 +4653,7 @@ footer .bottom .right {
     font-size: 14px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left span {
     font-size: 15px;
   }
@@ -4639,7 +4675,7 @@ footer .bottom .right {
     font-size: 17px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left h6 {
     font-size: 18px;
   }
@@ -4657,7 +4693,7 @@ footer .bottom .right {
     font-size: 14px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .main .left p {
     font-size: 16px;
   }
@@ -4683,7 +4719,7 @@ footer .bottom .right {
   font-family: var(--main-font-family);
   margin-bottom: 15px;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1111px) {
   .faq-container .faq-accordion h3 {
     margin-top: 15px;
   }
@@ -5746,9 +5782,19 @@ footer .bottom .right {
 .blog-page .third-blogs .row {
   padding: 30px;
 }
+@media (max-width: 460px) {
+  .blog-page .third-blogs .row {
+    padding: 0;
+  }
+}
 .blog-page .third-blogs .row .blog-card {
   margin: 20px;
   display: flex;
+}
+@media (max-width: 900px) {
+  .blog-page .third-blogs .row .blog-card {
+    flex-direction: column;
+  }
 }
 .blog-page .third-blogs .row .blog-image {
   width: 100%;
@@ -5772,12 +5818,25 @@ footer .bottom .right {
   gap: 20px;
   padding: 50px;
 }
+.blog-page .third-blogs .row .blog-content * {
+  color: var(--text-color);
+}
 .blog-page .third-blogs .row .blog-content h3 {
   font-family: var(--main-font-family);
   font-weight: 600;
 }
+@media (max-width: 1200px) {
+  .blog-page .third-blogs .row .blog-content h3 {
+    font-size: 25px;
+  }
+}
 .blog-page .third-blogs .row .blog-content * {
   font-family: var(--secondary-font-family);
+}
+@media (max-width: 1200px) {
+  .blog-page .third-blogs .row .blog-content {
+    padding: 25px;
+  }
 }
 .blog-page .third-blogs .row .blog-content .blog-meta {
   display: flex;

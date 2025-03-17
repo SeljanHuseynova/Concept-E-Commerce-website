@@ -56,11 +56,10 @@ const AdminDashboard = () => {
             <tbody>
               {products.map((product,index) => (
                 <tr key={product.id || index}>           
-                  <td>{product.name}</td>
+                  <td className="name">{product.name}</td>
                   <td>{product.brand}</td>
                   <td>${product.price}</td>
                   <td>{product.quantity}</td>
-
                   <td>
                     <button onClick={() => handleRemove(product.id)}>Remove</button>
                   </td>

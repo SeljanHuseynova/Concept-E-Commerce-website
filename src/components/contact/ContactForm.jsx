@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LanguageContext } from '../../context/LanguageProvider';
 
 const ContactForm = ({ currentUser }) => {
+  const {t} = useContext(LanguageContext);
   const [formData, setFormData] = useState({
     name: currentUser ? currentUser.name : '',
     email: '',
@@ -50,27 +52,27 @@ const ContactForm = ({ currentUser }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className='part'>
-        <label>Name<span>Required</span></label>
+        <label>{t("contact.name")}<span>{t("contact.required")}</span></label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} />
       </div>
       <div className='part'>
-        <label>Email<span>Required</span></label>
+        <label>{t("contact.email")}<span>{t("contact.required")}</span></label>
         <input type="email" name="email" value={formData.email} onChange={handleChange} />
       </div>
       <div className='part'>
-        <label>Phone Number<span>Required</span></label>
+        <label>{t("contact.phone")}<span>{t("contact.required")}</span></label>
         <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
         {phoneError && <span className="error">{phoneError}</span>}
       </div>
       <div className='part'>
-        <label>Company</label>
+        <label>{t("contact.company")}</label>
         <input type="text" name="company" value={formData.company} onChange={handleChange} />
       </div>
       <div className='part'>
-        <label>Comment</label>
+        <label>{t("contact.comment")}</label>
         <textarea className='comment'type="text" name="comment" value={formData.comment} onChange={handleChange} />
       </div>
-      <button type="submit">Submit Form</button>
+      <button type="submit">{t("contact.submit")}</button>
     </form>
   );
 };

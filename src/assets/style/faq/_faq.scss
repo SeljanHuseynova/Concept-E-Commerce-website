@@ -23,7 +23,7 @@
     * {
       color: var(--text-color);
     }
-    @media (max-width: 1050px) {
+    @media (max-width: 1111px) {
       flex-direction: column;
     }
     height: auto;
@@ -39,7 +39,7 @@
     justify-content: space-between;
     .right {
       width: 78%;
-      @media (max-width: 1050px) {
+      @media (max-width: 1111px) {
         width: 100%;
       }
       flex-basis: 75%;
@@ -50,11 +50,11 @@
       @media (max-width: 620px) {
         padding: 20px;
       }
-      @media (max-width: 1050px) {
+      @media (max-width: 1111px) {
         width: 100%;
       }
       .contact-us {
-        @media (max-width: 1050px) {
+        @media (max-width: 1111px) {
           width: 30%;
           margin-bottom: 20px;
           padding: 10px !important;
@@ -95,13 +95,14 @@
           @media (max-width: 1210px) {
             padding-right: 10px;
           }
-          @media (max-width: 1050px) {
+          @media (max-width: 1111px) {
             border: none;
           }
           border-right: 0.001rem solid rgba(163, 142, 142, 0.4);
         }
-        .contact {
-          @media (max-width: 1050px) {
+        .contact-faq {
+          text-align: center;
+          @media (max-width:1111px) {
             margin: 20px;
           }
           @media (max-width: 1111px) {
@@ -135,7 +136,7 @@
         @media (max-width: 1100px) {
           font-size: 14px;
         }
-        @media (max-width: 1050px) {
+        @media (max-width: 1111px) {
           font-size: 15px;
         }
       }
@@ -151,7 +152,7 @@
         @media (max-width: 1100px) {
           font-size: 17px;
         }
-        @media (max-width: 1050px) {
+        @media (max-width: 1111px) {
           font-size: 18px;
         }
       }
@@ -163,7 +164,7 @@
         @media (max-width: 1100px) {
           font-size: 14px;
         }
-        @media (max-width: 1050px) {
+        @media (max-width: 1111px) {
           font-size: 16px;
         }
         @media (max-width: 440px) {
@@ -185,7 +186,7 @@
     h3 {
       font-family: var(--main-font-family);
       margin-bottom: 15px;
-      @media (max-width: 1050px) {
+      @media (max-width: 1111px) {
         margin-top: 15px;
       }
       @media (max-width: 650px) {

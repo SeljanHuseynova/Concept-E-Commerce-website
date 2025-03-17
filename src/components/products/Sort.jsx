@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSort } from '../../redux/productsSlice';
 import { GoChevronDown } from 'react-icons/go';
+import { LanguageContext } from '../../context/LanguageProvider';
 
 const Sort = ({ toggleFilter, products, openFilter }) => {
+  const {t} = useContext(LanguageContext);
   const dispatch = useDispatch();
   const [selectedSort, setSelectedSort] = useState(null);
 
@@ -14,8 +16,8 @@ const Sort = ({ toggleFilter, products, openFilter }) => {
 
   return (
     <div className="sort-container" onClick={() => toggleFilter("sort")}>
-      <span className="number-products">{products.length} products</span>
-      <span>SORT</span>
+      <span className="number-products">{products.length}  {t("products.products")}</span>
+      <span> {t("products.sort")}</span>
       <GoChevronDown className="icon" />
       <div className={`sort-div ${openFilter === "sort" ? "open" : ""}`}>
         {[

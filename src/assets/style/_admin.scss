@@ -39,6 +39,10 @@
   padding: 20px;
 
   .log-out-btn {
+    @media (max-width:600px) {
+      font-size: 25px;
+      padding: 5px 20px;
+    }
     padding: 5px 40px;
     text-decoration: underline;
     font-family: var(--main-font-family);
@@ -66,6 +70,14 @@
       background-color: black;
       padding: 10px 50px;
       font-size: 16px;
+      @media (max-width:700px) {
+        padding: 8px 40px;
+        font-size: 15px;
+      }
+      @media (max-width:450px) {
+        padding: 7px 35px;
+        font-size: 14px;
+      }
 
       &:hover {
         background-color: darken(black, 10%);
@@ -73,8 +85,14 @@
     }
 
     .product-table {
+      * {
+        font-family: var(--secondary-font-family);
+      }
       background-color: var(--faq-bg-color);
       padding: 30px;
+      @media (max-width: 560px) {
+        padding: 30px 5px;
+      }
       margin: 20px;
       display: flex;
       flex-direction: column;
@@ -94,6 +112,9 @@
             font-size: 11px;
             padding: 0;
           }
+          @media (max-width: 480px) {
+            font-size: 10px;
+          }
           padding: 12px;
           text-align: center;
           border-bottom: 1px solid var(--second-text-color);
@@ -112,10 +133,13 @@
           }
 
           button {
+            background: none;
+            font-weight: 700;
             border: none;
-            padding: 8px 15px;
-            cursor: pointer;
+            padding: 6px 10px;
             transition: 0.3s;
+            height: 100%;
+            background-color: none;
 
             &.remove-btn {
               background-color: red;

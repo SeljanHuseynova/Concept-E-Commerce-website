@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext} from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { loginUser } from "../../redux/accountSlice";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const LoginForm = ({ closeModal }) => {
+  const {t} = useContext(LanguageContext);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -46,7 +48,7 @@ const LoginForm = ({ closeModal }) => {
         className="user-name"
         name="email"
         autoComplete="email"
-        placeholder="Email"
+        placeholder={t("contact.email")}
         value={userData.email}
         onChange={handleChange}
       />
@@ -55,13 +57,13 @@ const LoginForm = ({ closeModal }) => {
         type="password"
         className="password"
         name="password"
-        placeholder="Password"
+        placeholder={t("account-modal.password")}
         autoComplete="current-password"
         value={userData.password}
         onChange={handleChange}
       />
 
-      <button type="submit">LOG IN</button>
+      <button type="submit">{t("account-modal.button-3")}</button>
     </form>
   );
 };
