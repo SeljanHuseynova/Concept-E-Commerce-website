@@ -26,6 +26,7 @@ import Adresses from "./pages/Adresses";
 import OrderCompleted from "./pages/OrderCompleted";
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import ForgetPassword from "./pages/ForgetPassword";
 function App() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products?.filteredProducts);
@@ -70,6 +71,7 @@ function App() {
           <Route path='/order-completed' element={currentUser ? <OrderCompleted /> : <Navigate to="/" />}/>
           <Route path='/contact' element={<Contact />} />
           <Route path="/CONCEPT'S-Beauty-Blogs" element={<Blog />} />
+          <Route path='account/recover' element={currentUser ? <ForgetPassword /> : <Navigate to="/"></Navigate>} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
         {!isCheckoutPage && <Footer />}

@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Breadcrumb from "../Global/breadcrumb/BreamCrumb";
 import { registerUser } from "../../redux/accountSlice";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import NewCustomers from "./NewCustomers";
 import Swal from "sweetalert2";
-
+import { LanguageContext } from "../../context/LanguageProvider";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const Register = () => {
+  const { t } = useContext(LanguageContext);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
@@ -70,17 +73,21 @@ const Register = () => {
       });
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); 
+  }, []);
+
   return (
     <>
       <Breadcrumb />
-      <div className="account-form">
-        <div className="account-title">
-          <h4>Create Account</h4>
+      <div className="account-form" data-aos="fade-up">
+        <div className="account-title" data-aos="fade-left">
+          <h4>{t("account.button")}</h4>
         </div>
         <div className="account-container">
           <form onSubmit={handleSubmit}>
-            <div className="part">
-              <label>First name</label>
+            <div className="part" data-aos="fade-right">
+              <label>{t("account.first")}</label>
               <input
                 type="text"
                 name="name"
@@ -89,8 +96,8 @@ const Register = () => {
               />
               {errors.name && <p className="error">{errors.name}</p>}
             </div>
-            <div className="part">
-              <label>Last name</label>
+            <div className="part" data-aos="fade-right">
+              <label>{t("account.last")}</label>
               <input
                 type="text"
                 name="surname"
@@ -100,8 +107,8 @@ const Register = () => {
               />
               {errors.surname && <p className="error">{errors.surname}</p>}
             </div>
-            <div className="part">
-              <label>Email</label>
+            <div className="part" data-aos="fade-right">
+              <label>{t("account.email")}</label>
               <input
                 type="email"
                 name="email"
@@ -111,8 +118,8 @@ const Register = () => {
               />
               {errors.email && <p className="error">{errors.email}</p>}
             </div>
-            <div className="part">
-              <label>Password</label>
+            <div className="part" data-aos="fade-right">
+              <label>{t("account.password")}</label>
               <input
                 type="password"
                 name="password"
@@ -122,9 +129,10 @@ const Register = () => {
               />
               {errors.password && <p className="error">{errors.password}</p>}
             </div>
-            <button type="submit">REGISTER</button>
+            <button type="submit" data-aos="fade-up">{t("account.register")}</button>
+            <Link to='/login' className="log-in">Already have an account?</Link>
           </form>
-          <NewCustomers />
+          <NewCustomers data-aos="fade-up" />
         </div>
       </div>
     </>

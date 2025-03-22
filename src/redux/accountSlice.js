@@ -357,7 +357,43 @@ export const fetchAddress = createAsyncThunk(
       return rejectWithValue(error.response?.data?.message || error.message);
     }
   }
-);;
+);
+//forget password
+export const forgetPassword = createAsyncThunk(
+  "users/forgetPassword",
+  async ({ email, newPassword }, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${accountUrl}?email=eq.${email}`, {
+        headers,
+      });
+
+      console.log("Supabase response:", response.data);
+
+      if (!response.data || response.data.length === 0) {
+        toast.error("Email not found");
+        return rejectWithValue("Email not found");
+      }
+
+      if (newPassword.length < 8) {
+        toast.error("Password must be at least 8 characters");
+        return rejectWithValue("Password must be at least 8 characters");
+      }
+
+      await axios.patch(
+        `${accountUrl}?email=eq.${email}`,
+        { password: newPassword },
+        { headers }
+      );
+
+      toast.success("Password updated successfully!");
+      return { email, newPassword };
+    } catch (error) {
+      console.error("Error during password reset:", error);
+      toast.error("Password reset failed");
+      return rejectWithValue(error.response?.data || "Password reset failed");
+    }
+  }
+);
 
 const initialState = {
   currentUser: JSON.parse(localStorage.getItem("currentUser")) || null,

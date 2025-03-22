@@ -199,21 +199,66 @@
     "button": "Alış-verişə Başlayın",
     "button-2": "YENİ HESAB YARADIN",
     "password": "Parol",
-    "button-3": "DAXİL OL"
+    "button-3": "DAXİL OL",
+    "forgot": "Parolu sıfırla"
   },
- "wishlist": {
+  "wishlist": {
     "head": "İstək Siyahısı",
     "span": "Hələ heç bir favoritiniz yoxdur",
     "p": "Hər hansı bir məhsulun üzərində ürək işarəsini sıxın və onu favoritlərinizə əlavə edin.",
     "add": "Sürətli Əlavə Et",
     "button": "Hamısını Təmizlə"
-},
-"cart": {
+  },
+  "cart": {
     "head": "Səbətiniz",
     "p": "Səbətiniz boşdur.",
     "button": "Alış-verişə davam et"
-}
-
-
-
+  },
+  "account": {
+    "head": "Daxil ol",
+    "email": "E-poçt",
+    "password": "Şifrə",
+    "new": "Yeni Müştərilər",
+    "p": "Bizimlə hesab yaradın və siz bunları edə biləcəksiniz:",
+    "li-1": "Daha sürətli ödəmə edin",
+    "li-2": "Bir neçə çatdırılma ünvanı saxlayın",
+    "li-3": "Sifariş tarixçənizə baxın",
+    "li-4": "Yeni sifarişləri izləyin",
+    "li-5": "Məhsulları Arzu Siyahınıza əlavə edin",
+    "button": "Hesab Yaradın",
+    "create": "Hesab Yaradın",
+    "first": "Ad",
+    "last": "Soyad",
+    "account": "Hesab",
+    "log-out": "Çıxış",
+    "orders": "Siz hələ sifariş verməmisiniz.",
+    "address": "Ünvanlara baxın",
+    "addresses": "Ünvanlar",
+    "add-address": "Yeni ünvan əlavə edin",
+    "edit": "Redaktə et",
+    "delete": "Sil",
+    "register": "DAXİL OL",
+    "new-password": "Yeni parol",
+    "cancel": "Ləğv edin"
+  },
+  "about": {
+    "head": "Haqqımızda",
+    "p": "CONCEPT – makiyaj və dəriyə qulluq üçün ideal məkan.",
+    "head-2": "Baxışımız",
+    "head-3": "Missiyamız",
+    "vision": "Baxışımız ən mənalı, gözəl və əlçatan məhsulları istehsal və dizayn etməkdir. Bunun üçün keyfiyyətli məhsulları, insanları və dəyərləri bir araya gətirərək gözəl ideyaları gerçəyə çeviririk. Komandamız hər bir layihəni fərdi yanaşma ilə dəstəkləyir ki, müştərilər tamamilə özünəməxsus layihə və ya mebel parçaları yarada bilsinlər – həm ehtiyaclarına, həm də büdcələrinə uyğun olaraq.",
+    "mission": "Gözəl ev qur – Gözəl planet qur. Biz planetimizə hörmət edirik. Çevrəyə təsirimizi azaltmaq üçün müsbət addımlar atırıq. Bizim üçün bu, məsuliyyətli pərakəndə satış deməkdir. Bu hədəfə çatmaq üçün bir sıra məqsədlər müəyyən etmişik. Bunlara məhsul qablaşdırmalarında lazımsız plastikdən imtina etmək və ətraf mühitə ən çox təsir edən materialların 100% davamlı mənbələrdən əldə olunmasını təmin etmək daxildir.",
+    "quote": "“Evinizlə bağlı biz inanırıq ki, siz hər şeyi əldə edə bilərsiniz: gözəl dizayn və keyfiyyəti münasib qiymətə. Biz hər bir dizayn elementi və sevgi ilə yaratdığımız mebel parçaları ilə məkanınıza həyat veririk.”",
+    "author": "Annie Lee - CEO, Concept-in təsisçisi",
+    "rate": "5 üzərindən 5",
+    "head-4": "Biz Kimik?",
+    "head-5": "Nə Edirik?",
+    "p-1": "CONCEPT, ev üçün hər şeyin ünvanıdır. Hər kəsə, hər yerdə öz ev hissini yaratmağa kömək edən bir məkan. Biz evinizin hər otağı üçün yaxşı dizayn edilmiş məhsullar və həllər təqdim edirik. Sizə tam sizin üçün uyğun olan məkanlar yaratmaq imkanı veririk.",
+    "p-2": "Bizim üçün ev hər şeyin başlanğıcıdır və əsas prioritetimizdir. Sizə ən çox istədiyiniz məhsulları təqdim etməkdə mütəxəssisik və ev ehtiyaclarınızın müdafiəçisiyik.",
+    "p-3": "Evi dizayn edib mebellə təmin etmək üçün mükəmməl həllərimiz var və onu həqiqi bir evə çeviririk. Biz, yaşayış məkanları üçün yüksək keyfiyyətli, xüsusi hazırlanmış və müştərinin tələbinə uyğun dizayn edilmiş mebellərlə tam və koordinasiyalı interyer layihələrini idarə edirik.",
+    "community": "Concept İcması",
+    "span": "Rahatlıq və üslubun mükəmməl harmoniyada qovuşduğu yer",
+    "button": "İcəmizə Qoşulun"
+  },
+   "not-found":"Səhifə tapılmadı"
 }

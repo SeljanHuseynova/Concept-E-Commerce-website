@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { accountUrl, headers } from "../supabase";
 import AdressModal from "../components/modals/AdressModal";
 import BreamCrumb from "../components/Global/breadcrumb/BreamCrumb";
+import { LanguageContext } from "../context/LanguageProvider";
 
 const Adresses = () => {
+  const {t} = useContext(LanguageContext);
   const [adresses, setAdresses] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedAdress, setSelectedAdress] = useState(null);
@@ -61,32 +63,30 @@ const Adresses = () => {
     <>
       <BreamCrumb />
       <div className="addresses">
-        <h2>Addresses</h2>
+        <h2>{t("account.addresses")}</h2>
         <button onClick={() => openModal()} className="add-btn">
-          Add a new address
+        {t("account.add-address")}
         </button>
 
-        {adresses.length ? (
+        {adresses.length && (
           <ul>
             {adresses.map((adress, index) => (
               <li key={index}>
                 <div className="address"> {adress}</div>
                 <div className="buttons">
                   <button onClick={() => openModal(adress)} className="edit">
-                    Edit
+                  {t("account.edit")}
                   </button>
                   <button
                     onClick={() => deleteAdress(adress)}
                     className="delete"
                   >
-                    Delete
+                    {t("account.delete")}
                   </button>
                 </div>
               </li>
             ))}
           </ul>
-        ) : (
-          <p>No addresses available.</p>
         )}
 
         {modalOpen && (

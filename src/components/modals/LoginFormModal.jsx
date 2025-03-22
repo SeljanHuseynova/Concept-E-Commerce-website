@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState,useContext} from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { loginUser } from "../../redux/accountSlice";
 import { LanguageContext } from "../../context/LanguageProvider";
 
 const LoginForm = ({ closeModal }) => {
-  const { t } = useContext(LanguageContext);
+  const {t} = useContext(LanguageContext);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -42,30 +42,26 @@ const LoginForm = ({ closeModal }) => {
   return (
     <form onSubmit={handleSubmit}>
       {error && <p className="error">{error}</p>}
-      <div className="part">
-        <label>{t("account.email")}</label>
-        <input
-          type="text"
-          className="user-name"
-          name="email"
-          autoComplete="email"
-          placeholder={t("contact.email")}
-          value={userData.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="part">
-        <label>{t("account.password")}</label>
-        <input
-          type="password"
-          className="password"
-          name="password"
-          placeholder={t("account-modal.password")}
-          autoComplete="current-password"
-          value={userData.password}
-          onChange={handleChange}
-        />
-      </div>
+
+      <input
+        type="text"
+        className="user-name"
+        name="email"
+        autoComplete="email"
+        placeholder={t("contact.email")}
+        value={userData.email}
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        className="password"
+        name="password"
+        placeholder={t("account-modal.password")}
+        autoComplete="current-password"
+        value={userData.password}
+        onChange={handleChange}
+      />
 
       <button type="submit">{t("account-modal.button-3")}</button>
     </form>

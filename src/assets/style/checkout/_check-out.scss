@@ -286,14 +286,5 @@
 }
 
 .order-completed {
-  display: flex;
-  flex-direction: column;
-  .completed-animation {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    .animation {
-      width: 400px !important;
-    }
-  }
+ margin-top: -110px;
 }

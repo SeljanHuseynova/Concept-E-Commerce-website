@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { LanguageContext } from '../../context/LanguageProvider';
 
 const NewCustomers = () => {
+  const {t}= useContext(LanguageContext);
+  const location = useLocation();
   return (
     <div className="new-customers-container">
-    <div className='new-customers'>
-        <h5>New Customers</h5>
-        <span>Create an account with us and you'll be able to:</span>
+      <div className='new-customers'>
+        <h5>{t("account.new")}</h5>
+        <span>{t("account.p")}</span>
         <ul>
-            <li>Check out faster</li>
-            <li>Save multiple shipping addresses</li>
-            <li>Access your order history</li>
-            <li>Track new orders</li>
-            <li>Save items to your Wish List</li>
+          <li>{t("account.li-1")}</li>
+          <li>{t("account.li-2")}</li>
+          <li>{t("account.li-3")}</li>
+          <li>{t("account.li-4")}</li>
+          <li>{t("account.li-5")}</li>
         </ul>
-        <button>Create Account</button>
-        </div>
+        {location.pathname !== '/register' && (
+          <Link to='/register' className='link'>{t("account.button")}</Link>
+        )}
+      </div>
     </div>
   )
 }
