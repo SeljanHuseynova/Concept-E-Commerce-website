@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { addToCart } from "../../redux/accountSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { WishListContext } from "../../context/WishListProvider";
+import { WishListContext } from "../../context/WishListProviderNew";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router";

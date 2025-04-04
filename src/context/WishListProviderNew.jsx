@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 export const WishListContext = createContext();
-export const WishListProvider = ({ children }) => {
+export const WishListProviderNew = ({ children }) => {
   const [wishlist, setWishlist] = useState(() => {
     const savedWishlist = localStorage.getItem("wishlist");
     return savedWishlist ? JSON.parse(savedWishlist) : [];

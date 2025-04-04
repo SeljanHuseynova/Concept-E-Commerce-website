@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { WishListContext } from "../../context/WishListProvider";
+import { WishListContext } from "../../context/WishListProviderNew";
 import { addToCart } from "../../redux/accountSlice";
 const RecommendedProducts = () => {
   const products = useSelector((state) => state.products?.filteredProducts);

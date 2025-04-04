@@ -4,11 +4,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/accountSlice";
-import { WishListContext } from "../../context/WishListProvider";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LanguageContext } from "../../context/LanguageProvider";
+import { WishListContext } from "../../context/WishListProviderNew";
 
 const NewArrivals = ({ products }) => {
   const {t} = useContext(LanguageContext);

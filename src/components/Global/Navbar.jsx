@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo/concept.logo.png";
 import { LuMenu } from "react-icons/lu";
 import Modal from "../modals/Modal";
-import { WishListContext } from "../../context/WishListProvider";
+import { WishListContext } from "../../context/WishListProviderNew";
 import { LanguageContext } from "../../context/LanguageProvider";
 
 

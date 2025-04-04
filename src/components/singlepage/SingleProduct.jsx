@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect, useContext } from "react";
 import { addToCart } from "../../redux/accountSlice";
-import { WishListContext } from "../../context/WishListProvider";
+import { WishListContext } from "../../context/WishListProviderNew";
 import { CiHeart } from "react-icons/ci";
 import { FaEye, FaHeart } from "react-icons/fa";
 import { toast } from "react-toastify";

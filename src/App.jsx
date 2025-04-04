@@ -27,7 +27,8 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import ForgetPassword from "./pages/ForgetPassword";
 import Loader from "./components/Global/Loader";
-import { WishListProvider } from "./context/WishListProviderNew";
+import { WishListProviderNew } from "./context/WishListProviderNew";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ function App() {
       {loading && <Loader />} 
 
       {!loading && (
-        <WishListProvider>
+        <WishListProviderNew>
           {!isCheckoutPage && <Header currentUser={currentUser} />}
           <Routes>
             <Route path="/" element={<Home products={products} />} />
@@ -87,7 +88,7 @@ function App() {
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
           {!isCheckoutPage && <Footer />}
-        </WishListProvider>
+        </WishListProviderNew>
       )}
     </>
   );
