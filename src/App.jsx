@@ -15,7 +15,6 @@ import Header from "./components/Global/Header";
 import Footer from "./components/Global/Footer";
 import FloatingButtons from "./components/Global/FloatingButtons";
 import ScrollToTop from "./components/Global/ScrollToTop";
-import { WishListProvider } from "./context/WishListProvider";
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { fetchProducts } from "./redux/productsSlice";
@@ -28,6 +27,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import ForgetPassword from "./pages/ForgetPassword";
 import Loader from "./components/Global/Loader";
+import { WishListProvider } from "./context/WishListProvider";
 
 function App() {
   const dispatch = useDispatch();
