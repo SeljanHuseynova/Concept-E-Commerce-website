@@ -97,9 +97,6 @@ body {
   opacity: 0;
 }
 
-.swal2-popup * {
-  color: var(--text-color);
-}
 .swal2-popup h2 {
   font-family: var(--main-font-family);
   font-size: 40px;
@@ -125,7 +122,6 @@ body {
 .Toastify__toast {
   background-color: var(--primary-color);
   font-family: var(--secondary-font-family);
-  color: var(--text-color);
   font-size: 15px;
 }
 
