@@ -6,7 +6,8 @@
   transition: 0.3s all;
   cursor: none !important;
 }
-html,body {
+html,
+body {
   overflow-x: hidden;
 }
 .title {
@@ -60,7 +61,7 @@ html,body {
   position: fixed;
   width: 25px;
   height: 25px;
-  background-color: rgba(255, 205, 205, 0.5); /* Light Pink */
+  background-color: var(--cursor-main-color);
   border-radius: 50%;
   transition: transform 0.2s ease-out;
   z-index: 9998;
@@ -71,7 +72,7 @@ html,body {
   position: fixed;
   width: 6px;
   height: 6px;
-  background-color: rgb(253, 139, 139); /* Darker Pink */
+  background-color: var(--small-cursor-color);
   border-radius: 50%;
   transition: transform 0.1s ease-out, opacity 0.3s;
   z-index: 9999;
@@ -86,4 +87,39 @@ html,body {
 
 .cursor--small.hover {
   opacity: 0;
+}
+
+//alerts desing
+.swal2-popup {
+  * {
+    color: var(--text-color);
+  }
+  h2 {
+    font-family: var(--main-font-family);
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 15px;
+  }
+  .swal2-html-container {
+    font-family: var(--secondary-font-family);
+    font-size: 16px;
+  }
+  button {
+    outline: none;
+    background-color: var(--primary-color);
+    font-family: var(--secondary-font-family);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.06);
+      background-color: var(--second-primary-color) !important;
+    }
+  }
+}
+//toastfy 
+.Toastify__toast{
+  background-color: var(--primary-color);
+  font-family: var(--secondary-font-family);
+  color: var(--text-color);
+  font-size: 15px;
 }

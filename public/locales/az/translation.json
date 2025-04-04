@@ -6,7 +6,9 @@
     "blog": "Bloq",
     "contact": "Əlaqə",
     "faq": "Suallar",
-    "announcement": "120$-dan yuxarı sifarişlər üçün PULSUZ ÇATDIRILMA"
+    "announcement1": "120$-dən yuxarı sifarişlərdə PULSUZ ÇATDIRILMA",
+    "announcement2": "BÜTÜN DERMOKOSMETİK MƏHSULLARINDA 20% ENDİRİM!",
+    "announcement3": "VIP KLUBA QOŞULUN və eksklüziv endirimlər qazanın!"
   },
   "home": {
     "discover": "Kosmetikanın Sənətini Kəşf Edin",
@@ -184,6 +186,92 @@
     "message": "Bizə mesaj göndərin",
     "contact": "Bizimlə əlaqə saxlayın"
   },
+
+  "faqSections": [
+    {
+      "title": "Geri qaytarma, Zəmanətlər və Çatdırılma",
+      "faqs": [
+        {
+          "Q": "İnternetdən verdiyim sifarişi ləğv etdikdə geri ödəmə nə zaman olacaq?",
+          "A": "İnternet sifarişi üçün geri ödəmə müddəti, geri ödəmə verildikdən sonra 7-14 iş günü arasında olacaq."
+        },
+        {
+          "Q": "Sifarişimi verdikdən sonra onu ləğv edə bilərəmmi, geri ödəmə dərhal olacaqmı?",
+          "A": "Sifarişi təsdiq əlaqəsindən istifadə edərək ləğv edə bilərsiniz. Alternativ olaraq, əlavə dəstək üçün bizə +1 (090) 123-456 nömrəsi ilə əlaqə saxlaya bilərsiniz."
+        },
+        {
+          "Q": "Promo kodumu necə istifadə edə bilərəm?",
+          "A": "Kodunuzu tam olaraq olduğu kimi ödəmə zamanı daxil edin. QEYD: Kodunuzun minimum xərcləmə tələbi ola bilər (çatdırılma qiyməti daxil deyil)."
+        },
+        {
+          "Q": "Online alış-veriş etdiyim məhsulları mağazalarda geri qaytara bilərəmmi?",
+          "A": "Bəli, onlayn və ya kliklə və ya toplama ilə aldığınız məhsulları mağazalarda da qaytara bilərsiniz. İstifadə etdiyiniz məbləği asanlaşdırmaq üçün qəbzlə gəlməyinizi tövsiyə edirik. Geri qaytarma yalnız məhsulun çatdırılma və ya yığılma yerinin mağazanın olduğu eyni şəhərdə olması şərti ilə mümkündür."
+        },
+        {
+          "Q": "Şikayətimi onlayn izləmək mümkündürmü?",
+          "A": "Şikayət nömrəsi ilə müştəri dəstək komandamızla əlaqə saxlaya bilərsiniz və biz sizə daha yaxşı kömək edə bilərik."
+        },
+        {
+          "Q": "Sifariş zamanı ünvanımı seçdim, amma indi dəyişə bilərəmmi?",
+          "A": "Biz ünvanın yalnız kiçik dəyişikliklərini edə bilərik, amma poçt kodu dəyişdirilə bilməz. Bu barədə əlavə dəstək üçün zəhmət olmasa +1 (090) 123-456 nömrəsinə zəng edin."
+        },
+        {
+          "Q": "Şablonu yükləməkdə kömək alıram?",
+          "A": "Müştərilərinizə brendiniz haqqında məlumat vermək üçün üst mətn istifadə edin. Üslubunuza və hekayənizə uyğun şəkil və mətn seçin."
+        },
+        {
+          "Q": "Çatdırılmanı sürətləndirmək istəyirəm, bu mümkündürmü?",
+          "A": "Müştərilər çatdırılma tarixini öncədən dəyişdirə bilməzlər. Ancaq, çatdırılma tarixini mövcud olan vaxt şərtləri ilə uzatma imkanınız var."
+        }
+      ]
+    },
+    {
+      "title": "Xidmətlər",
+      "faqs": [
+        {
+          "Q": "Çatdırılmanın dəqiq vaxtını bilə bilərəmmi?",
+          "A": "Hal-hazırda, çatdırılma üçün dəqiq vaxt seçimi mümkün deyil. Nəqliyyat xidmətləri müştəri ilə əlaqə quraraq çatdırılma vaxtını bildirməyə çalışır."
+        },
+        {
+          "Q": "Çatdırılma vaxtında sifarişi ləğv etmək mümkündürmü?",
+          "A": "Çatdırılma tarixindən 24 saat əvvəl xidmətin ləğv edilməsi təqdirdə, çatdırılma haqqını geri alacağıq. Lakin, xidmətin ləğv edilməsinə səbəb olan xüsusi bir səbəb varsa, zəhmət olmasa zəng/chat və ya e-mail vasitəsilə əlaqə saxlayın."
+        },
+        {
+          "Q": "Məhsul mövcudluğunu necə yoxlaya bilərəm?",
+          "A": "Məhsulların mövcudluğunu qorumağa çalışırıq, lakin bəzi məhsulların yüksək tələbatı səbəbindən mövcud olmaya bilər. Məhsulun məlumat səhifələrində mövcudluğu yoxlaya bilərsiniz."
+        },
+        {
+          "Q": "Əlavə və ya dəyişdirilmiş aksesuarlar təklif edirsinizmi?",
+          "A": "Zəhmət olmasa bizimlə əlaqə saxlayın +1 (090) 123-456."
+        },
+        {
+          "Q": "Mağaza iş saatlarınız nədir?",
+          "A": "11:00-dan 09:00-a qədər (bütün günlər)."
+        },
+        {
+          "Q": "Hazırda mağazalarınızda COVID-19 məhdudiyyətləri varmı?",
+          "A": "Bütün müştərilərimizdən əsas təhlükəsizlik tədbirlərinə riayət etmələrini tövsiyə edirik. COVID-19 məhdudiyyətləri müştərinin ziyarət etdiyi mağazaya görə dəyişir."
+        },
+        {
+          "Q": "Mağazalarınız bütün günlər açıqdırmı?",
+          "A": "Bəli, mağazalarımız bütün günlər açıqdır."
+        },
+        {
+          "Q": "Ev heyvanları mağazaya daxil ola bilərmi?",
+          "A": "Biz heyvanları sevirik, amma riskdən qaçınmaq üçün onlar mağazaya daxil ola bilməzlər."
+        },
+        {
+          "Q": "Planlaşdırma xidmətləri təklif edirsinizmi?",
+          "A": "İhtiyaçlarınıza əsasən onlayn/mağaza və ya evdə planlaşdırma xidmətləri təklif edirik, biz sizi axtarırıq."
+        },
+        {
+          "Q": "Bəzi məhsullar niyə mövcud deyil?",
+          "A": "Bir çox pərakəndə kimi, COVID-19 səbəbindən təchizatla bağlı bəzi çətinliklərlə qarşılaşırıq və buna görə də bəzi məhsulların mövcudluğunda problemlər yaşanır."
+        }
+      ]
+    }
+  ],
+
   "search": "Axtar",
   "search-for-products": "Məhsulları axtarın...",
   "account-modal": {
@@ -260,5 +348,27 @@
     "span": "Rahatlıq və üslubun mükəmməl harmoniyada qovuşduğu yer",
     "button": "İcəmizə Qoşulun"
   },
-   "not-found":"Səhifə tapılmadı"
+  "not-found": "Səhifə tapılmadı",
+  "reviews": {
+    "name": "Rəylər",
+    "no-review": "Hələ rəy yoxdur. İlk yazan siz olun!",
+    "write": "ŞƏRHLƏR YAZIN"
+  },
+  "like": "You may also like",
+  "product-details": {
+    "desc": "Təsvir",
+    "benefits": "Faydaları",
+    "ingredients": "Tərkibi",
+    "how-to": "İstifadə Qaydası"
+  },
+  "product-info": {
+    "return": "15 gün ərzində pulsuz geri qaytarılma",
+    "shipping": "49%+ sifarişlərə pulsuz çatdırılma",
+    "harmful": "Zərərli kimyəvi maddələr yoxdur",
+    "fresh": "Təzə və təmiz məhsul"
+  },
+  "alert":{
+    "add":"səbətinizə əlavə edildi",
+    "please-log-in":"Səbətə əşyalar əlavə etmək üçün daxil olun."
+  }
 }

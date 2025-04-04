@@ -17,6 +17,7 @@
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
+    "emoji-mart": "^5.6.0",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.4",
     "i18next-http-backend": "^3.0.2",
@@ -31,6 +32,7 @@
     "react-router-dom": "^7.1.5",
     "react-toastify": "^11.0.5",
     "sass": "^1.83.4",
+    "styled-components": "^6.1.16",
     "sweetalert2": "^11.17.2"
   },
   "devDependencies": {

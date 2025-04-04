@@ -39,7 +39,7 @@
   padding: 20px;
 
   .log-out-btn {
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       font-size: 25px;
       padding: 5px 20px;
     }
@@ -70,11 +70,11 @@
       background-color: black;
       padding: 10px 50px;
       font-size: 16px;
-      @media (max-width:700px) {
+      @media (max-width: 700px) {
         padding: 8px 40px;
         font-size: 15px;
       }
-      @media (max-width:450px) {
+      @media (max-width: 450px) {
         padding: 7px 35px;
         font-size: 14px;
       }
@@ -189,16 +189,23 @@
         outline: none;
         color: white;
         background-color: black;
-        padding: 5px 10px;
+        padding: 8px 10px;
       }
       form {
         input,
         textarea {
-          padding: 1px 15px;
+          color: var(--text-color);
+          padding: 6px 15px;
+          border-color: var(--second-text-color);
+          outline: none;
+          background: none;
+          &::placeholder {
+            color: var(--second-text-color);
+          }
         }
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
       }
       display: flex;
       flex-direction: column;

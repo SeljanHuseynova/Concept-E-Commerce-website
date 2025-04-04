@@ -7,6 +7,9 @@ header {
     font-size: 15px;
     padding: 5px 0;
     font-weight: 400;
+    @media (max-width:550px) {
+      font-size: 13px;
+    }
   }
 
   nav {

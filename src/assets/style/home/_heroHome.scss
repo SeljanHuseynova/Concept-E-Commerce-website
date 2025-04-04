@@ -23,7 +23,7 @@
         overflow: hidden;
         display: inline-block;
         &:hover {
-          color: black;
+          color: var(--text-color);
         }
         &::before {
           content: "";

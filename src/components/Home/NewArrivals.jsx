@@ -22,7 +22,7 @@ const NewArrivals = ({ products }) => {
   const handleAddToCart = (product, e) => {
     e.preventDefault();
     if (!currentUser) {
-       toast.error("Please log in to add items to the cart.");
+       toast.error(t("alert.please-log-in"));
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));

@@ -8,7 +8,9 @@ import { WishListContext } from "../../context/WishListProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router";
+import { LanguageContext } from "../../context/LanguageProvider";
 const AllProducts = ({ products }) => {
+  const {t} = useContext(LanguageContext);
   const { wishlist, toggleWishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.users.currentUser);
@@ -17,12 +19,11 @@ const AllProducts = ({ products }) => {
   }, []);
   if (!products || products.length === 0) {
     return <div className="no-result">Loading or No Products Found</div>;
-    y;
   }
   const handleAddToCart = (product,e) => {
     e.preventDefault();
     if (!currentUser) {
-      toast.error("Please log in to add items to the cart.");
+      toast.error(t("alert.please-log-in"));
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));

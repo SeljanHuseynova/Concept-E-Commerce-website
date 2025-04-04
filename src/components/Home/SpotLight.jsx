@@ -4,6 +4,7 @@ import { TfiArrowLeft, TfiArrowRight } from "react-icons/tfi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { LanguageContext } from "../../context/LanguageProvider";
+import { Link } from "react-router";
 
 const SpotLight = ({ products }) => {
   const {t} = useContext(LanguageContext);
@@ -78,6 +79,7 @@ const SpotLight = ({ products }) => {
                     backgroundImage: `url(${selectedProduct.images[0]})`,
                   }}
                 ></div>
+                <Link to={`/products/${selectedProduct.id}`} className="link">
                 <div className="info">
                   <div className="icon-container" onClick={handlePrev}>
                     <TfiArrowLeft className="icon" />
@@ -91,6 +93,7 @@ const SpotLight = ({ products }) => {
                     <TfiArrowRight className="icon" />
                   </div>
                 </div>
+                </Link>
               </div>
             ) : (
               <p>Loading product...</p>

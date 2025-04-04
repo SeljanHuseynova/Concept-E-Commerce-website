@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 import DashboardModal from "../components/admin/DashboardModal";
 import { removeProduct } from "../redux/productsSlice";
 import Breadcrumb from "../components/Global/breadcrumb/BreamCrumb";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2"; 
+
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -29,8 +33,20 @@ const AdminDashboard = () => {
     setIsModalOpen(true);
   };
 
-  const handleRemove = (id) => {
-    dispatch(removeProduct(id));
+  const handleRemove = (product) => {
+    Swal.fire({
+      title: `Are you sure you want to remove ${product.name}?`,
+      text: "This action cannot be undone!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, remove it!",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeProduct(product.id));
+        toast.success("Product deleted successfully!");
+      }
+    });
   };
 
   return (
@@ -61,7 +77,7 @@ const AdminDashboard = () => {
                   <td>${product.price}</td>
                   <td>{product.quantity}</td>
                   <td>
-                    <button onClick={() => handleRemove(product.id)}>Remove</button>
+                    <button onClick={() => handleRemove(product)}>Remove</button>
                   </td>
                   <td>
                     <button onClick={() => openEditModal(product)}>Edit</button>

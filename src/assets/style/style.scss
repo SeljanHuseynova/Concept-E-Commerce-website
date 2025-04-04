@@ -22,10 +22,10 @@
 @import "./home/quotas";
 @import "./faq/faq";
 @import "./notFoundPage";
-@import './login/login';
-@import './contact';
+@import "./login/login";
+@import "./contact";
 @import "./blog";
-@import './about/about';
+@import "./about/about";
 
 :root {
   --primary-color: #fff9f9;
@@ -46,6 +46,9 @@
   --wishlist-icon-color: black;
   --close-btn: #e5e0e0;
   --faq-bg-color: #ebe5e5;
+  --cursor-main-color: rgba(255, 205, 205, 0.5);
+  --small-cursor-color: rgb(253, 139, 139);
+  --bg-color:white;
 }
 
 /* Dark mode */
@@ -68,6 +71,9 @@
   --wishlist-icon-color: white;
   --close-btn: #7e5559;
   --faq-bg-color: #978384;
+  --cursor-main-color: rgba(100, 50, 50, 0.7);
+  --small-cursor-color: rgb(180, 80, 80);
+  --bg-color:rgba(73, 6, 6, 0.3);
 }
 [data-theme="dark"] .navbar-brand img {
   filter: invert(100%);

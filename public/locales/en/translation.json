@@ -6,7 +6,9 @@
     "blog": "Blog",
     "contact": "Contact",
     "faq": "FAQ",
-    "announcement": "FREE SHIPPING on orders over $120"
+    "announcement1": "FREE SHIPPING on orders over $120",
+    "announcement2": "20% OFF on all skincare products!",
+    "announcement3": "JOIN VIP CLUB for exclusive discounts"
   },
   "home": {
     "discover": "Discover the Art of Cosmetics",
@@ -186,6 +188,90 @@
     "message": "Message us",
     "contact": "Contact us"
   },
+  "faqSections": [
+    {
+      "title": "Returns, Guarantees & Delivery",
+      "faqs": [
+        {
+          "Q": "When can I expect the refund for my online order that was cancelled?",
+          "A": "The refund timeline for an online order is 7-14 business days from the date the refund is issued."
+        },
+        {
+          "Q": "Can I cancel the order once placed, is the refund immediate?",
+          "A": "You can cancel the order via the link received in the order confirmation. Alternatively, you can contact us on the toll-free number +1 (090) 123-456 for further assistance."
+        },
+        {
+          "Q": "How can I use my promo code?",
+          "A": "Enter the code exactly as it appears during checkout. NOTE: Your code may have a minimum spend requirement (excluding delivery costs)."
+        },
+        {
+          "Q": "Can I return the items I bought online at one of the stores?",
+          "A": "Yes, items bought online or via click-and-collect can be returned at the stores as well. We recommend bringing the receipt as it will facilitate the process. Returns are only possible if the delivery/pickup location is in the same city as the store."
+        },
+        {
+          "Q": "Can I track my complaint online?",
+          "A": "You can contact our customer support team with the complaint reference number and we can assist you further."
+        },
+        {
+          "Q": "I selected an order address when placing the order, can it be changed now?",
+          "A": "We can assist with minor changes to the address, except for the postal code. For further support on this, please call +1 (090) 123-456."
+        },
+        {
+          "Q": "Can I get help uploading the template?",
+          "A": "Use overlay text to give your customers insight into your brand. Select images and text that match your style and story."
+        },
+        {
+          "Q": "I want to expedite the delivery, is that possible?",
+          "A": "Customers cannot advance the delivery date, but they can extend the delivery date based on available slots."
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "faqs": [
+        {
+          "Q": "Can I know the exact time of delivery?",
+          "A": "Currently, we do not have the option to select a specific delivery time slot. Transport service providers usually reach out to customers to inform them of the delivery time."
+        },
+        {
+          "Q": "Can I cancel my order at the time of delivery?",
+          "A": "If the service is canceled 24 hours before the scheduled delivery date, we will refund the delivery charges. If there is a specific reason for the cancellation, please reach out to us via call/chat or email for more support."
+        },
+        {
+          "Q": "How can I check product availability?",
+          "A": "We make every effort to maintain product availability, but due to high demand, some items may not always be in stock. You can check availability on the product information pages."
+        },
+        {
+          "Q": "Do you offer extra or replacement fittings?",
+          "A": "Please contact us at +1 (090) 123-456."
+        },
+        {
+          "Q": "What are your store hours?",
+          "A": "11:00 AM to 09:00 PM (every day)."
+        },
+        {
+          "Q": "Are there any COVID-19 restrictions at your stores right now?",
+          "A": "We encourage all customers to follow basic safety measures. The COVID-19 restrictions vary based on the store you are visiting."
+        },
+        {
+          "Q": "Are your stores open every day?",
+          "A": "Yes, our stores are open every day."
+        },
+        {
+          "Q": "Are pets allowed inside the store?",
+          "A": "We love pets, but to avoid any risks, they are not allowed inside the store."
+        },
+        {
+          "Q": "Do you offer planning services?",
+          "A": "We offer various planning services either online, in-store, or at home, depending on your needs, and we will reach out to you."
+        },
+        {
+          "Q": "Why are some products out of stock?",
+          "A": "Like many retailers, we are facing supply chain challenges due to COVID-19, and as a result, some products may be temporarily unavailable."
+        }
+      ]
+    }
+  ],
   "search": "Search",
   "search-for-products": "Search for products...",
   "account-modal": {
@@ -261,7 +347,28 @@
     "span": "This is where comfort and style meet to blissful perfection",
     "button": "Join Our Community"
   },
-  "not-found":"Page not found"
+  "not-found": "Page not found",
+  "reviews":{
+    "name":"Reviews",
+    "no-review":"No reviews yet. Be the first to write one!",
+    "write":"WRITE A REVIEW"
+  },
+  "like":"You may also like",
+  "product-details" : {
+    "desc":"Description",
+    "benefits":"Benefits",
+    "ingredients":"Ingrediens",
+    "how-to":"How to"
+  },
+  "product-info" : {
+    "return":"Free return within 15 days",
+    "shipping":"Free shipping on orders over 49%",
+    "harmful":"No harmful chemicals",
+    "fresh":"Fresh and clean product"
+  },
+  "alert":{
+    "add":"added to your cart",
+    "please-log-in":"Please log in to add items to the cart."
 
-  
+  }
 }

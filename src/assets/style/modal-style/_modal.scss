@@ -6,6 +6,10 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 4;
+  transition: opacity 0.3s ease;
+  &.closing {
+    opacity: 0;
+  }
 
   .modal-content {
     height: 100vh;
@@ -31,15 +35,16 @@
     @media (max-width: 460px) {
       width: 92%;
     }
-   
-
     background-color: var(--third-primary-color);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+    &.closing {
+      transform: translateX(100%);
+      opacity: 0;
+    }
     z-index: 5;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-
     .icon-container {
       position: relative;
       z-index: 40;

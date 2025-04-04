@@ -8,8 +8,9 @@ import { WishListContext } from "../../context/WishListProvider";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { LanguageContext } from "../../context/LanguageProvider";
 const EnhanceProducts = () => {
+  const {t} = useContext(LanguageContext);
   const { toggleWishlist, wishlist } = useContext(WishListContext);
   const products = useSelector((state) => state.products.filteredProducts);
   console.log(products)
@@ -22,12 +23,11 @@ const EnhanceProducts = () => {
   const handleAddToCart = (product,e) => {
     e.preventDefault();
     if (!currentUser) {
-     toast.error("Please log in to add items to the cart.");
+     toast.error(t("alert.please-log-in"));
       return;
     }
     dispatch(addToCart({ userId: currentUser.id, product }));
   };
-
   return (
     <div className="enhance-products">
       <div className="products-container">
@@ -48,14 +48,11 @@ const EnhanceProducts = () => {
                   {product.name}
                 </h2>
               </div>
-
               <div className="bottom">
                 <span className="price" data-aos="zoom-in">
                   ${product.price}
                 </span>
               </div>
-
-             
               <Link
                 to={`/products/${product.id}`}
                 className="hover-buttons"

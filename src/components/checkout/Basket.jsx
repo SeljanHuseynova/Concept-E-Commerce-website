@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { MdOutlineDiscount } from "react-icons/md";
-
+import { CiCircleCheck } from "react-icons/ci";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const Basket = () => {
   const cart = useSelector((state) => state.users.currentUser?.cart || []);
@@ -17,22 +18,35 @@ const Basket = () => {
       let newTotal = totalPrice;
       if (promoCode === "NOVRUZ30") {
         newTotal = totalPrice * 0.7;
-        setDiscountApplied("✅ Code Applied: NOVRUZ30 (30% OFF)");
+        setDiscountApplied(
+          <>
+            <CiCircleCheck className="success-icon"/> Code Applied: <strong>NOVRUZ30</strong> (30% OFF)
+          </>
+        );
         setErrorMessage("");
       } else if (promoCode === "NACLES50") {
         newTotal = Math.max(0, totalPrice - 50);
-        setDiscountApplied("✅ Code Applied: NACLES50 ($50 OFF)");
+        setDiscountApplied(
+          <>
+            <CiCircleCheck className="success-icon"/> Code Applied: <strong>NACLES50</strong> ($50 OFF)
+          </>
+        );
         setErrorMessage("");
       } else {
-        setErrorMessage("❌ Invalid Promo Code");
-        setDiscountApplied("");
+        setErrorMessage(
+          <>
+            <IoIosCloseCircleOutline className="error-icon"/> Invalid Promo Code
+          </>
+        );
+        setDiscountApplied(null);
         setDiscountedTotal(null);
         return;
       }
-
+  
       setDiscountedTotal(newTotal);
     }
   };
+  
   const totalSavings = discountedTotal !== null ? totalPrice - discountedTotal : 0;
   return (
     <div className="basket">

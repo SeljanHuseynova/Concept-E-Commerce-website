@@ -8,11 +8,13 @@ import { WishListContext } from "../../context/WishListProvider";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const YouMayAlsoLike = () => {
     const products = useSelector((state) => state.products?.filteredProducts || []) ;
   const { toggleWishlist, wishlist } = useContext(WishListContext);
   const dispatch = useDispatch();
+  const {t} = useContext(LanguageContext);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -30,7 +32,7 @@ const YouMayAlsoLike = () => {
   return (
     <div className="you-may-also-like">
       <div className="title" data-aos="fade-up">
-        <h2>You may also like</h2>
+        <h2>{t("like")}</h2>
       </div>
       <div className="products-container">
         <div className="products">

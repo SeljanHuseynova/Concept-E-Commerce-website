@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 
 const FAQ = () => {
   const { t } = useContext(LanguageContext);
-
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);

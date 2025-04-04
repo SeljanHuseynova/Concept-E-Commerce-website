@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
-import { faqSections } from "../../Faqs";
+import { LanguageContext } from "../../context/LanguageProvider";
 
 const FaqsAccordion = () => {
   const [openIndexes, setOpenIndexes] = useState(new Set());
+  const {t} = useContext(LanguageContext);
   const toggleFaq = (index) => {
     setOpenIndexes((prevIndexes) => {
       const newIndexes = new Set(prevIndexes);
@@ -13,7 +14,7 @@ const FaqsAccordion = () => {
   };
   return (
     <div className="faq-accordion">
-      {faqSections.map((section, sectionIndex) => (
+     {t('faqSections', { returnObjects: true }).map((section, sectionIndex) => (
         <div key={sectionIndex} className="faqs">
           <h3>{section.title}</h3>
           {section.faqs.map((faq, faqIndex) => {
@@ -32,8 +33,8 @@ const FaqsAccordion = () => {
                     <GoChevronDown className="icon" />
                   )}
                 </div>
-                {isOpen && <div className="faq-answer">{faq.A}</div>}
-              </div>
+                {isOpen && <div className={`faq-answer ${isOpen ? "open" : ""}`}>{faq.A}</div>}
+                </div>
             );
           })}
         </div>
