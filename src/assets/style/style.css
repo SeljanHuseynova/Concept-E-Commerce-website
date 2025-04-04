@@ -129,6 +129,10 @@ body {
   font-size: 15px;
 }
 
+header .btn-close {
+  --bs-btn-close-color: none;
+  color: var(--second-text-color) !important;
+}
 header .announcement {
   background-color: black;
   color: white;
@@ -394,6 +398,45 @@ header .icon-container .badge {
   left: 60%;
   position: absolute;
   color: var(--text-color);
+}
+
+.offcanvas {
+  background-color: var(--primary-color) !important;
+}
+@media (max-width: 900px) {
+  .offcanvas {
+    width: 50% !important;
+  }
+}
+@media (max-width: 700px) {
+  .offcanvas {
+    width: 60% !important;
+  }
+}
+@media (max-width: 500px) {
+  .offcanvas {
+    width: 75% !important;
+  }
+}
+
+.mobile-wishlist-cart {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.mobile-wishlist-cart .badge-mobile {
+  transform: translateY(-8px);
+}
+.mobile-wishlist-cart .part {
+  border-bottom: 0.001rem solid rgba(218, 151, 151, 0.3);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.mobile-wishlist-cart .part .icon {
+  transform: translateY(-7px);
+  font-size: 26px !important;
 }
 
 .new-arrivals {

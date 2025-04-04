@@ -1,4 +1,8 @@
 header {
+  .btn-close {
+    --bs-btn-close-color: none;
+    color: var(--second-text-color) !important;
+  }
   .announcement {
     background-color: black;
     color: white;
@@ -7,7 +11,7 @@ header {
     font-size: 15px;
     padding: 5px 0;
     font-weight: 400;
-    @media (max-width:550px) {
+    @media (max-width: 550px) {
       font-size: 13px;
     }
   }
@@ -264,6 +268,37 @@ header {
       left: 60%;
       position: absolute;
       color: var(--text-color);
+    }
+  }
+}
+.offcanvas {
+  background-color: var(--primary-color) !important;
+  @media (max-width: 900px) {
+    width: 50% !important;
+  }
+  @media (max-width: 700px) {
+    width: 60% !important;
+  }
+  @media (max-width: 500px) {
+    width: 75% !important;
+  }
+}
+.mobile-wishlist-cart {
+  .badge-mobile {
+    transform: translateY(-8px);
+  }
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .part {
+    border-bottom: 0.001rem solid rgba(218, 151, 151, 0.3);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    .icon {
+      transform: translateY(-7px);
+      font-size: 26px !important;
     }
   }
 }

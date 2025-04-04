@@ -11,8 +11,6 @@ import { LuMenu } from "react-icons/lu";
 import Modal from "../modals/Modal";
 import { WishListContext } from "../../context/WishListProviderNew";
 import { LanguageContext } from "../../context/LanguageProvider";
-
-
 const Navbar = ({
   currentUser,
   isSticky,
@@ -113,14 +111,22 @@ const Navbar = ({
                 </li>
                 {isMobileView && (
                   <div className="mobile-wishlist-cart">
+                    <div className="part">
                     <IoHeartOutline
                       className="icon"
                       onClick={() => openModal("wishlist")}
                     />
+                    <p>Wishlist</p>
+                    {wishlist.length > 0 && <span className="badge-mobile">({wishlist.length})</span>}
+                    </div>
+                    <div className="part">
                     <IoBagOutline
                       className="icon"
                       onClick={() => openModal("cart")}
                     />
+                    <p>Your cart</p>
+                    {totalItems > 0 && <span className="badge-mobile">({totalItems})</span>}
+                    </div>
                   </div>
                 )}
               </ul>
