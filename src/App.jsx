@@ -27,7 +27,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import ForgetPassword from "./pages/ForgetPassword";
 import Loader from "./components/Global/Loader";
-import { WishListProvider } from "./context/WishListProvider";
+import { WishListProvider } from "./context/WishListProviderNew";
 
 function App() {
   const dispatch = useDispatch();

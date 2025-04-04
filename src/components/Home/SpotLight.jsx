@@ -79,21 +79,25 @@ const SpotLight = ({ products }) => {
                     backgroundImage: `url(${selectedProduct.images[0]})`,
                   }}
                 ></div>
-                <Link to={`/products/${selectedProduct.id}`} className="link">
+              
                 <div className="info">
                   <div className="icon-container" onClick={handlePrev}>
                     <TfiArrowLeft className="icon" />
                   </div>
+                 
                   <div className="content">
+                  <Link to={`/products/${selectedProduct.id}`} className="link">
                     <span>{selectedProduct.brand}</span>
                     <h4>{selectedProduct.name}</h4>
                     <p className="price">${selectedProduct.price}</p>
+                    </Link>
                   </div>
+                 
                   <div className="icon-container" onClick={handleNext}>
                     <TfiArrowRight className="icon" />
                   </div>
                 </div>
-                </Link>
+              
               </div>
             ) : (
               <p>Loading product...</p>
