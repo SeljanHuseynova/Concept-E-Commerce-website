@@ -1,4 +1,10 @@
 .search-modal {
+  h2 {
+    font-family: var(--main-font-family);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 35px;
+  }
   p {
     font-family: var(--main-font-family);
     color: var(--second-text-color);

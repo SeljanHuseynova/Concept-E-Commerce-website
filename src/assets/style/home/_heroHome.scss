@@ -48,6 +48,9 @@
         font-family: var(--secondary-font-family);
         padding: 12px 32px;
         font-size: 19px;
+        @media (max-width:390px) {
+          font-size: 18px;
+        }
         margin-top: 10px;
       }
       @media (max-width: 900px) {
