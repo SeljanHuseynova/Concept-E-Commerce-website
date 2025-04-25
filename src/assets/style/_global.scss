@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
   transition: 0.3s all;
+  @media (max-width:900px) {
+    cursor:default !important;
+  }
   cursor: none !important;
 }
 html,
@@ -44,7 +47,7 @@ body {
     }
   }
 }
-
+@media (min-width:900px) {
 // cursor wrap
 .cursor-fixed {
   position: fixed;
@@ -88,7 +91,7 @@ body {
 .cursor--small.hover {
   opacity: 0;
 }
-
+}
 //alerts desing
 .swal2-popup {
   h2 {
