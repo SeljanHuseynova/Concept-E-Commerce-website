@@ -348,27 +348,53 @@
     "button": "Join Our Community"
   },
   "not-found": "Page not found",
-  "reviews":{
-    "name":"Reviews",
-    "no-review":"No reviews yet. Be the first to write one!",
-    "write":"WRITE A REVIEW"
+  "reviews": {
+    "name": "Reviews",
+    "no-review": "No reviews yet. Be the first to write one!",
+    "write": "WRITE A REVIEW"
   },
-  "like":"You may also like",
-  "product-details" : {
-    "desc":"Description",
-    "benefits":"Benefits",
-    "ingredients":"Ingrediens",
-    "how-to":"How to"
+  "like": "You may also like",
+  "product-details": {
+    "desc": "Description",
+    "benefits": "Benefits",
+    "ingredients": "Ingrediens",
+    "how-to": "How to"
   },
-  "product-info" : {
-    "return":"Free return within 15 days",
-    "shipping":"Free shipping on orders over 49%",
-    "harmful":"No harmful chemicals",
-    "fresh":"Fresh and clean product"
+  "product-info": {
+    "return": "Free return within 15 days",
+    "shipping": "Free shipping on orders over 49%",
+    "harmful": "No harmful chemicals",
+    "fresh": "Fresh and clean product"
   },
-  "alert":{
-    "add":"added to your cart",
-    "please-log-in":"Please log in to add items to the cart."
-
+  "alert": {
+    "add": "added to your cart",
+    "please-log-in": "Please log in to add items to the cart."
+  },
+  "checkout": {
+    "country":"Select a country",
+    "first":"First Name",
+    "last":"Last Name",
+    "adress":"Address",
+    "apartment":"Apartment",
+    "city":"City",
+    "state":"State",
+    "postal":"Postal Code",
+    "shipping":"Shipping Method",
+    "payment":"Payment Method",
+    "paypal":"PayPal",
+    "cash":"Cash on Delivery",
+    "money":"Money Order",
+    "google":"Google Pay",
+    "billing":"Billing Adress",
+    "same":"Same as shipping address",
+    "new":"New Adsress",
+    "paywith":"Pay with",
+    "error":"This field cannot be left blank!"
+  },
+  "basket":{
+    "total":"Total",
+    "applied":"Code Applied",
+    "invalid":"Invalid Promo Code",
+    "savings":"Total Savings"
   }
 }

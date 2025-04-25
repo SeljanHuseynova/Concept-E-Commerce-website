@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import paypal from "../../assets/images/general/paypal-white.svg";
+import { LanguageContext } from "../../context/LanguageProvider";
 const Form = ({ handleSubmit, formData, handleChange, errors }) => {
+  const {t} = useContext(LanguageContext);
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <select name="region" value={formData.region} onChange={handleChange}>
-          <option value="">Select a country</option>
+          <option value="">{t("checkout.country")}</option>
           <option value="canada">Canada</option>
           <option value="united-state">United States</option>
         </select>
@@ -15,7 +17,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
             <input
               type="text"
               name="firstName"
-              placeholder="First Name"
+              placeholder={t("checkout.first")}
               value={formData.firstName}
               onChange={handleChange}
             />
@@ -25,7 +27,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
             <input
               type="text"
               name="secondName"
-              placeholder="Last Name"
+              placeholder={t("checkout.last")}
               value={formData.secondName}
               onChange={handleChange}
             />
@@ -36,7 +38,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
         <input
           type="text"
           name="address"
-          placeholder="Address"
+          placeholder={t("checkout.address")}
           value={formData.address}
           onChange={handleChange}
         />
@@ -45,7 +47,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
         <input
           type="text"
           name="apartment"
-          placeholder="Apartment"
+          placeholder={t("checkout.apartment")}
           value={formData.apartment}
           onChange={handleChange}
         />
@@ -55,7 +57,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
             <input
               type="text"
               name="city"
-              placeholder="City"
+              placeholder={t("checkout.city")}
               value={formData.city}
               onChange={handleChange}
             />
@@ -65,7 +67,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
             <input
               type="text"
               name="state"
-              placeholder="State"
+              placeholder={t("checkout.state")}
               value={formData.state}
               onChange={handleChange}
             />
@@ -75,7 +77,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
             <input
               type="text"
               name="postalCode"
-              placeholder="Postal Code"
+              placeholder={t("checkout.postal")}
               value={formData.postalCode}
               onChange={handleChange}
             />
@@ -84,11 +86,11 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
         </div>
 
         <div className="shipping">
-          <h4>Shipping Method</h4>
+          <h4>{t("checkout.shipping")}</h4>
           <input
             type="text"
             name="shippingMethod"
-            placeholder="Shipping Method"
+            placeholder={t("checkout.shipping")}
             value={formData.shippingMethod}
             onChange={handleChange}
           />
@@ -98,7 +100,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
         </div>
 
         <div className="payment">
-          <h4>Payment Method</h4>
+          <h4>{t("checkout.payment")}</h4>
           <div className="content">
             <label>
               <input
@@ -108,7 +110,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
                 checked={formData.payment === "paypal"}
                 onChange={handleChange}
               />
-              PayPal
+              {t("checkout.paypal")}
             </label>
             <label>
               <input
@@ -118,7 +120,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
                 checked={formData.payment === "cod"}
                 onChange={handleChange}
               />
-              Cash on Delivery
+              {t("checkout.cash")}
             </label>
             <label>
               <input
@@ -138,14 +140,14 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
                 checked={formData.payment === "google-pay"}
                 onChange={handleChange}
               />
-              Google Pay
+             {t("checkout.google")}
             </label>
           </div>
         </div>
         {errors.payment && <p className="error">{errors.payment}</p>}
 
         <div className="billing-address">
-          <h4>Billing Address</h4>
+          <h4>{t("checkout.billing")}</h4>
           <div className="content">
             <label>
               <input
@@ -155,7 +157,7 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
                 checked={formData.billing === "same"}
                 onChange={handleChange}
               />
-              Same as shipping address
+              {t("checkout.same")}
             </label>
             <label>
               <input
@@ -165,14 +167,14 @@ const Form = ({ handleSubmit, formData, handleChange, errors }) => {
                 checked={formData.billing === "new"}
                 onChange={handleChange}
               />
-              New Address
+              {t("checkout.new")}
             </label>
           </div>
         </div>
         {errors.billing && <p className="error">{errors.billing}</p>}
 
         <button type="submit">
-          Pay with <img src={paypal} alt="paypal" width={90} />
+        {t("checkout.paywith")} <img src={paypal} alt="paypal" width={90} />
         </button>
       </form>
     </div>

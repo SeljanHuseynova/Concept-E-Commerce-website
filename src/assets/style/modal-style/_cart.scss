@@ -76,12 +76,20 @@
         border: none;
         background-color: black;
         color: #f1dfdf;
+        &:hover {
+          background-color: rgb(81, 74, 74);
+          cursor:  pointer !important;
+        }
       }
       .link {
         text-align: center;
         padding: 7px 0;
         text-decoration: none;
         border: 0.001rem solid var(--second-text-color);
+        &:hover {
+          background-color: #ecdde1;
+          cursor:  pointer !important;
+        }
       }
     }
     width: 100%;
@@ -179,6 +187,7 @@
               border: none;
               background: none;
               font-size: 25px;
+      
             }
             border: 0.001rem solid var(--second-text-color);
           }

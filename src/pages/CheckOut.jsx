@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { SlBasketLoaded } from 'react-icons/sl'
 import Basket from '../components/checkout/Basket'
 import Form from '../components/checkout/Form'
@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
 import { clearAll, updateStockAfterPurchase } from '../redux/accountSlice'
 import Swal from "sweetalert2";
+import { LanguageContext } from '../context/LanguageProvider'
 const CheckOut = () => {
+  const {t} = useContext(LanguageContext);
   const currentUser = useSelector((state) => state.users.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ const CheckOut = () => {
     let newErrors = {};
     Object.keys(formData).forEach((key) => {
       if (!formData[key].trim()) {
-        newErrors[key] = "This field cannot be left blank!";
+        newErrors[key] = t("checkout.error");
       }
     });
     if (Object.keys(newErrors).length > 0) {

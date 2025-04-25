@@ -370,5 +370,32 @@
   "alert":{
     "add":"səbətinizə əlavə edildi",
     "please-log-in":"Səbətə əşyalar əlavə etmək üçün daxil olun."
-  }
+  },
+  "checkout": {
+  "country": "Ölkə seçin",
+  "first": "Ad",
+  "last": "Soyad",
+  "adress": "Ünvan",
+  "apartment": "Mənzil",
+  "city": "Şəhər",
+  "state": "Ştat / Rayon",
+  "postal": "Poçt Kodu",
+  "shipping": "Çatdırılma Metodu",
+  "payment": "Ödəmə Metodu",
+  "paypal": "PayPal",
+  "cash": "Qapıda Ödəniş",
+  "money": "Pul Köçürməsi",
+  "google": "Google Pay",
+  "billing": "Faktura Ünvanı",
+  "same": "Çatdırılma ünvanı ilə eynidir",
+  "new": "Yeni Ünvan",
+  "paywith": "Ödəmə üsulu",
+   "error":"Bu sahə boş buraxıla bilməz!"
+},
+"basket": {
+  "total": "Cəmi",
+  "applied": "Kod Tətbiq Olundu",
+  "invalid": "Etibarsız Promo Kod",
+  "savings": "Ümumi Qənaət"
+}
 }
