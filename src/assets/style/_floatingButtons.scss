@@ -40,9 +40,8 @@
         padding: 5px;
         display: flex;
         gap: 10px;
-        opacity: 0;
-        visibility: hidden;
         transition: opacity 0.2s ease, visibility 0.2s ease;
+        touch-action: manipulation;
   
         button {
           background: none;
