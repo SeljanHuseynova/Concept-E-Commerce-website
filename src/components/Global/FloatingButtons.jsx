@@ -28,7 +28,8 @@ const FloatingButtons = ({ onThemeChange }) => {
       </button>
 
       <div className="language-container">
-        <button className="language-toggle" onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}>
+        <button className="language-toggle" onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}   onTouchStart={() => setShowLanguageDropdown(!showLanguageDropdown)}
+        >
           <Globe size={20} />
         </button>
 

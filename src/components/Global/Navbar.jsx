@@ -38,6 +38,7 @@ const Navbar = ({
   const cart = useMemo(() => currentUser?.cart || [], [currentUser]);
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   const { wishlist } = useContext(WishListContext);
+  
   return (
     <>
       <nav
