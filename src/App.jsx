@@ -32,7 +32,7 @@ import { WishListProviderNew } from "./context/WishListProviderNew";
 
 function App() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products?.filteredProducts);
+  const products = useSelector((state) => state.products.products);
   const currentUser = useSelector((state) => state.users?.currentUser);
   const location = useLocation();
   const cart = currentUser?.cart || [];
@@ -74,7 +74,7 @@ function App() {
             <Route path="/login" element={currentUser ? <Navigate to="/Account" /> : <Login />} />
             <Route path="/register" element={currentUser ? <Navigate to="/Account" /> : <Register />} />
             <Route path="/Account" element={currentUser ? <Account /> : <Navigate to="/login" />} />
-            <Route path="/products" element={<Products products={products} />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<SinglePage />} />
             <Route path="/FAQs" element={<FAQ />} />
             <Route path="/check-out" element={currentUser && cart.length > 0 ? <CheckOut /> : <Navigate to="/" />} />

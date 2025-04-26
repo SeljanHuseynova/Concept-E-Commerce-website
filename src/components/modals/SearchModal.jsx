@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../../context/LanguageProvider";
 const SearchModal = ({ closeModal }) => {
   const {t} = useContext(LanguageContext);
-  const allProducts = useSelector((state) => state.products?.filteredProducts);
+  const allProducts = useSelector((state) => state.products?.products);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 

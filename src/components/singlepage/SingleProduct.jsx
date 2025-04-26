@@ -70,7 +70,7 @@ const SingleProduct = () => {
   return (
     <div className="single-product">
       <div className="title-product">
-        <Link className="home">Home</Link>
+        <Link className="home" to="/">Home</Link>
         <span>/</span>
         <p>{product.name}</p>
       </div>
