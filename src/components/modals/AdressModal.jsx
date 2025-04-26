@@ -8,24 +8,21 @@ const AdressModal = ({ closeModal, selectedAdress, setAdresses }) => {
   const id = useSelector((state) => state.users?.currentUser?.id);
 
   const handleSubmit = async () => {
+    if (!adressText) return;
     try {
       let updatedAdresses;
       
       if (selectedAdress) {
-        // Edit existing address
         updatedAdresses = (await axios.get(`${accountUrl}?id=eq.${id}&select=adress`, { headers }))
           .data[0].adress.map((adr) => (adr === selectedAdress ? adressText : adr));
       } else {
-        // Add new address
         const response = await axios.get(`${accountUrl}?id=eq.${id}&select=adress`, { headers });
         const currentAdresses = response.data[0]?.adress || [];
         updatedAdresses = [...currentAdresses, adressText];
       }
 
-      // Update in database
       await axios.patch(`${accountUrl}?id=eq.${id}`, { adress: updatedAdresses }, { headers });
 
-      // Update local state
       setAdresses(updatedAdresses);
       closeModal();
     } catch (error) {
