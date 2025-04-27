@@ -7,11 +7,6 @@ const Header = ({ currentUser }) => {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 992);
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
   useEffect(() => {
-    if (!isOffcanvasOpen) {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 100);
-    }
   
     const handleScroll = () => {
       if (!isOffcanvasOpen) {

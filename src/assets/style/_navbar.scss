@@ -20,7 +20,7 @@ header {
     * {
       color: var(--text-color);
     }
-    z-index: 2;
+    z-index: 30;
     &.sticky {
       animation: slideDown 0.6s ease-in-out forwards;
       position: fixed;
