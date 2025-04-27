@@ -31,8 +31,6 @@ const Navbar = ({
     setIsOffcanvasOpen(!isOffcanvasOpen);
     if (!isOffcanvasOpen) {
       setIsSticky(false);
-    } else {
-      setIsSticky(window.scrollY > 50);
     }
   };
   const cart = useMemo(() => currentUser?.cart || [], [currentUser]);
