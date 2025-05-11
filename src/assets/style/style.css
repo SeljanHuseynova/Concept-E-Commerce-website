@@ -5,6 +5,15 @@
   transition: 0.3s all;
   cursor: none !important;
 }
+@media (max-width: 900px) {
+  * {
+    cursor: default !important;
+  }
+}
+
+body {
+  padding-right: 0 !important;
+}
 
 html,
 body {
@@ -57,46 +66,43 @@ body {
   }
 }
 
-.cursor-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
+@media (min-width: 900px) {
+  .cursor-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .cursor--large {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: var(--cursor-main-color);
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
+    z-index: 9998;
+  }
+  .cursor--small {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background-color: var(--small-cursor-color);
+    border-radius: 50%;
+    transition: transform 0.1s ease-out, opacity 0.3s;
+    z-index: 9999;
+  }
+  .cursor--large.hover {
+    width: 42px;
+    height: 42px;
+    opacity: 0.7;
+  }
+  .cursor--small.hover {
+    opacity: 0;
+  }
 }
-
-.cursor--large {
-  position: fixed;
-  width: 25px;
-  height: 25px;
-  background-color: var(--cursor-main-color);
-  border-radius: 50%;
-  transition: transform 0.2s ease-out;
-  z-index: 9998;
-}
-
-.cursor--small {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background-color: var(--small-cursor-color);
-  border-radius: 50%;
-  transition: transform 0.1s ease-out, opacity 0.3s;
-  z-index: 9999;
-}
-
-.cursor--large.hover {
-  width: 42px;
-  height: 42px;
-  opacity: 0.7;
-}
-
-.cursor--small.hover {
-  opacity: 0;
-}
-
 .swal2-popup h2 {
   font-family: var(--main-font-family);
   font-size: 40px;
@@ -111,6 +117,7 @@ body {
   outline: none;
   background-color: var(--primary-color);
   font-family: var(--secondary-font-family);
+  color: var(--text-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: all 0.3s ease-in-out;
 }
@@ -144,7 +151,7 @@ header .announcement {
   }
 }
 header nav {
-  z-index: 2;
+  z-index: 30;
   background: linear-gradient(45deg, var(--primary-color), var(--third-primary-color), var(--second-primary-color), var(--fourth-primary-color));
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
@@ -157,7 +164,7 @@ header nav.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 30;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -528,6 +535,11 @@ header .icon-container .badge {
 }
 .home-hero .content-container .content button:hover::before {
   transform: translate(0, 0);
+}
+@media (max-width: 390px) {
+  .home-hero .content-container .content button {
+    font-size: 18px;
+  }
 }
 @media (max-width: 900px) {
   .home-hero .content-container .content h2 {
@@ -1110,7 +1122,7 @@ header .icon-container .badge {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 4;
+  z-index: 31;
   transition: opacity 0.3s ease;
 }
 .modal-overlay.closing {
@@ -1124,7 +1136,7 @@ header .icon-container .badge {
   width: 35%;
   background-color: var(--third-primary-color);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-  z-index: 5;
+  z-index: 31;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1268,6 +1280,12 @@ header .icon-container .badge {
   text-align: center;
 }
 
+.search-modal h2 {
+  font-family: var(--main-font-family);
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 35px;
+}
 .search-modal p {
   font-family: var(--main-font-family);
   color: var(--second-text-color);
@@ -1548,6 +1566,10 @@ header .icon-container .badge {
   color: white;
   border: none;
 }
+.wishlist-container .clear-all:hover {
+  color: var(--text-color);
+  background-color: var(--second-primary-color);
+}
 .wishlist-container h5 {
   color: var(--text-color);
   font-size: 21px;
@@ -1660,6 +1682,7 @@ header .icon-container .badge {
   }
 }
 .wishlist-container .wishlist .wishlist-product .right .bottom .add-to-cart {
+  color: black;
   border: none;
   background: none;
   display: flex;
@@ -1784,11 +1807,20 @@ header .icon-container .badge {
   background-color: black;
   color: #f1dfdf;
 }
+.cart-modal .below .buttons button:hover {
+  background-color: var(--second-primary-color);
+  color: var(--text-color);
+  cursor: pointer !important;
+}
 .cart-modal .below .buttons .link {
   text-align: center;
   padding: 7px 0;
   text-decoration: none;
   border: 0.001rem solid var(--second-text-color);
+}
+.cart-modal .below .buttons .link:hover {
+  background-color: var(--second-primary-color);
+  cursor: pointer !important;
 }
 .cart-modal .below .total {
   margin-top: 4px;
@@ -2321,9 +2353,6 @@ header .icon-container .badge {
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
 }
-.enhance-collection * {
-  color: var(--text-color);
-}
 @media (max-width: 1200px) {
   .enhance-collection {
     padding: 70px 40px;
@@ -2345,6 +2374,7 @@ header .icon-container .badge {
   }
 }
 .enhance-collection h2 {
+  color: var(--text-color);
   margin-bottom: 65px;
   font-family: var(--main-font-family);
   font-size: 44px;
@@ -2377,6 +2407,7 @@ header .icon-container .badge {
 }
 .enhance-collection .main * {
   font-family: var(--seondary-font-family);
+  color: var(--text-color);
 }
 .enhance-collection .main .left {
   width: 50%;
@@ -3453,6 +3484,7 @@ header .icon-container .badge {
 }
 .floating-buttons .language-container .language-dropdown {
   position: absolute;
+  z-index: 25;
   top: 50%;
   left: 50px;
   transform: translateY(-50%);
@@ -3462,9 +3494,8 @@ header .icon-container .badge {
   padding: 5px;
   display: flex;
   gap: 10px;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  touch-action: manipulation;
 }
 .floating-buttons .language-container .language-dropdown button {
   background: none;
@@ -3481,6 +3512,7 @@ header .icon-container .badge {
 }
 .floating-buttons .language-container .language-toggle:focus + .language-dropdown,
 .floating-buttons .language-container .language-dropdown:hover {
+  touch-action: manipulation;
   opacity: 1;
   visibility: visible;
 }
@@ -5171,13 +5203,40 @@ footer .bottom .right {
   z-index: 21;
 }
 .adress-modal-overlay .adress-modal {
-  background: white;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   min-width: 300px;
   text-align: center;
+}
+.adress-modal-overlay .adress-modal h3 {
+  color: var(--text-color);
+  font-family: var(--main-font-family);
+  font-weight: 600;
+}
+.adress-modal-overlay .adress-modal input {
+  border-radius: 5px;
+  border: 1px solid var(--second-text-color);
+  padding: 8px 10px;
+}
+.adress-modal-overlay .adress-modal input::-moz-placeholder {
+  font-family: var(--secondary-font-family);
+}
+.adress-modal-overlay .adress-modal input::placeholder {
+  font-family: var(--secondary-font-family);
+}
+.adress-modal-overlay .adress-modal button {
+  color: var(--text-color);
+  font-family: var(--secondary-font-family);
+  background-color: var(--third-primary-color);
+  border: 1px solid var(--second-text-color);
+  border-radius: 5px;
+  padding: 2px 0;
 }
 
 .account-details {

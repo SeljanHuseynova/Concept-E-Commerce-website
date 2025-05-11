@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 4;
+  z-index: 31;
   transition: opacity 0.3s ease;
   &.closing {
     opacity: 0;
@@ -41,7 +41,7 @@
       transform: translateX(100%);
       opacity: 0;
     }
-    z-index: 5;
+    z-index: 31;
     padding: 2rem;
     display: flex;
     flex-direction: column;
